@@ -1,4 +1,4 @@
-package csc214_assignment01.helloworld;
+package assignment01.csc214.hellodaniel;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("csc214_assignment01.helloworld", appContext.getPackageName());
+        assertEquals("assignment01.csc214.hellodaniel", appContext.getPackageName());
     }
 }

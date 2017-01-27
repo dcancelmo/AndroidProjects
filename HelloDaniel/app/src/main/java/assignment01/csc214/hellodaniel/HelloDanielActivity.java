@@ -1,13 +1,13 @@
-package csc214_assignment01.helloworld;
+package assignment01.csc214.hellodaniel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HelloWorldActivity extends AppCompatActivity {
+public class HelloDanielActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hello_world);
+        setContentView(R.layout.activity_hello_daniel);
     }
 }

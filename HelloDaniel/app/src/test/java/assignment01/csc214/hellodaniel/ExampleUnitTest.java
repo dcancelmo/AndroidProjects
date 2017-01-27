@@ -1,4 +1,4 @@
-package csc214_assignment01.helloworld;
+package assignment01.csc214.hellodaniel;
 
 import org.junit.Test;
 
