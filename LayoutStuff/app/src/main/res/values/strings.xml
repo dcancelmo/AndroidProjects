@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LayoutStuff</string>
+    <string name="top_left">Top Left</string>
+    <string name="below_top_left">Below top left</string>
+    <string name="button1">A button</string>
+    <string name="another_button">Another Button</string>
+    <string name="third_Button">Third</string>
+</resources>
