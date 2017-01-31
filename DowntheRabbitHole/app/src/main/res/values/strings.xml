@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Down the Rabbit Hole</string>
+    <string name="bigger">You got bigger!</string>
+    <string name="smaller">You got smaller</string>
+    <string name="eat_cake">Eat cake</string>
+    <string name="instructions">Select to eat cake or drink potion:</string>
+    <string name="drink_potion">Drink potion</string>
+</resources>
