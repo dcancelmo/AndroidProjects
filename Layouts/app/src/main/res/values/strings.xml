@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Layouts</string>
+    <string name="dev_name">Dev name</string>
+    <string name="ta_name">TA name</string>
+    <string name="decrement">Decrement</string>
+    <string name="beadle">Alan Beadle</string>
+    <string name="cancelmo">Daniel Cancelmo</string>
+    <string name="_100">100</string>
+</resources>

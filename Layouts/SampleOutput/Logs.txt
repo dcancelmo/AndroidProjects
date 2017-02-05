@@ -1,0 +1,17 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 01
+January 26, 2017
+Logs File
+
+02-04 15:46:39.179 2353-2353/assignment02.csc214.layouts I/Cancelmo: mTANameButton clicked
+02-04 15:46:42.560 2353-2353/assignment02.csc214.layouts I/Cancelmo: mDevNameButton clicked
+02-04 15:46:46.423 2353-2353/assignment02.csc214.layouts I/Cancelmo: Value decremented 1
+02-04 15:46:49.223 2353-2353/assignment02.csc214.layouts I/Cancelmo: Value decremented 1
+02-04 15:46:50.987 2353-2353/assignment02.csc214.layouts I/Cancelmo: Value decremented 1
+02-04 15:46:53.391 2353-2353/assignment02.csc214.layouts I/Cancelmo: mTANameButton clicked
+02-04 15:46:53.980 2353-2353/assignment02.csc214.layouts I/Cancelmo: mDevNameButton clicked
+02-04 15:46:57.265 2353-2353/assignment02.csc214.layouts I/Cancelmo: Value decremented 1
