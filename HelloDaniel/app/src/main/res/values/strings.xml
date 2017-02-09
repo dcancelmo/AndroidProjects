@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Hello Daniel</string>
+    <string name="hello_daniel_cancelmo">Hello, Daniel Cancelmo!</string>
+    <string name="font_changer">Font Changer</string>
+    <string name="change_font">Change font</string>
+    <string name="bold">Bold</string>
+    <string name="italic">Italic</string>
+    <string name="underlined">Underlined</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -13,5 +13,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Daniel Cancelmo!" />
+        android:text="@string/hello_daniel_cancelmo"
+        android:layout_centerInParent="true"
+        android:id="@+id/hello"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hello"
+        android:layout_centerHorizontal="true"
+        android:text="@string/change_font"
+        android:id="@+id/change_button"/>
+
 </RelativeLayout>
