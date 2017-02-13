@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rotation_display"
+        android:textSize="20sp"
+        android:id="@id/travel_option_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/travel_image_view"
+        />
+
+    <ImageView
+        android:layout_width="275dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_ocean"
+        android:id="@id/travel_image_view"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_train"
+        android:padding="5sp"
+        android:id="@id/train_image_button"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/travel_image_view"
+        android:onClick="imageCycle"
+        />
+
+</RelativeLayout>

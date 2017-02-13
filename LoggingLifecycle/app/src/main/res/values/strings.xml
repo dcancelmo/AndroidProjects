@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Logging Lifecycle</string>
+    <string name="rotation_display">Device rotated 0 times.</string>
+</resources>

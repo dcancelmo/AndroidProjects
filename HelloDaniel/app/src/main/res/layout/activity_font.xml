@@ -53,12 +53,14 @@
                     android:layout_height="wrap_content"
                     android:text="@string/okay"
                     android:id="@+id/okay"
+                    android:onClick="infoReturn"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cancel"
                     android:id="@+id/cancel"
+                    android:onClick="cancel"
                     />
 
             </LinearLayout>
