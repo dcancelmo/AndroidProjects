@@ -11,9 +11,9 @@ import org.w3c.dom.Text;
 
 public class LoggingLifecycleActivity extends AppCompatActivity {
 
-    private static final String TAG = "Daniel Tag";
-    public static final String KEY_IMAGE = "assignment3.csc214.logginglifecylce.image";
-    public static final String KEY_ROTATIONS = "assignment3.csc214.logginglifecylce.rotations";
+    private static final String TAG = "DanielStateChangeTag";
+    public static final String KEY_IMAGE = "assignment03.csc214.logginglifecylce.image";
+    public static final String KEY_ROTATIONS = "assignment03.csc214.logginglifecylce.rotations";
 
     private boolean mOceanView = true;
     private int mRotations = -1;
@@ -22,8 +22,8 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logging_lifecycle);
-        Log.i(TAG, "onCreate(Bundle bundle) called");
-        if (savedInstanceState != null) {
+        Log.i(TAG, "onCreate(Bundle savedInstanceState) called");
+       if (savedInstanceState != null) {
             mOceanView = savedInstanceState.getBoolean(KEY_IMAGE);
             mRotations = savedInstanceState.getInt(KEY_ROTATIONS);
         }
@@ -33,19 +33,17 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
 
         ImageView mTravelImageView = (ImageView) findViewById(R.id.travel_image_view);
         if (mOceanView) {
-            mTravelImageView.setImageResource(R.drawable.ic_venice);
-            mOceanView = false;
-        } else {
             mTravelImageView.setImageResource(R.drawable.ic_ocean);
-            mOceanView = true;
+        } else {
+            mTravelImageView.setImageResource(R.drawable.ic_venice);
         }
 
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle bundle) {
-        bundle.putBoolean(KEY_IMAGE, mOceanView);
-        bundle.putInt(KEY_ROTATIONS, mRotations);
+    protected void onSaveInstanceState(Bundle state) {
+        state.putBoolean(KEY_IMAGE, mOceanView);
+        state.putInt(KEY_ROTATIONS, mRotations);
     }
 
     public void imageCycle(View view) {

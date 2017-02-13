@@ -1,0 +1,24 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 03
+February 12, 2017
+Logs File
+
+02-12 23:44:48.607 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onCreate(Bundle savedInstanceState) called
+02-12 23:44:48.608 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onStart() called
+02-12 23:44:48.608 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onResume() called
+02-12 23:45:01.406 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onPause() called
+02-12 23:45:01.407 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onStop() called
+02-12 23:45:01.407 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onDestroy() called
+02-12 23:45:01.637 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onCreate(Bundle savedInstanceState) called
+02-12 23:45:01.638 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onStart() called
+02-12 23:45:01.640 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onResume() called
+02-12 23:45:13.220 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onPause() called
+02-12 23:45:13.221 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onStop() called
+02-12 23:45:13.221 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onDestroy() called
+02-12 23:45:13.419 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onCreate(Bundle savedInstanceState) called
+02-12 23:45:13.420 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onStart() called
+02-12 23:45:13.421 3866-3866/assignment03.csc214.logginglifecycle I/DanielStateChangeTag: onResume() called
