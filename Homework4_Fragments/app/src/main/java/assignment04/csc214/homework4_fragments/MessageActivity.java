@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MessageActivity extends AppCompatActivity {
 
@@ -14,15 +15,20 @@ public class MessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        if (savedInstanceState != null) {
+            mMessage = savedInstanceState.getString(KEY_MESSAGE);
+        }
+        EditText mMessageEditText = (EditText) findViewById(R.id.message_edittext);
+        mMessageEditText.setText(mMessage);
     }
 
-    public void setValues() {
-
+    public void getValues() {
+        mMessage = ((EditText) findViewById(R.id.message_edittext)).getText().toString();
     }
 
     public void acceptChanges(View view) {
         Intent intent = new Intent(MessageActivity.this, MainActivity.class);
-        setValues();
+        getValues();
         intent.putExtra(KEY_MESSAGE, mMessage);
         setResult(RESULT_OK, intent);
         finish();

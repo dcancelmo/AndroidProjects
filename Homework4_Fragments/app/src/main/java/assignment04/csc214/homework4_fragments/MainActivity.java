@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import static android.graphics.Typeface.BOLD;
+import static android.graphics.Typeface.BOLD_ITALIC;
 import static android.graphics.Typeface.ITALIC;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
         TextView mDisplayMessage = (TextView) findViewById(R.id.message);
         if (mIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), BOLD);
         if (mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), ITALIC);
+        if (mIsBold && mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), BOLD_ITALIC);
         if (mIsUnderlined) {
-
+            //TODO: Underlined
         }
         switch (mColor) {
             case "Black":

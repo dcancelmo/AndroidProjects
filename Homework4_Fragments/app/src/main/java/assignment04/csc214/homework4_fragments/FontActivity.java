@@ -69,16 +69,20 @@ public class FontActivity extends AppCompatActivity {
         }
         mColorSpinner.setSelection(mColorChoice);
         EditText mSizeEditText = (EditText) findViewById(R.id.size_selector);
-        mSizeEditText.setText(mSize);
+        mSizeEditText.setText(String.valueOf(mSize));
     }
 
-    public void setValues() {
-
+    public void getValues() {
+        mIsBold = ((CheckBox) findViewById(R.id.bold_checkbox)).isChecked();
+        mIsItalic = ((CheckBox) findViewById(R.id.italic_checkbox)).isChecked();
+        mIsUnderlined = ((CheckBox) findViewById(R.id.underline_checkbox)).isChecked();
+        mColor = ((Spinner) findViewById(R.id.color_spinner)).getSelectedItem().toString();
+        mSize = Integer.valueOf(((EditText) findViewById(R.id.size_selector)).getText().toString());
     }
 
     public void acceptChanges(View view) {
         Intent intent = new Intent(FontActivity.this, MainActivity.class);
-        setValues();
+        getValues();
         intent.putExtra(KEY_BOLD, mIsBold);
         intent.putExtra(KEY_ITALIC, mIsItalic);
         intent.putExtra(KEY_UNDERLINE, mIsUnderlined);
