@@ -87,8 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        Log.i(TAG, "onActivityResultCalled");
         if (requestCode == RC_FONT) {
             if (resultCode == RESULT_OK) {
+                Log.i(TAG, "Font Activity return, OK");
                 if (intent != null) {
                     mIsBold = intent.getBooleanExtra(KEY_BOLD, false);
                     mIsItalic = intent.getBooleanExtra(KEY_ITALIC, false);
@@ -98,21 +100,25 @@ public class MainActivity extends AppCompatActivity {
                     setTextValues();
                 }
             } else if (resultCode == RESULT_CANCELED) {
+                Log.i(TAG, "Font Activity return, canceled");
                 //Do nothing
             }
         } else if (requestCode == RC_MESSAGE) {
+            Log.i(TAG, "Message Activity return, OK");
             if (resultCode == RESULT_OK) {
                 if (intent != null) {
                     mMessage = intent.getStringExtra(KEY_MESSAGE);
                     setTextValues();
                 }
             } else if (resultCode == RESULT_CANCELED) {
+                Log.i(TAG, "Message Activity return, canceled");
                 //Do nothing
             }
         }
     }
 
     public void changeFontActivity(View view) {
+        Log.i(TAG, "Font Activity called");
         Intent intent = new Intent(MainActivity.this, FontActivity.class);
         intent.putExtra(KEY_BOLD, mIsBold);
         intent.putExtra(KEY_ITALIC, mIsItalic);
@@ -124,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeMessageActivity(View view) {
+        Log.i(TAG, "Message Activity called");
         Intent intent = new Intent(MainActivity.this, MessageActivity.class);
         intent.putExtra(KEY_BOLD, mIsBold);
         intent.putExtra(KEY_ITALIC, mIsItalic);

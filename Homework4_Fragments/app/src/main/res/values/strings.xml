@@ -20,8 +20,6 @@
         <item id="purple_color">Purple</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_text_here">Enter text here…</string>
     <string name="enter_the_message_you_wish_to_appear">Enter the message you wish to appear:</string>
 
