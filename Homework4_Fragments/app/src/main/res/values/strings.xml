@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <string name="this_is_my_homework_assignment">This is my homework assignment.</string>
+    <string name="change_font">Change Font</string>
+    <string name="change_message">Change Message</string>
+    <string name="font_size_edittext">Font size in sip…</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="bold">Bold</string>
+    <string name="italic">Italic</string>
+    <string name="underline">Underline</string>
+    <string name="font_color">Font color:</string>
+
+    <string-array name="colors">
+        <item id="black_color">Black</item>
+        <item id="blue_color">Blue</item>
+        <item id="red_color">Red</item>
+        <item id="green_color">Green</item>
+        <item id="orange_color">Orange</item>
+        <item id="purple_color">Purple</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_text_here">Enter text here…</string>
+    <string name="enter_the_message_you_wish_to_appear">Enter the message you wish to appear:</string>
+
+</resources>

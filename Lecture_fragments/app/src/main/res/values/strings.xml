@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lecture fragments</string>
+    <string name="this_is_a_fragment">This is a fragment</string>
+
+</resources>
