@@ -53,17 +53,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void setTextValues() {
         TextView mDisplayMessage = (TextView) findViewById(R.id.message);
-        mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.NORMAL);
-        //TODO: Cannot return all the way back to normal. Remains bold/italic/bold_italic
+        mDisplayMessage.setTypeface(Typeface.DEFAULT);
         if (mIsBold && mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD_ITALIC);
         else if (mIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD);
         else if (mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.ITALIC);
-        else mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.NORMAL);
+        else mDisplayMessage.setTypeface(Typeface.DEFAULT);
+
         if (mIsUnderlined) {
             mDisplayMessage.setPaintFlags(mDisplayMessage.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         } else {
             mDisplayMessage.setPaintFlags(0);
         }
+
         switch (mColor) {
             case "Black":
                 mDisplayMessage.setTextColor(Color.BLACK);

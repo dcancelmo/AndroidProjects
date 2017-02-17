@@ -1,0 +1,21 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 04
+February 21, 2017
+Logs File
+
+02-17 00:01:52.085 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onRCreate() called
+02-17 00:03:32.937 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Font Activity called
+02-17 00:04:22.770 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onActivityResultCalled
+02-17 00:04:22.770 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Font Activity return, OK
+02-17 00:04:32.314 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Font Activity called
+02-17 00:04:44.691 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onActivityResultCalled
+02-17 00:04:44.691 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Font Activity return, canceled
+02-17 00:04:59.213 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Message Activity called
+02-17 00:06:55.893 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onRCreate() called
+02-17 00:06:55.899 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onActivityResultCalled
+02-17 00:06:55.899 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: Message Activity return, OK
+02-17 00:07:18.267 2329-2329/assignment04.csc214.homework4_fragments I/DANIEL_TAG: onRCreate() called
