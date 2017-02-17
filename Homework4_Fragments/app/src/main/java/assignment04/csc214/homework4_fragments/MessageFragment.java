@@ -19,7 +19,7 @@ import static android.app.Activity.RESULT_OK;
 public class MessageFragment extends Fragment {
 
     private static final String KEY_MESSAGE = "assignment04.csc214.fragments.message";
-    private static String mMessage = "This is my homework assignment.";
+    private static String mMessage = "This is test text.";
 
 
     public MessageFragment() {

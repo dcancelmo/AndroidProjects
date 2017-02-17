@@ -9,7 +9,7 @@ import android.widget.EditText;
 public class MessageActivity extends AppCompatActivity {
 
     private static final String KEY_MESSAGE = "assignment04.csc214.fragments.message";
-    private static String mMessage = "This is my homework assignment.";
+    private static String mMessage = "This is test text.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

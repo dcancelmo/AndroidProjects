@@ -2,6 +2,8 @@ package assignment04.csc214.homework4_fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import static android.graphics.Typeface.BOLD;
 import static android.graphics.Typeface.BOLD_ITALIC;
 import static android.graphics.Typeface.ITALIC;
+import static android.graphics.Typeface.NORMAL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private static boolean mIsUnderlined = false;
     private static String mColor = "Black";
     private static int mSize = 15;
-    private static String mMessage = "This is my homework assignment.";
+    private static String mMessage = "This is test text.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +49,20 @@ public class MainActivity extends AppCompatActivity {
             mSize = savedInstanceState.getInt(KEY_SIZE);
         }
         setTextValues();
-
     }
 
-    public void setTextValues () {
+    public void setTextValues() {
         TextView mDisplayMessage = (TextView) findViewById(R.id.message);
-        if (mIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), BOLD);
-        if (mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), ITALIC);
-        if (mIsBold && mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), BOLD_ITALIC);
+        mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.NORMAL);
+        //TODO: Cannot return all the way back to normal. Remains bold/italic/bold_italic
+        if (mIsBold && mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD_ITALIC);
+        else if (mIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD);
+        else if (mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.ITALIC);
+        else mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.NORMAL);
         if (mIsUnderlined) {
-            //TODO: Underlined
+            mDisplayMessage.setPaintFlags(mDisplayMessage.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        } else {
+            mDisplayMessage.setPaintFlags(0);
         }
         switch (mColor) {
             case "Black":
