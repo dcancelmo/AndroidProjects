@@ -9,27 +9,27 @@ import android.widget.EditText;
 public class MessageActivity extends AppCompatActivity {
 
     private static final String KEY_MESSAGE = "assignment04.csc214.fragments.message";
-    private static String mMessage = "This is test text.";
+    private static String sMessage = "This is test text.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
         if (savedInstanceState != null) {
-            mMessage = savedInstanceState.getString(KEY_MESSAGE);
+            sMessage = savedInstanceState.getString(KEY_MESSAGE);
         }
         EditText mMessageEditText = (EditText) findViewById(R.id.message_edittext);
-        mMessageEditText.setText(mMessage);
+        mMessageEditText.setText(sMessage);
     }
 
     public void getValues() {
-        mMessage = ((EditText) findViewById(R.id.message_edittext)).getText().toString();
+        sMessage = ((EditText) findViewById(R.id.message_edittext)).getText().toString();
     }
 
     public void acceptChanges(View view) {
         Intent intent = new Intent(MessageActivity.this, MainActivity.class);
         getValues();
-        intent.putExtra(KEY_MESSAGE, mMessage);
+        intent.putExtra(KEY_MESSAGE, sMessage);
         setResult(RESULT_OK, intent);
         finish();
     }

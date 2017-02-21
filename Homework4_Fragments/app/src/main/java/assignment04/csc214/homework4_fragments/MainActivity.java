@@ -28,25 +28,25 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_FONT = 1;
     private static final int RC_MESSAGE = 2;
 
-    private static boolean mIsBold = false;
-    private static boolean mIsItalic = false;
-    private static boolean mIsUnderlined = false;
-    private static String mColor = "Black";
-    private static int mSize = 15;
-    private static String mMessage = "This is test text.";
+    private static boolean sIsBold = false;
+    private static boolean sIsItalic = false;
+    private static boolean sIsUnderlined = false;
+    private static String sColor = "Black";
+    private static int sSize = 15;
+    private static String sMessage = "This is test text.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "onRCreate() called");
+        Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState != null) {
-            mIsBold = savedInstanceState.getBoolean(KEY_BOLD);
-            mIsItalic = savedInstanceState.getBoolean(KEY_ITALIC);
-            mIsUnderlined = savedInstanceState.getBoolean(KEY_UNDERLINE);
-            mColor = savedInstanceState.getString(KEY_COLOR);
-            mSize = savedInstanceState.getInt(KEY_SIZE);
+            sIsBold = savedInstanceState.getBoolean(KEY_BOLD);
+            sIsItalic = savedInstanceState.getBoolean(KEY_ITALIC);
+            sIsUnderlined = savedInstanceState.getBoolean(KEY_UNDERLINE);
+            sColor = savedInstanceState.getString(KEY_COLOR);
+            sSize = savedInstanceState.getInt(KEY_SIZE);
         }
         setTextValues();
     }
@@ -54,18 +54,18 @@ public class MainActivity extends AppCompatActivity {
     public void setTextValues() {
         TextView mDisplayMessage = (TextView) findViewById(R.id.message);
         mDisplayMessage.setTypeface(Typeface.DEFAULT);
-        if (mIsBold && mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD_ITALIC);
-        else if (mIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD);
-        else if (mIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.ITALIC);
+        if (sIsBold && sIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD_ITALIC);
+        else if (sIsBold) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.BOLD);
+        else if (sIsItalic) mDisplayMessage.setTypeface(mDisplayMessage.getTypeface(), Typeface.ITALIC);
         else mDisplayMessage.setTypeface(Typeface.DEFAULT);
 
-        if (mIsUnderlined) {
+        if (sIsUnderlined) {
             mDisplayMessage.setPaintFlags(mDisplayMessage.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         } else {
             mDisplayMessage.setPaintFlags(0);
         }
 
-        switch (mColor) {
+        switch (sColor) {
             case "Black":
                 mDisplayMessage.setTextColor(Color.BLACK);
                 break;
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 mDisplayMessage.setTextColor(Color.BLACK);
                 break;
         }
-        mDisplayMessage.setTextSize(mSize);
-        mDisplayMessage.setText(mMessage);
+        mDisplayMessage.setTextSize(sSize);
+        mDisplayMessage.setText(sMessage);
     }
 
     @Override
@@ -100,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Log.i(TAG, "Font Activity return, OK");
                 if (intent != null) {
-                    mIsBold = intent.getBooleanExtra(KEY_BOLD, false);
-                    mIsItalic = intent.getBooleanExtra(KEY_ITALIC, false);
-                    mIsUnderlined = intent.getBooleanExtra(KEY_UNDERLINE, false);
-                    mColor = intent.getStringExtra(KEY_COLOR);
-                    mSize = intent.getIntExtra(KEY_SIZE, 15);
+                    sIsBold = intent.getBooleanExtra(KEY_BOLD, false);
+                    sIsItalic = intent.getBooleanExtra(KEY_ITALIC, false);
+                    sIsUnderlined = intent.getBooleanExtra(KEY_UNDERLINE, false);
+                    sColor = intent.getStringExtra(KEY_COLOR);
+                    sSize = intent.getIntExtra(KEY_SIZE, 15);
                     setTextValues();
                 }
             } else if (resultCode == RESULT_CANCELED) {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "Message Activity return, OK");
             if (resultCode == RESULT_OK) {
                 if (intent != null) {
-                    mMessage = intent.getStringExtra(KEY_MESSAGE);
+                    sMessage = intent.getStringExtra(KEY_MESSAGE);
                     setTextValues();
                 }
             } else if (resultCode == RESULT_CANCELED) {
@@ -128,33 +128,33 @@ public class MainActivity extends AppCompatActivity {
     public void changeFontActivity(View view) {
         Log.i(TAG, "Font Activity called");
         Intent intent = new Intent(MainActivity.this, FontActivity.class);
-        intent.putExtra(KEY_BOLD, mIsBold);
-        intent.putExtra(KEY_ITALIC, mIsItalic);
-        intent.putExtra(KEY_UNDERLINE, mIsUnderlined);
-        intent.putExtra(KEY_COLOR, mColor);
-        intent.putExtra(KEY_SIZE, mSize);
-        intent.putExtra(KEY_MESSAGE, mMessage);
-        startActivityForResult(intent, 1);
+        intent.putExtra(KEY_BOLD, sIsBold);
+        intent.putExtra(KEY_ITALIC, sIsItalic);
+        intent.putExtra(KEY_UNDERLINE, sIsUnderlined);
+        intent.putExtra(KEY_COLOR, sColor);
+        intent.putExtra(KEY_SIZE, sSize);
+        intent.putExtra(KEY_MESSAGE, sMessage);
+        startActivityForResult(intent, RC_FONT);
     }
 
     public void changeMessageActivity(View view) {
         Log.i(TAG, "Message Activity called");
         Intent intent = new Intent(MainActivity.this, MessageActivity.class);
-        intent.putExtra(KEY_BOLD, mIsBold);
-        intent.putExtra(KEY_ITALIC, mIsItalic);
-        intent.putExtra(KEY_UNDERLINE, mIsUnderlined);
-        intent.putExtra(KEY_COLOR, mColor);
-        intent.putExtra(KEY_SIZE, mSize);
-        intent.putExtra(KEY_MESSAGE, mMessage);
-        startActivityForResult(intent, 2);
+        intent.putExtra(KEY_BOLD, sIsBold);
+        intent.putExtra(KEY_ITALIC, sIsItalic);
+        intent.putExtra(KEY_UNDERLINE, sIsUnderlined);
+        intent.putExtra(KEY_COLOR, sColor);
+        intent.putExtra(KEY_SIZE, sSize);
+        intent.putExtra(KEY_MESSAGE, sMessage);
+        startActivityForResult(intent, RC_MESSAGE);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle state) {
-        state.putBoolean(KEY_BOLD, mIsBold);
-        state.putBoolean(KEY_ITALIC, mIsItalic);
-        state.putBoolean(KEY_UNDERLINE, mIsUnderlined);
-        state.putString(KEY_COLOR, mColor);
-        state.putInt(KEY_SIZE, mSize);
+        state.putBoolean(KEY_BOLD, sIsBold);
+        state.putBoolean(KEY_ITALIC, sIsItalic);
+        state.putBoolean(KEY_UNDERLINE, sIsUnderlined);
+        state.putString(KEY_COLOR, sColor);
+        state.putInt(KEY_SIZE, sSize);
     }
 }

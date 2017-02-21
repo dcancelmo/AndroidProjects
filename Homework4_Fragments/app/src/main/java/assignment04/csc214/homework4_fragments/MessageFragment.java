@@ -19,7 +19,7 @@ import static android.app.Activity.RESULT_OK;
 public class MessageFragment extends Fragment {
 
     private static final String KEY_MESSAGE = "assignment04.csc214.fragments.message";
-    private static String mMessage = "This is test text.";
+    private static String sMessage = "This is test text.";
 
 
     public MessageFragment() {
@@ -37,7 +37,7 @@ public class MessageFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle state) {
-        state.putString(KEY_MESSAGE, mMessage);
+        state.putString(KEY_MESSAGE, sMessage);
     }
 
 }

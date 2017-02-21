@@ -17,33 +17,33 @@ public class FontActivity extends AppCompatActivity {
     private static final String KEY_SIZE = "assignment04.csc214.fragments.size";
     private static final String KEY_MESSAGE = "assignment04.csc214.fragments.message";
 
-    private static boolean mIsBold = false;
-    private static boolean mIsItalic = false;
-    private static boolean mIsUnderlined = false;
-    private static String mColor = "Black";
-    private static int mSize = 15;
-    private static String mMessage = "This is my homework assignment.";
+    private static boolean sIsBold = false;
+    private static boolean sIsItalic = false;
+    private static boolean sIsUnderlined = false;
+    private static String sColor = "Black";
+    private static int sSize = 15;
+    private static String sMessage = "This is my homework assignment.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_font);
         if (savedInstanceState != null) {
-            mIsBold = savedInstanceState.getBoolean(KEY_BOLD);
-            mIsItalic = savedInstanceState.getBoolean(KEY_ITALIC);
-            mIsUnderlined = savedInstanceState.getBoolean(KEY_UNDERLINE);
-            mColor = savedInstanceState.getString(KEY_COLOR);
-            mSize = savedInstanceState.getInt(KEY_SIZE);
+            sIsBold = savedInstanceState.getBoolean(KEY_BOLD);
+            sIsItalic = savedInstanceState.getBoolean(KEY_ITALIC);
+            sIsUnderlined = savedInstanceState.getBoolean(KEY_UNDERLINE);
+            sColor = savedInstanceState.getString(KEY_COLOR);
+            sSize = savedInstanceState.getInt(KEY_SIZE);
         }
         CheckBox mBoldBox = (CheckBox) findViewById(R.id.bold_checkbox);
-        mBoldBox.setChecked(mIsBold);
+        mBoldBox.setChecked(sIsBold);
         CheckBox mItalicBox = (CheckBox) findViewById(R.id.italic_checkbox);
-        mItalicBox.setChecked(mIsItalic);
+        mItalicBox.setChecked(sIsItalic);
         CheckBox mUnderlineBox = (CheckBox) findViewById(R.id.underline_checkbox);
-        mUnderlineBox.setChecked(mIsUnderlined);
+        mUnderlineBox.setChecked(sIsUnderlined);
         Spinner mColorSpinner = (Spinner) findViewById(R.id.color_spinner);
         int mColorChoice = 0;
-        switch (mColor) {
+        switch (sColor) {
             case "Black":
                 mColorChoice = 0;
                 break;
@@ -69,25 +69,25 @@ public class FontActivity extends AppCompatActivity {
         }
         mColorSpinner.setSelection(mColorChoice);
         EditText mSizeEditText = (EditText) findViewById(R.id.size_selector);
-        mSizeEditText.setText(String.valueOf(mSize));
+        mSizeEditText.setText(String.valueOf(sSize));
     }
 
     public void getValues() {
-        mIsBold = ((CheckBox) findViewById(R.id.bold_checkbox)).isChecked();
-        mIsItalic = ((CheckBox) findViewById(R.id.italic_checkbox)).isChecked();
-        mIsUnderlined = ((CheckBox) findViewById(R.id.underline_checkbox)).isChecked();
-        mColor = ((Spinner) findViewById(R.id.color_spinner)).getSelectedItem().toString();
-        mSize = Integer.valueOf(((EditText) findViewById(R.id.size_selector)).getText().toString());
+        sIsBold = ((CheckBox) findViewById(R.id.bold_checkbox)).isChecked();
+        sIsItalic = ((CheckBox) findViewById(R.id.italic_checkbox)).isChecked();
+        sIsUnderlined = ((CheckBox) findViewById(R.id.underline_checkbox)).isChecked();
+        sColor = ((Spinner) findViewById(R.id.color_spinner)).getSelectedItem().toString();
+        sSize = Integer.valueOf(((EditText) findViewById(R.id.size_selector)).getText().toString());
     }
 
     public void acceptChanges(View view) {
         Intent intent = new Intent(FontActivity.this, MainActivity.class);
         getValues();
-        intent.putExtra(KEY_BOLD, mIsBold);
-        intent.putExtra(KEY_ITALIC, mIsItalic);
-        intent.putExtra(KEY_UNDERLINE, mIsUnderlined);
-        intent.putExtra(KEY_COLOR, mColor);
-        intent.putExtra(KEY_SIZE, mSize);
+        intent.putExtra(KEY_BOLD, sIsBold);
+        intent.putExtra(KEY_ITALIC, sIsItalic);
+        intent.putExtra(KEY_UNDERLINE, sIsUnderlined);
+        intent.putExtra(KEY_COLOR, sColor);
+        intent.putExtra(KEY_SIZE, sSize);
         setResult(RESULT_OK, intent);
         finish();
     }
@@ -100,11 +100,11 @@ public class FontActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle state) {
-        state.putBoolean(KEY_BOLD, mIsBold);
-        state.putBoolean(KEY_ITALIC, mIsItalic);
-        state.putBoolean(KEY_UNDERLINE, mIsUnderlined);
-        state.putString(KEY_COLOR, mColor);
-        state.putInt(KEY_SIZE, mSize);
-        state.putString(KEY_MESSAGE, mMessage);
+        state.putBoolean(KEY_BOLD, sIsBold);
+        state.putBoolean(KEY_ITALIC, sIsItalic);
+        state.putBoolean(KEY_UNDERLINE, sIsUnderlined);
+        state.putString(KEY_COLOR, sColor);
+        state.putInt(KEY_SIZE, sSize);
+        state.putString(KEY_MESSAGE, sMessage);
     }
 }
