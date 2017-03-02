@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             case "Purple":
                 mDisplayMessage.setTextColor(getResources().getColor(R.color.purple));
                 break;
-
             default:
                 mDisplayMessage.setTextColor(Color.BLACK);
                 break;
