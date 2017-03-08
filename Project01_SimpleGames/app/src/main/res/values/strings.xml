@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Simple Games</string>
+    <string name="username_hint">Enter username here...</string>
+    <string name="player_1_username">Player 1 Username:</string>
+    <string name="player_2_username">Player 2 Username:</string>
+    <string name="hot_amp_cold"><![CDATA[Hot & Cold]]></string>
+    <string name="hangman">Hangman</string>
+    <string name="connect_4">Connect 4</string>
+    <string name="accept_names">Accept names</string>
 </resources>

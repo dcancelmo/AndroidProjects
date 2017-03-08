@@ -10,6 +10,86 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="project01.csc214.project01_simplegames.MainActivity">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/user1_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_1_username"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/user1_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/username_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/user1_label"
+            android:padding="10sp"
+            />
+        <TextView
+            android:id="@+id/user2_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_2_username"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/user1_edittext"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/user2_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/username_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/user2_label"
+            android:padding="10sp"
+            />
+        <Button
+            android:id="@+id/accept_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user2_edittext"
+            android:text="@string/accept_names"
+            android:layout_centerHorizontal="true"
+            android:onClick="acceptNames"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/accept_button"
+            >
+            <Button
+                android:id="@+id/hotNColdButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hot_amp_cold"
+                android:onClick="startHotCold"
+                />
+            <Button
+                android:id="@+id/hangmanButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hangman"
+                android:onClick="startHangman"
+                />
+            <Button
+                android:id="@+id/connect4Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connect_4"
+                android:onClick="startConnect4"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
     </RelativeLayout>
