@@ -10,6 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="project01.csc214.project01_simplegames.MainActivity">
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        >
+
+        <fragment
+            android:name="project01.csc214.project01_simplegames.ScoreFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/score_fragment"
+            tools:layout="@layout/fragment_score"
+            />
+        
+    </FrameLayout>
+
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

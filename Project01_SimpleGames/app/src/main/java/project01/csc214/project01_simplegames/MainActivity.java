@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,15 +25,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.i(TAG, "onCreate() called");
+        Log.i(TAG, "onCreate() called[main]");
 
         if (savedInstanceState != null) {
             sUser1 = savedInstanceState.getString(KEY_USER1);
             sUser2 = savedInstanceState.getString(KEY_USER2);
             EditText editTextUser1 = (EditText) findViewById(R.id.user1_edittext);
+            TextView displayUser1 = (TextView) findViewById(R.id.user1Display);
             editTextUser1.setText(sUser1);
+            displayUser1.setText(sUser1);
             EditText editTextUser2 = (EditText) findViewById(R.id.user2_edittext);
+            TextView displayUser2 = (TextView) findViewById(R.id.user2Display);
             editTextUser2.setText(sUser2);
+            displayUser2.setText(sUser2);
         }
     }
 
