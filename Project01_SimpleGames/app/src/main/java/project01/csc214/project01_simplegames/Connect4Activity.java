@@ -14,4 +14,23 @@ public class Connect4Activity extends AppCompatActivity {
 
     public void returnHome(View view) {
     }
+
+    public void dropCol0(View view) {
+    }
+
+    public void dropCol1(View view) {
+    }
+
+    public void dropCol2(View view) {
+    }
+
+    public void dropCol3(View view) {
+    }
+
+    public void dropCol4(View view) {
+    }
+
+
+    public void dropCol5(View view) {
+    }
 }
