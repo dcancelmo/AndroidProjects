@@ -29,6 +29,23 @@
     <string name="warmer">Warmer</string>
     <string name="hot">Hot</string>
     <string name="on_fire">On fire!</string>
+    <string name="miss_count">miss count</string>
+    <string name="enter_a_single_letter_guess">Enter a single letter guess…</string>
+    <string name="incorrect_letters">Incorrect letters:</string>
+    <string name="confirm_quit">Press "Home" again to confirm.</string>
+    <string name="confirm">Confirm</string>
+    <string name="invalid_word">Invalid entry-Enter a single character</string>
+    <string name="word_found">Word found!</string>
+    <string name="already_guess">This character was already guessed</string>
+    <string name="out_of_guesses">You ran out of guesses</string>
+    <string name="player1_win">Player 1 won!</string>
+    <string name="player2_win">Player 2 won!</string>
+    <string name="draw">Draw</string>
+
+
+
+
+
 
 
 </resources>

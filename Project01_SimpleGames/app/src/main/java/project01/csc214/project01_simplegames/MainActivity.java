@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_HANG = 3;
     private static final int RC_CONNECT = 4;
 
-    private static String sUser1;
+    private static String sUser1 = "Player 1";
     private static int sUser1Score = 0;
-    private static String sUser2;
+    private static String sUser2 = "Player 2";
     private static int sUser2Score = 0;
 
 
@@ -94,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void startConnect4(View view) {
         Log.i(TAG, "startConnect4 called");
+        /*
         Intent intent = new Intent(MainActivity.this, GamesActivity.class);
         intent.putExtra(KEY_USER1, sUser1);
         intent.putExtra(KEY_USER2, sUser2);
         intent.putExtra(KEY_USER1_SCORE, sUser1Score);
         intent.putExtra(KEY_USER2_SCORE, sUser2Score);
         startActivityForResult(intent, RC_HANG);
+        */
     }
 
     public void acceptNames(View view) {

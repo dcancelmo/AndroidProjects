@@ -39,7 +39,7 @@
         android:layout_centerHorizontal="true">
 
         <TextView
-            android:id="@+id/user1_guess_name"
+            android:id="@+id/user1_miss_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/player1"
@@ -47,11 +47,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/guess_count"
+            android:text="@string/miss_count"
             android:padding="5sp"
             />
         <TextView
-            android:id="@+id/user1_guess_count"
+            android:id="@+id/user1_miss_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zero"
@@ -59,7 +59,7 @@
             />
 
         <TextView
-            android:id="@+id/user2_guess_name"
+            android:id="@+id/user2_miss_name"
             android:paddingStart="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,11 +68,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/guess_count"
+            android:text="@string/miss_count"
             android:padding="5sp"
             />
         <TextView
-            android:id="@+id/user2_guess_count"
+            android:id="@+id/user2_miss_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zero"
@@ -80,5 +80,91 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/turn_notifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/missDisplay">
+
+        <TextView
+            android:id="@+id/turn_notifier_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_1"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/turn_notifier_suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/s_turn"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/word_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/turn_notifier"
+        android:layout_centerHorizontal="true"
+        />
+    <ImageView
+        android:id="@+id/gallows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/word_display"
+        android:src="@drawable/blank"
+        />
+    <TextView
+        android:id="@+id/curr_display_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gallows"
+        android:layout_centerHorizontal="true"
+        android:padding="15sp"
+        />
+    <LinearLayout
+        android:id="@+id/word_submit_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/curr_display_word"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/word_submission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/enter_a_single_letter_guess"
+            />
+        <Button
+            android:id="@+id/confrim_guess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm"
+            android:onClick="confirmLetter"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/graveyard_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/word_submit_layout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/incorrect_letters"
+        />
+    <TextView
+        android:id="@+id/graveyard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/graveyard_label"
+        />
 
 </RelativeLayout>
