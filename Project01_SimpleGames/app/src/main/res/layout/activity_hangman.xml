@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="project01.csc214.project01_simplegames.HotColdActivity">
+    tools:context="project01.csc214.project01_simplegames.HangmanActivity">
 
     <FrameLayout
         android:id="@+id/scoreboard"
@@ -32,7 +32,7 @@
         />
 
     <LinearLayout
-        android:id="@+id/guessDisplay"
+        android:id="@+id/missDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/home_button"
@@ -80,73 +80,5 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-
-        <TextView
-            android:id="@+id/guess_prompt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/guess_a_number_between_0_and_20"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:textSize="17sp"
-            />
-        <LinearLayout
-            android:id="@+id/turn_notifier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/guess_prompt">
-
-            <TextView
-                android:id="@+id/turn_notifier_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player_1"
-                android:textSize="20sp"
-                />
-            <TextView
-                android:id="@+id/turn_notifier_suffix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/s_turn"
-                android:textSize="20sp"
-                />
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/hotColdGuessBox"
-            android:inputType="number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/guess_hint"
-            android:layout_below="@id/turn_notifier"
-            android:layout_centerHorizontal="true"
-            android:padding="15sp"
-            />
-        <Button
-            android:id="@+id/hotColdConfirmButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/hotColdGuessBox"
-            android:layout_centerHorizontal="true"
-            android:text="@string/confirm_guess"
-            android:onClick="confirmGuess"
-            />
-        <TextView
-            android:id="@+id/hotColdFeedback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/hotColdConfirmButton"
-            android:layout_centerHorizontal="true"
-            android:text="@string/enter_your_guess"
-            android:padding="10sp"
-            />
-
-    </RelativeLayout>
 
 </RelativeLayout>

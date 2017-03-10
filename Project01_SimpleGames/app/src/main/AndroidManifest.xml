@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GamesActivity" />
-        <activity android:name=".HotColdActivity"></activity>
+        <activity android:name=".HotColdActivity" />
+        <activity android:name=".HangmanActivity"></activity>
     </application>
 
 </manifest>

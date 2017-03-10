@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startHangman(View view) {
         Log.i(TAG, "startHangman called");
-        Intent intent = new Intent(MainActivity.this, GamesActivity.class);
+        Intent intent = new Intent(MainActivity.this, HangmanActivity.class);
         intent.putExtra(KEY_USER1, sUser1);
         intent.putExtra(KEY_USER2, sUser2);
         intent.putExtra(KEY_USER1_SCORE, sUser1Score);
