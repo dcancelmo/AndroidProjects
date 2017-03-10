@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Simple Games</string>
-    <string name="username_hint">Enter username here...</string>
+    <string name="username_hint">Enter username here…</string>
     <string name="player_1_username">Player 1 Username:</string>
     <string name="player_2_username">Player 2 Username:</string>
     <string name="hot_amp_cold"><![CDATA[Hot & Cold]]></string>
@@ -8,10 +8,28 @@
     <string name="connect_4">Connect 4</string>
     <string name="accept_names">Accept names</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="current_score">Current score:</string>
     <string name="player_1">Player 1</string>
     <string name="player_2">Player 2</string>
     <string name="zero">0</string>
+    <string name="home">Home</string>
+    <string name="guess_a_number_between_0_and_20">Guess a number between 0 and 20</string>
+    <string name="guess_hint">Enter your guess here…</string>
+    <string name="confirm_guess">Confirm Guess</string>
+    <string name="enter_your_guess">Enter your guess…</string>
+    <string name="player1">Player1 </string>
+    <string name="guess_count"> guess count</string>
+    <string name="s_turn">\'s turn</string>
+    <string name="correct">Correct!</string>
+    <string name="cold">Cold</string>
+    <string name="colder">Colder</string>
+    <string name="freezing">Freezing</string>
+    <string name="absolute_zero">Absolute zero!</string>
+    <string name="warm">Warm</string>
+    <string name="warmer">Warmer</string>
+    <string name="hot">Hot</string>
+    <string name="on_fire">On fire!</string>
+
+
+
 </resources>
