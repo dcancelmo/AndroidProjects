@@ -66,19 +66,15 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onActivityResultCalled");
         TextView mDisplayUserScore1 = (TextView) findViewById(R.id.user1ScoreDisplay);
         TextView mDisplayUserScore2 = (TextView) findViewById(R.id.user2ScoreDisplay);
-        if (requestCode == RC_HOT) {
-            sUser1Score = intent.getIntExtra(KEY_USER1_SCORE, sUser1Score);
-            sUser2Score = intent.getIntExtra(KEY_USER2_SCORE, sUser2Score);
-            mDisplayUserScore1.setText(Integer.toString(sUser1Score));
-            mDisplayUserScore2.setText(Integer.toString(sUser2Score));
-
-
-        }
+        sUser1Score = intent.getIntExtra(KEY_USER1_SCORE, sUser1Score);
+        sUser2Score = intent.getIntExtra(KEY_USER2_SCORE, sUser2Score);
+        mDisplayUserScore1.setText(Integer.toString(sUser1Score));
+        mDisplayUserScore2.setText(Integer.toString(sUser2Score));
     }
 
     public void startHotCold(View view) {
         Log.i(TAG, "startHotCold called");
-        Intent intent = new Intent(MainActivity.this, GamesActivity.class);
+        Intent intent = new Intent(MainActivity.this, HotColdActivity.class);
         intent.putExtra(KEY_USER1, sUser1);
         intent.putExtra(KEY_USER2, sUser2);
         intent.putExtra(KEY_USER1_SCORE, sUser1Score);

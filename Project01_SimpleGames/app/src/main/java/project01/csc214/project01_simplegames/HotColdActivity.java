@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class GamesActivity extends AppCompatActivity {
+public class HotColdActivity extends AppCompatActivity {
 
     private static final String TAG = "DANIEL_TAG";
     private static final String KEY_USER1 = "project01.csc214.project01_simplegames.username1";
@@ -42,8 +42,8 @@ public class GamesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_games);
-        Log.i(TAG, "onCreate() called[games]");
+        setContentView(R.layout.activity_hot_cold);
+        Log.i(TAG, "onCreate() called[Hot Cold]");
 
         TextView mDisplayUser1 = (TextView) findViewById(R.id.user1Display);
         TextView mGuessDisplayUser1 = (TextView) findViewById(R.id.user1_guess_name);
@@ -172,7 +172,7 @@ public class GamesActivity extends AppCompatActivity {
     }
 
     public void returnHome(View view) {
-        Intent intent = new Intent(GamesActivity.this, MainActivity.class);
+        Intent intent = new Intent(HotColdActivity.this, MainActivity.class);
         intent.putExtra(KEY_USER1, sUser1);
         intent.putExtra(KEY_USER2, sUser2);
         intent.putExtra(KEY_USER1_SCORE, sUser1Score);
