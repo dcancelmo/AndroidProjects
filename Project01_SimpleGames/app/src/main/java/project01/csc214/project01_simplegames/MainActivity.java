@@ -94,14 +94,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void startConnect4(View view) {
         Log.i(TAG, "startConnect4 called");
-        /*
-        Intent intent = new Intent(MainActivity.this, GamesActivity.class);
+        Intent intent = new Intent(MainActivity.this, Connect4Activity.class);
         intent.putExtra(KEY_USER1, sUser1);
         intent.putExtra(KEY_USER2, sUser2);
         intent.putExtra(KEY_USER1_SCORE, sUser1Score);
         intent.putExtra(KEY_USER2_SCORE, sUser2Score);
-        startActivityForResult(intent, RC_HANG);
-        */
+        startActivityForResult(intent, RC_CONNECT);
     }
 
     public void acceptNames(View view) {
