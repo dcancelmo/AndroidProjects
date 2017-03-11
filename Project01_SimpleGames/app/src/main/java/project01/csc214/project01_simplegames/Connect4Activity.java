@@ -469,6 +469,51 @@ public class Connect4Activity extends AppCompatActivity {
                     }
                 }
             }
+
+            //Diagonal
+
+            //3 in primary direction
+            if (sBoardCheckerArray[mCol+1][mRow+1] == BLACK) {
+                if (sBoardCheckerArray[mCol+2][mRow+2] == BLACK) {
+                    if (sBoardCheckerArray[mCol+3][mRow+3] == BLACK) {
+
+                    }
+                }
+            }
+            if (sBoardCheckerArray[mCol+1][mRow-1] == BLACK) {
+                if (sBoardCheckerArray[mCol+2][mRow-2] == BLACK) {
+                    if (sBoardCheckerArray[mCol+3][mRow-3] == BLACK) {
+                        win();
+                        return;
+                    }
+                }
+            }
+            if (sBoardCheckerArray[mCol-1][mRow+1] == BLACK) {
+                if (sBoardCheckerArray[mCol-2][mRow+2] == BLACK) {
+                    if (sBoardCheckerArray[mCol-3][mRow+3] == BLACK) {
+                        win();
+                        return;
+                    }
+                }
+            }
+            if (sBoardCheckerArray[mCol-1][mRow-1] == BLACK) {
+                if (sBoardCheckerArray[mCol-2][mRow-2] == BLACK) {
+                    if (sBoardCheckerArray[mCol-3][mRow-3] == BLACK) {
+                        win();
+                        return;
+                    }
+                }
+            }
+
+            //2 in primary direction, 1 in opposite direction
+            if (sBoardCheckerArray[mCol+1][mRow+1] == BLACK) {
+                if (sBoardCheckerArray[mCol+2][mRow+2] == BLACK) {
+                    if (sBoardCheckerArray[mCol+3][mRow+3] == BLACK) {
+
+                    }
+                }
+            }
+
         }
 
 
