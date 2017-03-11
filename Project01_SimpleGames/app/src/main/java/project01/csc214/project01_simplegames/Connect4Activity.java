@@ -21,6 +21,8 @@ public class Connect4Activity extends AppCompatActivity {
     private static final String KEY_TURN_NAME = "project01.csc214.project01_simplegames.turnName";
     private static final String KEY_TURN = "project01.csc214.project01_simplegames.turn";
 
+    private static final int RED = 1;
+    private static final int BLACK = 2;
 
     private static String sUser1;
     private static int sUser1Score = 0;
@@ -36,6 +38,13 @@ public class Connect4Activity extends AppCompatActivity {
             {false, false, false, false, false, false},
             {false, false, false, false, false, false},
             {false, false, false, false, false, false}};
+    private static int[][] sBoardCheckerArray = {
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,35 +89,36 @@ public class Connect4Activity extends AppCompatActivity {
     }
 
     public void dropCol0(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[0][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot00);
                         break;
                     case 1:
-                        row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot01);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot02);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot03);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot04);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot05);
                         break;
                 }
@@ -123,47 +133,50 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[0][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[0][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(0, mRow);
         sUserTurn++;
-        checkWin(0, row);
     }
 
     public void dropCol1(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[1][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot10);
                         break;
                     case 1:
-                        row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot11);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot12);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot13);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot14);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot15);
                         break;
                 }
@@ -178,47 +191,50 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[1][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[1][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(1, mRow);
         sUserTurn++;
-        checkWin(1, row);
     }
 
     public void dropCol2(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[2][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot20);
                         break;
                     case 1:
-                        row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot21);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot22);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot23);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot24);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot25);
                         break;
                 }
@@ -233,47 +249,50 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[2][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[2][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(2, mRow);
         sUserTurn++;
-        checkWin(2, row);
     }
 
     public void dropCol3(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[3][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot30);
                         break;
                     case 1:
-                        row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot31);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot32);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot33);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot34);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot35);
                         break;
                 }
@@ -288,47 +307,50 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[3][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[3][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(3, mRow);
         sUserTurn++;
-        checkWin(3, row);
     }
 
     public void dropCol4(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[4][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot40);
                         break;
                     case 1:
-                         row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot41);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot42);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot43);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot44);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot45);
                         break;
                 }
@@ -343,47 +365,50 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[4][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[4][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(4, mRow);
         sUserTurn++;
-        checkWin(4, row);
     }
 
     public void dropCol5(View view) {
+        sQuitPress = false;
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
         ImageView mCurrSlot = null;
         boolean mSlotFound = false;
-        int row = 0;
+        int mRow = 0;
         for (int i = 5; i >= 0; i--) {
             if (!sBoardArray[5][i]) {
                 switch (i) {
                     case 0:
-                        row = 0;
+                        mRow = 0;
                         mCurrSlot = (ImageView) findViewById(R.id.slot50);
                         break;
                     case 1:
-                        row = 1;
+                        mRow = 1;
                         mCurrSlot = (ImageView) findViewById(R.id.slot51);
                         break;
                     case 2:
-                        row = 2;
+                        mRow = 2;
                         mCurrSlot = (ImageView) findViewById(R.id.slot52);
                         break;
                     case 3:
-                        row = 3;
+                        mRow = 3;
                         mCurrSlot = (ImageView) findViewById(R.id.slot53);
                         break;
                     case 4:
-                        row = 4;
+                        mRow = 4;
                         mCurrSlot = (ImageView) findViewById(R.id.slot54);
                         break;
                     case 5:
-                        row = 5;
+                        mRow = 5;
                         mCurrSlot = (ImageView) findViewById(R.id.slot55);
                         break;
                 }
@@ -398,22 +423,107 @@ public class Connect4Activity extends AppCompatActivity {
         }
         if (sUserTurn % 2 == 0) {
             mCurrSlot.setImageResource(R.mipmap.ic_black_checker);
+            sBoardCheckerArray[5][mRow] = BLACK;
             sTurnName = sUser2;
             mTurnName.setText(sUser2);
         } else {
             mCurrSlot.setImageResource(R.mipmap.ic_red_checker);
+            sBoardCheckerArray[5][mRow] = RED;
             sTurnName = sUser1;
             mTurnName.setText(sUser1);
         }
+        checkWin(5, mRow);
         sUserTurn++;
-        checkWin(5, row);
     }
 
-    private void checkWin(int col, int row) {
+    private void checkWin(int mCol, int mRow) {
+        //Black checkers
+        if (sUserTurn % 2 == 0) {
+            int counter = 0;
+            //Horizontal
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (sBoardCheckerArray[i][j] == BLACK) {
+                        counter++;
+                    }
+                    if (counter == 4) {
+                        win();
+                        return;
+                    } else if (sBoardCheckerArray[i][j] == RED) {
+                        counter = 0;
+                    }
+                }
+            }
+            counter = 0;
+            //Vertical
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (sBoardCheckerArray[j][i] == BLACK) {
+                        counter++;
+                    }
+                    if (counter == 4) {
+                        win();
+                        return;
+                    } else if (sBoardCheckerArray[j][i] == RED) {
+                        counter = 0;
+                    }
+                }
+            }
+        }
 
-        
+
+        //Red checkers
+        if (sUserTurn % 2 == 0) {
+            int counter = 0;
+            //Horizontal
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (sBoardCheckerArray[i][j] == RED) {
+                        counter++;
+                    }
+                    if (counter == 4) {
+                        win();
+                        return;
+                    } else if (sBoardCheckerArray[i][j] == BLACK) {
+                        counter = 0;
+                    }
+                }
+            }
+            counter = 0;
+            //Vertical
+            for (int i = 0; i < 6; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (sBoardCheckerArray[j][i] == RED) {
+                        counter++;
+                    }
+                    if (counter == 4) {
+                        win();
+                        return;
+                    } else if (sBoardCheckerArray[j][i] == BLACK) {
+                        counter = 0;
+                    }
+                }
+            }
+        }
 
         checkFull();
+    }
+
+    private void win() {
+        if (sUserTurn % 2 == 0) {
+            Toast.makeText(Connect4Activity.this, R.string.player1_win, Toast.LENGTH_SHORT).show();
+            clearBoard();
+            sUser1Score += 1000;
+            TextView mUser1Score = (TextView) findViewById(R.id.user1ScoreDisplay);
+            mUser1Score.setText(Integer.toString(sUser1Score));
+        } else {
+            Toast.makeText(Connect4Activity.this, R.string.player2_win, Toast.LENGTH_SHORT).show();
+            clearBoard();
+            sUser2Score += 1000;
+            TextView mUser2Score = (TextView) findViewById(R.id.user2ScoreDisplay);
+            mUser2Score.setText(Integer.toString(sUser2Score));
+
+        }
     }
 
     private void checkFull() {
@@ -428,91 +538,99 @@ public class Connect4Activity extends AppCompatActivity {
         if (mFull) {
             Toast.makeText(Connect4Activity.this, R.string.board_full, Toast.LENGTH_LONG).show();
             mFull = false;
-            for (int i = 0; i < 6; i++) {
-                for (int j = 0; j < 6; j++) {
-                    sBoardArray[i][j] = false;
-                }
-            }
-            ImageView mCurrSlot = null;
-            mCurrSlot = (ImageView) findViewById(R.id.slot00);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot01);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot02);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot03);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot04);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot05);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
-            mCurrSlot = (ImageView) findViewById(R.id.slot10);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot11);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot12);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot13);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot14);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot15);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
-            mCurrSlot = (ImageView) findViewById(R.id.slot20);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot21);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot22);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot23);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot24);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot25);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
-            mCurrSlot = (ImageView) findViewById(R.id.slot30);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot31);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot32);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot33);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot34);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot35);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
-            mCurrSlot = (ImageView) findViewById(R.id.slot40);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot41);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot42);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot43);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot44);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot45);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
-            mCurrSlot = (ImageView) findViewById(R.id.slot50);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot51);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot52);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot53);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot54);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-            mCurrSlot = (ImageView) findViewById(R.id.slot55);
-            mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
-
+            clearBoard();
         }
+    }
+
+    private void clearBoard() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                sBoardArray[i][j] = false;
+            }
+        }
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                sBoardCheckerArray[i][j] = 0;
+            }
+        }
+        ImageView mCurrSlot = null;
+        mCurrSlot = (ImageView) findViewById(R.id.slot00);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot01);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot02);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot03);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot04);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot05);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+
+        mCurrSlot = (ImageView) findViewById(R.id.slot10);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot11);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot12);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot13);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot14);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot15);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+
+        mCurrSlot = (ImageView) findViewById(R.id.slot20);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot21);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot22);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot23);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot24);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot25);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+
+        mCurrSlot = (ImageView) findViewById(R.id.slot30);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot31);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot32);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot33);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot34);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot35);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+
+        mCurrSlot = (ImageView) findViewById(R.id.slot40);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot41);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot42);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot43);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot44);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot45);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+
+        mCurrSlot = (ImageView) findViewById(R.id.slot50);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot51);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot52);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot53);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot54);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
+        mCurrSlot = (ImageView) findViewById(R.id.slot55);
+        mCurrSlot.setImageResource(R.mipmap.ic_null_checker);
     }
 
     public void returnHome(View view) {
