@@ -66,6 +66,7 @@
         android:columnCount="6">
 
         <ImageButton
+            android:id="@+id/dropCol0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -75,6 +76,7 @@
             android:layout_column="0"
             />
         <ImageButton
+            android:id="@+id/dropCol1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -84,6 +86,7 @@
             android:layout_column="1"
             />
         <ImageButton
+            android:id="@+id/dropCol2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -93,6 +96,7 @@
             android:layout_column="2"
             />
         <ImageButton
+            android:id="@+id/dropCol3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -102,6 +106,7 @@
             android:layout_column="3"
             />
         <ImageButton
+            android:id="@+id/dropCol4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -111,6 +116,7 @@
             android:layout_column="4"
             />
         <ImageButton
+            android:id="@+id/dropCol5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="0sp"
@@ -121,6 +127,7 @@
             />
 
         <ImageView
+            android:id="@+id/slot00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -128,6 +135,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -135,6 +143,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -142,6 +151,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -149,6 +159,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -156,6 +167,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot50"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -165,6 +177,7 @@
 
 
         <ImageView
+            android:id="@+id/slot01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -172,6 +185,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -179,6 +193,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -186,6 +201,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -193,6 +209,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -200,6 +217,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot51"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -208,6 +226,7 @@
             />
 
         <ImageView
+            android:id="@+id/slot02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -215,6 +234,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -222,6 +242,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -229,6 +250,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -236,6 +258,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -243,6 +266,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -252,6 +276,7 @@
 
 
         <ImageView
+            android:id="@+id/slot03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -259,6 +284,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -266,6 +292,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -273,6 +300,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -280,6 +308,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -287,6 +316,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot53"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -297,6 +327,7 @@
 
 
         <ImageView
+            android:id="@+id/slot04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -304,6 +335,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -311,6 +343,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -318,6 +351,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -325,6 +359,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot44"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -332,6 +367,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot54"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -341,6 +377,7 @@
 
 
         <ImageView
+            android:id="@+id/slot05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -348,6 +385,7 @@
             android:layout_column="0"
             />
         <ImageView
+            android:id="@+id/slot15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -355,6 +393,7 @@
             android:layout_column="1"
             />
         <ImageView
+            android:id="@+id/slot25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -362,6 +401,7 @@
             android:layout_column="2"
             />
         <ImageView
+            android:id="@+id/slot35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -369,6 +409,7 @@
             android:layout_column="3"
             />
         <ImageView
+            android:id="@+id/slot45"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"
@@ -376,6 +417,7 @@
             android:layout_column="4"
             />
         <ImageView
+            android:id="@+id/slot55"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_null_checker"

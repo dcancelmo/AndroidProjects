@@ -28,7 +28,8 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_below="@id/scoreboard"
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:id="@+id/user1_label"

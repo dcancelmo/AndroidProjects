@@ -41,6 +41,8 @@
     <string name="player1_win">Player 1 won!</string>
     <string name="player2_win">Player 2 won!</string>
     <string name="draw">Draw</string>
+    <string name="column_full">This column is full. Pick another.</string>
+    <string name="board_full">The board is full with no winner. Draw.</string>
 
 
 </resources>

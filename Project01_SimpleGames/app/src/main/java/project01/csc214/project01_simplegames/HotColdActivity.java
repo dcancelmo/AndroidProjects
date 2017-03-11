@@ -52,42 +52,40 @@ public class HotColdActivity extends AppCompatActivity {
         TextView mGuessDisplayUser2 = (TextView) findViewById(R.id.user2_guess_name);
         TextView mUser2Score = (TextView) findViewById(R.id.user2ScoreDisplay);
         TextView mTurnName = (TextView) findViewById(R.id.turn_notifier_name);
+        TextView mFeedback = (TextView) findViewById(R.id.hotColdFeedback);
+        TextView mGuessCountUser1 = (TextView) findViewById(R.id.user1_guess_count);
+        TextView mGuessCountUser2 = (TextView) findViewById(R.id.user2_guess_count);
+
+        Intent intent = getIntent();
 
         if (savedInstanceState != null) {
             sUser1 = savedInstanceState.getString(KEY_USER1);
             sUser2 = savedInstanceState.getString(KEY_USER2);
-            sUser1Score = savedInstanceState.getInt(KEY_USER1_SCORE);
-            sUser2Score = savedInstanceState.getInt(KEY_USER2_SCORE);
+            sUser1Score = savedInstanceState.getInt(KEY_USER1_SCORE, 0);
+            sUser2Score = savedInstanceState.getInt(KEY_USER2_SCORE, 0);
             sUser1Guesses = savedInstanceState.getInt(KEY_USER1_GUESS);
             sUser2Guesses = savedInstanceState.getInt(KEY_USER2_GUESS);
             sTurnName = savedInstanceState.getString(KEY_TURN_NAME);
-            sUserTurn = savedInstanceState.getInt(KEY_TURN);
+            sUserTurn = savedInstanceState.getInt(KEY_TURN, 0);
             sFeedback = savedInstanceState.getString(KEY_FEEDBACK);
-            sRandNum = savedInstanceState.getInt(KEY_RANDNUM);
+            sRandNum = savedInstanceState.getInt(KEY_RANDNUM, -1);
             sCurrGuess = savedInstanceState.getInt(KEY_CURR_GUESS, 0);
 
             mDisplayUser1.setText(sUser1);
             mDisplayUser2.setText(sUser2);
 
-            mUser1Score.setText(sUser1Score);
-            mUser2Score.setText(sUser2Score);
+            mUser1Score.setText(Integer.toString(sUser1Score));
+            mUser2Score.setText(Integer.toString(sUser2Score));
 
             mGuessDisplayUser1.setText(sUser1);
             mGuessDisplayUser2.setText(sUser2);
 
-            TextView mGuessCountUser1 = (TextView) findViewById(R.id.user1_guess_count);
-            mGuessCountUser1.setText(sUser1Guesses);
-            TextView mGuessCountUser2 = (TextView) findViewById(R.id.user2_guess_count);
-            mGuessCountUser2.setText(sUser2Guesses);
+            mGuessCountUser1.setText(Integer.toString(sUser1Guesses));
+            mGuessCountUser2.setText(Integer.toString(sUser2Guesses));
 
             mTurnName.setText(sTurnName);
-
-            TextView mFeedback = (TextView) findViewById(R.id.hotColdFeedback);
             mFeedback.setText(sFeedback);
-        }
-
-        Intent intent = getIntent();
-        if (intent != null) {
+        } else if (intent != null) {
             sUser1 = intent.getStringExtra(KEY_USER1);
             mDisplayUser1.setText(sUser1);
             mGuessDisplayUser1.setText(sUser1);
