@@ -15,7 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GamesActivity" />
         <activity android:name=".HotColdActivity" />
         <activity android:name=".HangmanActivity"
             android:screenOrientation="portrait"/>

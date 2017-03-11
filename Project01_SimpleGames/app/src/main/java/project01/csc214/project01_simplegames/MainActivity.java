@@ -106,12 +106,22 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "acceptNames called");
         EditText mEditTextUser1 = (EditText) findViewById(R.id.user1_edittext);
         TextView mDisplayUser1 = (TextView) findViewById(R.id.user1Display);
-        sUser1 = mEditTextUser1.getText().toString();
-        mDisplayUser1.setText(sUser1);
+        if (mEditTextUser1.getText().toString().length() > 0) {
+            sUser1 = mEditTextUser1.getText().toString();
+            mDisplayUser1.setText(sUser1);
+        } else {
+            sUser1 = getResources().getString(R.string.player_1);
+            mDisplayUser1.setText(sUser1);
+        }
         EditText mEditTextUser2 = (EditText) findViewById(R.id.user2_edittext);
         TextView mDisplayUser2 = (TextView) findViewById(R.id.user2Display);
-        sUser2 = mEditTextUser2.getText().toString();
-        mDisplayUser2.setText(sUser2);
+        if (mEditTextUser2.getText().toString().length() > 0) {
+            sUser2 = mEditTextUser2.getText().toString();
+            mDisplayUser2.setText(sUser2);
+        } else {
+            sUser2 = getResources().getString(R.string.player_2);
+            mDisplayUser2.setText(sUser2);
+        }
     }
 
     @Override

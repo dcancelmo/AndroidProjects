@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -55,6 +56,7 @@ public class HotColdActivity extends AppCompatActivity {
         TextView mFeedback = (TextView) findViewById(R.id.hotColdFeedback);
         TextView mGuessCountUser1 = (TextView) findViewById(R.id.user1_guess_count);
         TextView mGuessCountUser2 = (TextView) findViewById(R.id.user2_guess_count);
+        EditText mGuessSubmit = (EditText) findViewById(R.id.hotColdGuessBox);
 
         Intent intent = getIntent();
 
@@ -85,6 +87,7 @@ public class HotColdActivity extends AppCompatActivity {
 
             mTurnName.setText(sTurnName);
             mFeedback.setText(sFeedback);
+            mGuessSubmit.setText(Integer.toString(sCurrGuess));
         } else if (intent != null) {
             sUser1 = intent.getStringExtra(KEY_USER1);
             mDisplayUser1.setText(sUser1);
@@ -108,6 +111,10 @@ public class HotColdActivity extends AppCompatActivity {
     public void confirmGuess(View view) {
 
         EditText mUserGuessText = (EditText) findViewById(R.id.hotColdGuessBox);
+        if (mUserGuessText.getText().toString().length() < 1) {
+            Toast.makeText(HotColdActivity.this, R.string.must_enter_value, Toast.LENGTH_SHORT).show();
+            return;
+        }
         sCurrGuess = Integer.parseInt(mUserGuessText.getText().toString());
         TextView mFeedbackBox = (TextView) findViewById(R.id.hotColdFeedback);
         TextView mGuessCountUser1 = (TextView) findViewById(R.id.user1_guess_count);
@@ -148,21 +155,29 @@ public class HotColdActivity extends AppCompatActivity {
         } else {
             int mGuessDiff = Math.abs(sRandNum - sCurrGuess);
             if (mGuessDiff > 17) {
-                mFeedbackBox.setText(getResources().getString(R.string.absolute_zero));
+                sFeedback = getResources().getString(R.string.absolute_zero);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 15) {
-                mFeedbackBox.setText(getResources().getString(R.string.freezing));
+                sFeedback = getResources().getString(R.string.freezing);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 12) {
-                mFeedbackBox.setText(getResources().getString(R.string.colder));
+                sFeedback = getResources().getString(R.string.colder);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 9) {
-                mFeedbackBox.setText(getResources().getString(R.string.cold));
+                sFeedback = getResources().getString(R.string.cold);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 5) {
-                mFeedbackBox.setText(getResources().getString(R.string.warm));
+                sFeedback = getResources().getString(R.string.warm);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 3) {
-                mFeedbackBox.setText(getResources().getString(R.string.warmer));
+                sFeedback = getResources().getString(R.string.warmer);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff > 1) {
-                mFeedbackBox.setText(getResources().getString(R.string.hot));
+                sFeedback = getResources().getString(R.string.hot);
+                mFeedbackBox.setText(sFeedback);
             } else if (mGuessDiff == 1) {
-                mFeedbackBox.setText(getResources().getString(R.string.on_fire));
+                sFeedback = getResources().getString(R.string.on_fire);
+                mFeedbackBox.setText(sFeedback);
             }
 
         }

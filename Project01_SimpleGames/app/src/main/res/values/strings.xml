@@ -43,6 +43,7 @@
     <string name="draw">Draw</string>
     <string name="column_full">This column is full. Pick another.</string>
     <string name="board_full">The board is full with no winner. Draw.</string>
+    <string name="must_enter_value">You must enter a value!</string>
 
 
 </resources>

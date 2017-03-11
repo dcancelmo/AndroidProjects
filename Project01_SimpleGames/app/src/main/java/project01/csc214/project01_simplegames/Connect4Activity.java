@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -442,14 +443,16 @@ public class Connect4Activity extends AppCompatActivity {
             int counter = 0;
             //Horizontal
             for (int i = 0; i < 6; i++) {
+                counter = 0;
                 for (int j = 0; j < 6; j++) {
                     if (sBoardCheckerArray[i][j] == BLACK) {
                         counter++;
                     }
                     if (counter == 4) {
+                        Log.d(TAG, "Black Horizontal");
                         win();
                         return;
-                    } else if (sBoardCheckerArray[i][j] == RED) {
+                    } else if (sBoardCheckerArray[i][j] == RED || sBoardCheckerArray[i][j] == 0) {
                         counter = 0;
                     }
                 }
@@ -457,14 +460,16 @@ public class Connect4Activity extends AppCompatActivity {
             counter = 0;
             //Vertical
             for (int i = 0; i < 6; i++) {
+                counter = 0;
                 for (int j = 0; j < 6; j++) {
                     if (sBoardCheckerArray[j][i] == BLACK) {
                         counter++;
                     }
                     if (counter == 4) {
+                        Log.d(TAG, "Black Vertical");
                         win();
                         return;
-                    } else if (sBoardCheckerArray[j][i] == RED) {
+                    } else if (sBoardCheckerArray[j][i] == RED || sBoardCheckerArray[j][i] == 0) {
                         counter = 0;
                     }
                 }
@@ -473,63 +478,121 @@ public class Connect4Activity extends AppCompatActivity {
             //Diagonal
 
             //3 in primary direction
-            if (sBoardCheckerArray[mCol+1][mRow+1] == BLACK) {
-                if (sBoardCheckerArray[mCol+2][mRow+2] == BLACK) {
-                    if (sBoardCheckerArray[mCol+3][mRow+3] == BLACK) {
-
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow + 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol + 2][mRow + 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol + 3][mRow + 3] == BLACK) {
+                            Log.d(TAG, "Black Diag1");
+                            win();
+                            return;
+                        }
                     }
                 }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
-            if (sBoardCheckerArray[mCol+1][mRow-1] == BLACK) {
-                if (sBoardCheckerArray[mCol+2][mRow-2] == BLACK) {
-                    if (sBoardCheckerArray[mCol+3][mRow-3] == BLACK) {
-                        win();
-                        return;
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow - 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol + 2][mRow - 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol + 3][mRow - 3] == BLACK) {
+                            Log.d(TAG, "Black Diag2");
+                            win();
+                            return;
+                        }
                     }
                 }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
-            if (sBoardCheckerArray[mCol-1][mRow+1] == BLACK) {
-                if (sBoardCheckerArray[mCol-2][mRow+2] == BLACK) {
-                    if (sBoardCheckerArray[mCol-3][mRow+3] == BLACK) {
-                        win();
-                        return;
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow + 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol - 2][mRow + 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol - 3][mRow + 3] == BLACK) {
+                            Log.d(TAG, "Black Diag3");
+                            win();
+                            return;
+                        }
                     }
                 }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
-            if (sBoardCheckerArray[mCol-1][mRow-1] == BLACK) {
-                if (sBoardCheckerArray[mCol-2][mRow-2] == BLACK) {
-                    if (sBoardCheckerArray[mCol-3][mRow-3] == BLACK) {
-                        win();
-                        return;
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow - 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol - 2][mRow - 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol - 3][mRow - 3] == BLACK) {
+                            Log.d(TAG, "Black Diag4");
+                            win();
+                            return;
+                        }
                     }
                 }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
 
             //2 in primary direction, 1 in opposite direction
-            if (sBoardCheckerArray[mCol+1][mRow+1] == BLACK) {
-                if (sBoardCheckerArray[mCol+2][mRow+2] == BLACK) {
-                    if (sBoardCheckerArray[mCol+3][mRow+3] == BLACK) {
-
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow + 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol + 2][mRow + 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol - 1][mRow - 1] == BLACK) {
+                            Log.d(TAG, "Black Diag5");
+                            win();
+                            return;
+                        }
                     }
                 }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow - 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol + 2][mRow - 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol - 1][mRow + 1] == BLACK) {
+                            Log.d(TAG, "Black Diag6");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow + 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol - 2][mRow + 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol + 1][mRow - 1] == BLACK) {
+                            Log.d(TAG, "Black Diag7");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow - 1] == BLACK) {
+                    if (sBoardCheckerArray[mCol - 2][mRow - 2] == BLACK) {
+                        if (sBoardCheckerArray[mCol + 1][mRow + 1] == BLACK) {
+                            Log.d(TAG, "Black Diag7");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
 
-        }
+        } else {
 
-
-        //Red checkers
-        if (sUserTurn % 2 == 0) {
+            //Red checkers
             int counter = 0;
             //Horizontal
             for (int i = 0; i < 6; i++) {
+                counter = 0;
                 for (int j = 0; j < 6; j++) {
                     if (sBoardCheckerArray[i][j] == RED) {
                         counter++;
                     }
                     if (counter == 4) {
+                        Log.d(TAG, "Red Horizontal");
                         win();
                         return;
-                    } else if (sBoardCheckerArray[i][j] == BLACK) {
+                    } else if (sBoardCheckerArray[i][j] == BLACK || sBoardCheckerArray[i][j] == 0) {
                         counter = 0;
                     }
                 }
@@ -537,17 +600,120 @@ public class Connect4Activity extends AppCompatActivity {
             counter = 0;
             //Vertical
             for (int i = 0; i < 6; i++) {
+                counter = 0;
                 for (int j = 0; j < 6; j++) {
                     if (sBoardCheckerArray[j][i] == RED) {
                         counter++;
                     }
                     if (counter == 4) {
+                        Log.d(TAG, "Red Vertical");
                         win();
                         return;
-                    } else if (sBoardCheckerArray[j][i] == BLACK) {
+                    } else if (sBoardCheckerArray[j][i] == BLACK || sBoardCheckerArray[j][i] == 0) {
                         counter = 0;
                     }
                 }
+            }
+            //Diagonal
+
+            //3 in primary direction
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow + 1] == RED) {
+                    if (sBoardCheckerArray[mCol + 2][mRow + 2] == RED) {
+                        if (sBoardCheckerArray[mCol + 3][mRow + 3] == RED) {
+                            Log.d(TAG, "Red Diag1");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow - 1] == RED) {
+                    if (sBoardCheckerArray[mCol + 2][mRow - 2] == RED) {
+                        if (sBoardCheckerArray[mCol + 3][mRow - 3] == RED) {
+                            Log.d(TAG, "Red Diag2");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow + 1] == RED) {
+                    if (sBoardCheckerArray[mCol - 2][mRow + 2] == RED) {
+                        if (sBoardCheckerArray[mCol - 3][mRow + 3] == RED) {
+                            Log.d(TAG, "Red Diag3");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow - 1] == RED) {
+                    if (sBoardCheckerArray[mCol - 2][mRow - 2] == RED) {
+                        if (sBoardCheckerArray[mCol - 3][mRow - 3] == RED) {
+                            Log.d(TAG, "Red Diag4");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+
+            //2 in primary direction, 1 in opposite direction
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow + 1] == RED) {
+                    if (sBoardCheckerArray[mCol + 2][mRow + 2] == RED) {
+                        if (sBoardCheckerArray[mCol - 1][mRow - 1] == RED) {
+                            Log.d(TAG, "Red Diag5");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol + 1][mRow - 1] == RED) {
+                    if (sBoardCheckerArray[mCol + 2][mRow - 2] == RED) {
+                        if (sBoardCheckerArray[mCol - 1][mRow + 1] == RED) {
+                            Log.d(TAG, "Red Diag6");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow + 1] == RED) {
+                    if (sBoardCheckerArray[mCol - 2][mRow + 2] == RED) {
+                        if (sBoardCheckerArray[mCol + 1][mRow - 1] == RED) {
+                            Log.d(TAG, "Red Diag7");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
+            }
+            try {
+                if (sBoardCheckerArray[mCol - 1][mRow - 1] == RED) {
+                    if (sBoardCheckerArray[mCol - 2][mRow - 2] == RED) {
+                        if (sBoardCheckerArray[mCol + 1][mRow + 1] == RED) {
+                            Log.d(TAG, "Red Diag8");
+                            win();
+                            return;
+                        }
+                    }
+                }
+            } catch (ArrayIndexOutOfBoundsException exception) {
             }
         }
 
@@ -556,14 +722,14 @@ public class Connect4Activity extends AppCompatActivity {
 
     private void win() {
         if (sUserTurn % 2 == 0) {
-            Toast.makeText(Connect4Activity.this, R.string.player1_win, Toast.LENGTH_SHORT).show();
-            clearBoard();
+            Toast.makeText(Connect4Activity.this, R.string.player1_win, Toast.LENGTH_LONG).show();
+            clearBoard();   //Comment out clearBoard to debug accepting states
             sUser1Score += 1000;
             TextView mUser1Score = (TextView) findViewById(R.id.user1ScoreDisplay);
             mUser1Score.setText(Integer.toString(sUser1Score));
         } else {
-            Toast.makeText(Connect4Activity.this, R.string.player2_win, Toast.LENGTH_SHORT).show();
-            clearBoard();
+            Toast.makeText(Connect4Activity.this, R.string.player2_win, Toast.LENGTH_LONG).show();
+            clearBoard();   //Comment out clearBoard to debug accepting states
             sUser2Score += 1000;
             TextView mUser2Score = (TextView) findViewById(R.id.user2ScoreDisplay);
             mUser2Score.setText(Integer.toString(sUser2Score));
@@ -684,6 +850,7 @@ public class Connect4Activity extends AppCompatActivity {
             Toast.makeText(Connect4Activity.this, R.string.confirm_quit, Toast.LENGTH_LONG).show();
         } else if (sQuitPress) {
             Intent intent = new Intent(Connect4Activity.this, MainActivity.class);
+            clearBoard();
             intent.putExtra(KEY_USER1, sUser1);
             intent.putExtra(KEY_USER2, sUser2);
             intent.putExtra(KEY_USER1_SCORE, sUser1Score);

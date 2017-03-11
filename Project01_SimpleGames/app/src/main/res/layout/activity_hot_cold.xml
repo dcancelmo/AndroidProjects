@@ -127,7 +127,6 @@
             android:hint="@string/guess_hint"
             android:layout_below="@id/turn_notifier"
             android:layout_centerHorizontal="true"
-            android:padding="15sp"
             />
         <Button
             android:id="@+id/hotColdConfirmButton"
@@ -145,7 +144,7 @@
             android:layout_below="@id/hotColdConfirmButton"
             android:layout_centerHorizontal="true"
             android:text="@string/enter_your_guess"
-            android:padding="10sp"
+            android:padding="3sp"
             />
 
     </RelativeLayout>
