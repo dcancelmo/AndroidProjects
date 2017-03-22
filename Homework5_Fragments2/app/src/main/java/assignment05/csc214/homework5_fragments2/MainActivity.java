@@ -36,17 +36,7 @@ public class MainActivity extends AppCompatActivity implements TopFragment.Messa
             Intent intent = new Intent(MainActivity.this, MessageSendActivity.class);
             intent.putExtra(KEY_MESSAGE, mEditText.getText().toString());
             startActivityForResult(intent, 0);
-//            Intent intent = getIntent();
-//            intent.putExtra(KEY_MESSAGE, mEditText.getText().toString());
-//            FragmentTransaction mFragTransaction = getFragmentManager().beginTransaction();
-//            TopFragment mNewFragment = new TopFragment();
-//            mNewFragment.setArguments(intent.getExtras());
-//            mFragTransaction.replace(R.id.top_third_section, mNewFragment).commit();
-//
-//            TextView mDisplayMessage = (TextView) findViewById(R.id.top_message_display);
-//            mDisplayMessage.setText(intent.getStringExtra(KEY_MESSAGE));
         }
-
     }
 
     public void sendBack(View view) {

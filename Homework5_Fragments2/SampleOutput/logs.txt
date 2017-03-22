@@ -1,0 +1,27 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 05
+March 21, 2017
+Logs File
+
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onAttach(context) called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onAttach(activity) called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onCreate called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onAttach(context) called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onAttach(activity) called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onCreate called
+03-21 23:08:06.292 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onCreateView called (Bottom)
+03-21 23:08:06.293 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onCreateView called
+03-21 23:08:06.293 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onCreateView called (Top)
+03-21 23:08:06.294 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onCreateView called
+03-21 23:08:06.294 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onStart called
+03-21 23:08:06.294 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onStart called
+03-21 23:08:06.296 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onResume called
+03-21 23:08:06.296 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onResume called
+03-21 23:08:16.835 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onPause called
+03-21 23:08:16.835 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onPause called
+03-21 23:08:18.693 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.BottomFragment: onResume called
+03-21 23:08:18.694 2542-2542/assignment05.csc214.homework5_fragments2 I/assignment05.csc214.homework5_fragments2.TopFragment: onResume called
