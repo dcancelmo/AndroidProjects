@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements TopFragment.Messa
     public void sendBack(View view) {
         EditText mEditText = (EditText) findViewById(R.id.fragment_edittext);
         messageChanged(mEditText.getText());
+        TextView mBottomDisplay = (TextView) findViewById(R.id.bottom_message_display);
+        mBottomDisplay.setText(mEditText.getText());
     }
 
     @Override
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements TopFragment.Messa
 
     @Override
     public void messageChanged(CharSequence message) {
+        //mBottomFragment = new BottomFragment();
+        //getFragmentManager().beginTransaction().replace(R.id.bottom_third_section, mBottomFragment);
         mBottomFragment.messageSentBack(message);
     }
 

@@ -12,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0sp"
         android:layout_weight="1">
-
-
-
+        
     </FrameLayout>
 
     <RelativeLayout
@@ -49,8 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="0sp"
         android:layout_weight="1">
-
-
 
     </FrameLayout>
 

@@ -2,6 +2,7 @@ package assignment05.csc214.homework5_fragments2;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -27,6 +28,12 @@ public class TopFragment extends FragmentLifecycleLogger {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         mChangeListener = (MessageChangedListener)activity;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mChangeListener = (MessageChangedListener)context;
     }
 
 
