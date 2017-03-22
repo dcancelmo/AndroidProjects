@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MessageSendActivity extends AppCompatActivity implements TopFragment.MessageChangedListener {
+public class MessageSendActivity extends AppCompatActivity {
 
     private static final String KEY_MESSAGE = "assignment05.csc214.homework5_fragments2.message";
 
@@ -17,13 +17,12 @@ public class MessageSendActivity extends AppCompatActivity implements TopFragmen
 
         TopFragment mTopFrag = new TopFragment();
         mTopFrag.setArguments(getIntent().getExtras());
-    }
 
-    @Override
-    public void messageChanged(CharSequence message) {
-        Intent intent = new Intent();
-        intent.putExtra(KEY_MESSAGE, message);
+        Intent intent = new Intent(MessageSendActivity.this, MainActivity.class);
+        intent.putExtra(KEY_MESSAGE, mTopFrag.getArguments().getString(KEY_MESSAGE));
         setResult(RESULT_OK, intent);
         finish();
     }
+
+
 }

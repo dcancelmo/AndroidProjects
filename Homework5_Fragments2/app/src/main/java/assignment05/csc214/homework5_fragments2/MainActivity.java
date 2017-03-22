@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements TopFragment.Messa
         EditText mEditText = (EditText) findViewById(R.id.main_edittext);
         if (mEditText.getText() != null) {
             Intent intent = new Intent(MainActivity.this, MessageSendActivity.class);
-            intent.putExtra(KEY_MESSAGE, mEditText.getText());
+            intent.putExtra(KEY_MESSAGE, mEditText.getText().toString());
             startActivityForResult(intent, 0);
 //            Intent intent = getIntent();
 //            intent.putExtra(KEY_MESSAGE, mEditText.getText().toString());
