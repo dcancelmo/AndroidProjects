@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="assignment05.csc214.homework5_fragments2.MainActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/top_third_section"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1">
+
+
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/middle_third_section"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/main_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_a_message"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/send_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_message"
+            android:onClick="sendMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/main_edittext"
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_third_section"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1">
+
+
+
+    </FrameLayout>
+
+</LinearLayout>

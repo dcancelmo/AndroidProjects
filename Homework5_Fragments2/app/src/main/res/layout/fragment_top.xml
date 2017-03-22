@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="assignment05.csc214.homework5_fragments2.TopFragment"
+    android:background="#2b48ff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/top_message_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_message_received"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:padding="10sp"
+        />
+    <EditText
+        android:id="@+id/fragment_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_a_message"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/top_message_display"
+
+        />
+    <Button
+        android:id="@+id/send_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_back"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fragment_edittext"
+        android:onClick="sendBack"
+        />
+
+</RelativeLayout>
