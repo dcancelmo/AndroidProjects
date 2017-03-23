@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Homework6_ListRecyclerViews</string>
+    <string name="app_name">Homework6 List/Recycler Views</string>
+    <string name="no_description_available">No description available for this course.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="course_description">Course Description</string>
 </resources>
