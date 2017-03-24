@@ -1,5 +1,7 @@
 package assignment06.csc214.homework6_listrecyclerviews;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,5 +11,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentManager mFragManager = getFragmentManager();
+        Fragment mFragment = mFragManager.findFragmentById(R.id.main_activity_framelayout);
+        if(mFragment == null) {
+            mFragment = new CourseFragment();
+            mFragManager.beginTransaction().add(R.id.main_activity_framelayout, mFragment).commit();
+        }
     }
 }

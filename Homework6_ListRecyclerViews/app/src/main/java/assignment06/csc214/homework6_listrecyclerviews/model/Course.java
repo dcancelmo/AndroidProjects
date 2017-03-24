@@ -54,6 +54,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return getCourseName() + " " + getCourseNum() + " Instructor: " + getInstructor();
+        return getCourseNum() + " " + getCourseName() + " " + "\nInstructor: " + getInstructor();
     }
 }

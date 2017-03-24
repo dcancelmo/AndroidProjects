@@ -52,15 +52,15 @@ public class Schedule {
     }
 
     public List<Course> getSchedule() {
-        List<Course> schedule = new ArrayList<>(sMapSchedule.size());
-        schedule.addAll(sMapSchedule.values());
-        Collections.sort(schedule, new ScheduleComparator());
-        return schedule;
+        List<Course> mSchedule = new ArrayList<>(sMapSchedule.size());
+        mSchedule.addAll(sMapSchedule.values());
+        Collections.sort(mSchedule, new ScheduleComparator());
+        return mSchedule;
     }
 
-    public static Schedule get(Context c) {
+    public static Schedule get(Context mContext) {
         if(sSchedule == null) {
-            sSchedule = new Schedule(c);
+            sSchedule = new Schedule(mContext);
         }
         return sSchedule;
     }

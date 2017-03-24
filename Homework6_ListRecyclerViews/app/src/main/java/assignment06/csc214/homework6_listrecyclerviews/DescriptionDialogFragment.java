@@ -4,6 +4,7 @@ package assignment06.csc214.homework6_listrecyclerviews;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -48,7 +49,12 @@ public class DescriptionDialogFragment extends DialogFragment {
         String mDescriptionString = mArgs.getString(DESCRIPTION);
         TextView mDescriptionView = (TextView) mView.findViewById(R.id.description_dialog);
         mDescriptionView.setText(mDescriptionString);
-        return new AlertDialog.Builder(getActivity()).setView(mView).setTitle(R.string.course_description).
+        return new AlertDialog.Builder(getActivity()).setView(mView).setTitle(R.string.course_description)
+                .setNeutralButton(getString(R.string.close), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dismiss();
+                    }
+                }).create();
 
     }
 
