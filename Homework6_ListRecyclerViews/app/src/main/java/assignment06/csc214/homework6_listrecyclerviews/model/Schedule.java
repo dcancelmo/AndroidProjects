@@ -1,6 +1,7 @@
 package assignment06.csc214.homework6_listrecyclerviews.model;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,6 +66,9 @@ public class Schedule {
     public List<Course> getSchedule() {
         List<Course> mSchedule = new ArrayList<>(sMapSchedule.size());
         mSchedule.addAll(sMapSchedule.values());
+        for (int i = 0; i < 20; i++) {
+            Log.d("DEBUGTAG", "CHECK " + mSchedule.get(i));
+        }
         //Collections.sort(mSchedule, new ScheduleComparator());
         return mSchedule;
     }
