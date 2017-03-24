@@ -1,0 +1,62 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 05
+March 21, 2017
+Logs File
+
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:47.320 6270-6270/? D/DEBUGTAG: Course: 229 HIS History of England & Ireland
+                                           Instructor: Weaver
+03-24 17:21:48.815 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 0
+03-24 17:21:48.857 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 1
+03-24 17:21:48.860 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 2
+03-24 17:21:48.861 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 3
+03-24 17:21:48.861 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 4
+03-24 17:21:48.864 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 5
+03-24 17:21:48.879 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 6
+03-24 17:21:48.882 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 7
+03-24 17:21:48.885 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 8
+03-24 17:21:48.888 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 9
+03-24 17:21:48.891 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 10
+03-24 17:21:48.892 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 11
+03-24 17:21:48.895 6270-6270/assignment06.csc214.homework6_listrecyclerviews D/DEBUG: getView 12

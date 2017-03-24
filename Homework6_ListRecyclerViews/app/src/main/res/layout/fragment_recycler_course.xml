@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="assignment06.csc214.homework6_listrecyclerviews.RecyclerCourseFragment"
-    android:id="@+id/course_recycler_view">
+    android:id="@+id/course_recycler_view"
+    android:background="#ff0004">
 
 </android.support.v7.widget.RecyclerView>

@@ -3,7 +3,7 @@ package assignment06.csc214.homework6_listrecyclerviews;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,6 +21,8 @@ import assignment06.csc214.homework6_listrecyclerviews.model.Schedule;
  * A simple {@link Fragment} subclass.
  */
 public class RecyclerCourseFragment extends Fragment {
+
+    private static final String COURSE_NUM = "COURSE_NUM";
 
     private RecyclerView mRecyclerView;
     private TextView mCourseTextView;
@@ -54,6 +56,14 @@ public class RecyclerCourseFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return  mView;
+    }
+
+    public static RecyclerCourseFragment newInstance(Course mCourse) {
+        RecyclerCourseFragment mFragment = new RecyclerCourseFragment();
+        Bundle args = new Bundle();
+        args.putInt(COURSE_NUM, mCourse.getCourseNum());
+        mFragment.setArguments(args);
+        return mFragment;
     }
 
 }

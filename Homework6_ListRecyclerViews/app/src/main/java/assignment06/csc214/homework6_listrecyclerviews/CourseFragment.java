@@ -1,7 +1,8 @@
 package assignment06.csc214.homework6_listrecyclerviews;
 
-import android.app.FragmentManager;
-import android.app.ListFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.Collections;
 import java.util.List;
 
 import assignment06.csc214.homework6_listrecyclerviews.model.Course;
@@ -19,6 +19,8 @@ import assignment06.csc214.homework6_listrecyclerviews.model.Schedule;
 
 
 public class CourseFragment extends ListFragment {
+
+    private static final String COURSE_NUM = "COURSE_NUM";
 
     private List<Course> mCourses;
 
@@ -37,6 +39,14 @@ public class CourseFragment extends ListFragment {
             Log.d("DEBUGTAG", "Course: " + mCourses.get(i));
         }
 
+    }
+
+    public static CourseFragment newInstance(Course mCourse) {
+        CourseFragment mFragment = new CourseFragment();
+        Bundle args = new Bundle();
+        args.putInt(COURSE_NUM, mCourse.getCourseNum());
+        mFragment.setArguments(args);
+        return mFragment;
     }
 
     @Override
