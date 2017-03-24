@@ -20,13 +20,36 @@ import assignment06.csc214.homework6_listrecyclerviews.model.Course;
 
 public class CourseArrayAdapter<T extends Course> extends ArrayAdapter<T> {
 
+//    public CourseArrayAdapter(Context context, int resource, List<T> objects) {
+//        super(context, 0, objects);
+//    }
+
+//    @Override
+//    public View getView(int position, View convertView, ViewGroup parent) {
+//        Log.d("DEBUG", "getView " + position);
+//        LayoutInflater inflater = LayoutInflater.from(getContext());
+//        View mLayout;
+//        if (convertView == null) {
+//            mLayout = inflater.inflate(R.layout.view_course, parent, false);
+//        } else {
+//            mLayout = convertView;
+//        }
+//        T mCourse = getItem(position);
+//        TextView mCourseTextView = (TextView) mLayout.findViewById(R.id.course_textview);
+//        mCourseTextView.setText(mCourse.toString());
+//
+//        return mLayout;
+//    }
+
+    private List<T> mCourses;
     public CourseArrayAdapter(Context context, int resource, List<T> objects) {
         super(context, resource, objects);
+        mCourses = objects;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("DEBUG", "getView" + position);
+        Log.d("DEBUG", "getView " + position);
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View mLayout;
         if (convertView == null) {
@@ -34,13 +57,9 @@ public class CourseArrayAdapter<T extends Course> extends ArrayAdapter<T> {
         } else {
             mLayout = convertView;
         }
-        T mComic = getItem(position);
-        TextView mCourseNum = (TextView) mLayout.findViewById(R.id.course_num);
-        mCourseNum.setText(mComic.getCourseNum());
-        TextView mCourseName = (TextView) mLayout.findViewById(R.id.course_name);
-        mCourseName.setText(mComic.getCourseName());
-        TextView mInstructor = (TextView) mLayout.findViewById(R.id.instructor);
-        mInstructor.setText(mComic.getInstructor());
+        // T mCourse = getItem(position);
+        TextView mCourseTextView = (TextView) mLayout.findViewById(R.id.course_textview);
+        mCourseTextView.setText(mCourses.get(position).toString());
 
         return mLayout;
     }

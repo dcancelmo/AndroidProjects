@@ -28,7 +28,7 @@ public class Course {
         Course.sCourseName = sCourseName;
     }
 
-    public static int getCourseNum() {
+    public static Integer getCourseNum() {
         return sCourseNum;
     }
 
@@ -54,6 +54,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return getCourseNum() + " " + getCourseName() + " " + "\nInstructor: " + getInstructor();
+        return getCourseNum() + " " + getCourseName() + "\nInstructor: " + getInstructor();
     }
 }

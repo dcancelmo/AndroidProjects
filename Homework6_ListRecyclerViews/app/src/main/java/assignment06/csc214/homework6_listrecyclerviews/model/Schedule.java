@@ -15,11 +15,13 @@ import java.util.Map;
 public class Schedule {
     private static Schedule sSchedule;
     private Context mAppContext;
-    private Map<Integer, Course> sMapSchedule;
+    //private Map<Integer, Course> sMapSchedule;
+    private ArrayList<Course> sListSchedule;
 
     private Schedule(Context appContext) {
         mAppContext = appContext;
-        sMapSchedule = new HashMap<>();
+        //sMapSchedule = new HashMap<>();
+        sListSchedule = new ArrayList<>();
         addCourse("CSC Computation and Formal Systems", 173, "Ferguson", "Investigation of several formal systems influential in computer science, and also some of their applications (e.g. inspiring and providing the foundation for a computer programming style, or providing the basis for solving important practical problems like communications protocols, compiling, systems analysis, graphics ...)");
         addCourse("CSC Computer Organization", 252, "Ipek", "Introduction to computer architecture and the layering of hardware/software systems. Topics include instruction set design; logical building blocks; computer arithmetic; processor organization; the memory hierarchy (registers, caches, main memory, and secondary storage); I/O—buses, devices, and interrupts; microcode and assembly language; virtual machines; the roles of the assembler, linker, compiler, and operating system; technological trends and the future of computing hardware. Several programming assignments required.");
         addCourse("CSC Android Mobile App Dev", 214, "StJacques", "Coursework covers user interface designs and functional algorithms for mobile devices (Android) and unique user interactions using multi-touch technologies. Object-oriented design using model-view-controller paradigm, memory management. Other topics include: object-oriented database API, animation, multi-threading and performance considerations");
@@ -42,21 +44,30 @@ public class Schedule {
         addCourse("HIS History of England & Ireland", 229, "Weaver", "This course is an introductory survey of the tragically intermingled histories of England and Ireland from the Tudor succession to the present. Topics include the English Reformation, the English Civil War and Revolution, the settlement of Ireland, revolution and Irish nationalism, the Great Famine, the Irish emigration, Victorian reform, the two world wars, and the \"Troubles\" (old and new). Course consists of lectures, small group discussion, and a few films.");
     }
 
+//    public void addCourse(String mCourseName, int mCourseNum, String mInstructor, String mDescription) {
+//        Course mNewCourse = new Course(mCourseName, mCourseNum, mInstructor, mDescription);
+//        sMapSchedule.put(mNewCourse.getCourseNum(), mNewCourse);
+//    }
+
     public void addCourse(String mCourseName, int mCourseNum, String mInstructor, String mDescription) {
         Course mNewCourse = new Course(mCourseName, mCourseNum, mInstructor, mDescription);
-        sMapSchedule.put(mNewCourse.getCourseNum(), mNewCourse);
-    }
-
-    public Course getCourse (int mCourseNum) {
-        return sMapSchedule.get(mCourseNum);
+        sListSchedule.add(mNewCourse);
     }
 
     public List<Course> getSchedule() {
-        List<Course> mSchedule = new ArrayList<>(sMapSchedule.size());
-        mSchedule.addAll(sMapSchedule.values());
-        Collections.sort(mSchedule, new ScheduleComparator());
-        return mSchedule;
+        return sListSchedule;
     }
+
+//    public Course getCourse (int mCourseNum) {
+//        return sMapSchedule.get(mCourseNum);
+//    }
+
+//    public List<Course> getSchedule() {
+//        List<Course> mSchedule = new ArrayList<>(sMapSchedule.size());
+//        mSchedule.addAll(sMapSchedule.values());
+//        //Collections.sort(mSchedule, new ScheduleComparator());
+//        return mSchedule;
+//    }
 
     public static Schedule get(Context mContext) {
         if(sSchedule == null) {
