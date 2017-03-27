@@ -7,10 +7,10 @@ import assignment06.csc214.homework6_listrecyclerviews.R;
  */
 
 public class Course {
-    private static String sCourseName;
-    private static int sCourseNum;
-    private static String sInstructor;
-    private static String sDescription;
+    private String sCourseName;
+    private int sCourseNum;
+    private String sInstructor;
+    private String sDescription;
 
     public Course(String mCourseName, int mCourseNum, String mInstructor, String mDescription) {
         sCourseName = mCourseName;
@@ -20,36 +20,36 @@ public class Course {
     }
 
 
-    public static String getCourseName() {
+    public String getCourseName() {
         return sCourseName;
     }
 
-    public static void setCourseName(String sCourseName) {
-        Course.sCourseName = sCourseName;
+    public void setCourseName(String sCourseName) {
+        sCourseName = sCourseName;
     }
 
-    public static Integer getCourseNum() {
+    public Integer getCourseNum() {
         return sCourseNum;
     }
 
-    public static void setCourseNum(int sCourseNum) {
-        Course.sCourseNum = sCourseNum;
+    public void setCourseNum(int sCourseNum) {
+        sCourseNum = sCourseNum;
     }
 
-    public static String getInstructor() {
+    public String getInstructor() {
         return sInstructor;
     }
 
-    public static void setInstructor(String sInstructor) {
-        Course.sInstructor = sInstructor;
+    public void setInstructor(String sInstructor) {
+        sInstructor = sInstructor;
     }
 
-    public static String getDescription() {
+    public String getDescription() {
         return sDescription;
     }
 
-    public static void setDescription(String sDescription) {
-        Course.sDescription = sDescription;
+    public void setDescription(String sDescription) {
+        sDescription = sDescription;
     }
 
     @Override

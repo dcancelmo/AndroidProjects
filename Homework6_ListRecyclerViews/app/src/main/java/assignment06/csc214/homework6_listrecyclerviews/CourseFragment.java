@@ -35,9 +35,9 @@ public class CourseFragment extends ListFragment {
         CourseArrayAdapter<Course> mAdapter = new CourseArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, mCourses);
         setListAdapter(mAdapter);
 
-        for (int i = 0; i < 20; i++ ) {
-            Log.d("DEBUGTAG", "Course: " + mCourses.get(i));
-        }
+//        for (int i = 0; i < 20; i++ ) {
+//            Log.d("DEBUGTAG", "Course: " + mCourses.get(i));
+//        }
 
     }
 
