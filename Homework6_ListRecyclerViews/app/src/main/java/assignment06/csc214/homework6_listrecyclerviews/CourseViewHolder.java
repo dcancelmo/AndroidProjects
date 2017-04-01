@@ -28,7 +28,6 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
                 DescriptionDialogFragment mDialog = DescriptionDialogFragment.newInstance(mCourse);
                 mDialog.show(mManager, "Course Dialog");
             }
-
         });
 
     }
