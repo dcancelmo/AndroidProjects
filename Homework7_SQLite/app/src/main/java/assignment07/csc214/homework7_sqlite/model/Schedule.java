@@ -109,4 +109,19 @@ public class Schedule {
         return new CourseCursorWrapper(mCursor);
     }
 
+    public List<Course> getCourses() {
+        CourseCursorWrapper mWrapper = queryCourses(null, null);
+
+        try {
+            mWrapper.moveToFirst();
+            while(mWrapper.isAfterLast() == false) {
+                Course mCourse = mWrapper.getCourse();
+                sListSchedule.add(mCourse);
+                mWrapper.moveToNext();
+            }
+        } finally {
+            mWrapper.close();
+        }
+        return sListSchedule;
+    }
 }
