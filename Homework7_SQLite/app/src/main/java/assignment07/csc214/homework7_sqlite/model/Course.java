@@ -18,6 +18,12 @@ public class Course {
         sInstructor = mInstructor;
         sDescription = mDescription;
     }
+    public Course(int mCourseNum) {
+        sCourseName = null;
+        sCourseNum = mCourseNum;
+        sInstructor = null;
+        sDescription = null;
+    }
 
 
     public String getCourseName() {
