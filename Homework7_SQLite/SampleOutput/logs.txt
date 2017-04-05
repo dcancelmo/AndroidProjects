@@ -1,0 +1,17 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 07
+April 04, 2017
+Logs File
+
+04-04 21:37:58.557 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onCreate MainActivity called
+04-04 21:38:00.266 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onCreateOptionsMenu MainActivity called
+04-04 21:38:09.028 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onOptionsItemSelected MainActivity called
+04-04 21:38:18.777 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onActivityResult MainActivity called
+04-04 21:38:22.917 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onOptionsItemSelected MainActivity called
+04-04 21:38:27.848 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onActivityResult MainActivity called
+04-04 21:38:35.311 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onOptionsItemSelected MainActivity called
+04-04 21:38:40.880 10750-10750/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onActivityResult MainActivity called

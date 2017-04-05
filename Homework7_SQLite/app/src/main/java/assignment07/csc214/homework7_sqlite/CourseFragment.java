@@ -26,6 +26,8 @@ import assignment07.csc214.homework7_sqlite.model.Schedule;
  */
 public class CourseFragment extends Fragment {
 
+    private static  final String TAG = "DEBUG_TAG";
+
 
     private static final String COURSE_NUM = "COURSE_NUM";
 
@@ -46,7 +48,8 @@ public class CourseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.i("INFOTAG", "RecylcerView");
+        Log.d(TAG, "onCreateView CourseFragment called");
+        Log.i(TAG, "RecyclerView");
         View mView = inflater.inflate(R.layout.fragment_course, container, false);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.course_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -62,6 +65,7 @@ public class CourseFragment extends Fragment {
     }
 
     public static CourseFragment newInstance(Course mCourse) {
+        Log.d(TAG, "newInstance CourseFragment called");
         CourseFragment mFragment = new CourseFragment();
         Bundle args = new Bundle();
         args.putInt(COURSE_NUM, mCourse.getCourseNum());
@@ -72,6 +76,7 @@ public class CourseFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        Log.d(TAG, "onPause CourseFragment called");
         mCourse.setCourseNum(Integer.getInteger(mNumEdit.getText().toString()));
         mCourse.setCourseName(mNameEdit.getText().toString());
         mCourse.setInstructor(mInstructorEdit.getText().toString());

@@ -6,15 +6,20 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static  final String TAG = "DEBUG_TAG";
+
     private CourseListFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate MainActivity called");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -26,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu mMenu) {
+        Log.d(TAG, "onCreateOptionsMenu MainActivity called");
         getMenuInflater().inflate(R.menu.menu_main, mMenu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem mItem) {
+        Log.d(TAG, "onOptionsItemSelected MainActivity called");
         boolean handled;
         switch(mItem.getItemId()) {
             case R.id.menu_item_course_entry:
@@ -48,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d(TAG, "onActivityResult MainActivity called");
         if(resultCode == Activity.RESULT_OK) {
             mFragment.updateUI();
         }
