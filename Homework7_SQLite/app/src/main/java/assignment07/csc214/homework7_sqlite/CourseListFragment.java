@@ -1,6 +1,8 @@
 package assignment07.csc214.homework7_sqlite;
 
 
+import android.content.Intent;
+import android.graphics.Movie;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.Fragment;
@@ -26,6 +28,8 @@ import assignment07.csc214.homework7_sqlite.model.Schedule;
  * A simple {@link Fragment} subclass.
  */
 public class CourseListFragment extends Fragment {
+
+    private static  final String TAG = "DEBUG_TAG";
 
     private static final String COURSE_NUM = "COURSE_NUM";
 
@@ -78,5 +82,46 @@ public class CourseListFragment extends Fragment {
             mAdapter.setCourses(mCourses);
         }
     }
+
+//    private class CourseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
+//        private List<Course> mCourses;
+//
+//        public CourseAdapter(List<Course> mCourseList) {
+//            mCourses = mCourseList;
+//        }
+//
+//        @Override
+//        public CourseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//            Log.d(TAG, "onCreateViewHolder() CourseListFragment called");
+//            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+//            View itemView = inflater.inflate(R.layout.view_course, parent, false);
+//            return new CourseViewHolder(itemView);
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(CourseViewHolder holder, int position) {
+//
+//        }
+//
+//        @Override
+//        public void onBindViewHolder(CourseViewHolder holder, int position) {
+//            Log.d(TAG, "onBindViewHolder(holder," + position +") called");
+//            Course mCourse = mCourses.get(position);
+//            holder.bindCourse(mCourse);
+//        }
+//
+//        @Override
+//        public int getItemCount() {
+//            Log.d(TAG, "getItemCount() returning " + mCourses.size());
+//            return mCourses.size();
+//        }
+//
+//        public void setCourses(List<Course> mCourseList) {
+//            mCourses = mCourseList;
+//            notifyDataSetChanged();
+//        }
+//    }
+
+
 
 }

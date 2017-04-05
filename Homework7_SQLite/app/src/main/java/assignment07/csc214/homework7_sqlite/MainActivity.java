@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        mFragment.updateUI();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu mMenu) {
         Log.d(TAG, "onCreateOptionsMenu MainActivity called");
         getMenuInflater().inflate(R.menu.menu_main, mMenu);

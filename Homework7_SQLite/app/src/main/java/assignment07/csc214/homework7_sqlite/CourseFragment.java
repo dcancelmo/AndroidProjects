@@ -53,7 +53,7 @@ public class CourseFragment extends Fragment {
         View mView = inflater.inflate(R.layout.fragment_course, container, false);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.course_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        CourseRecyclerAdapter mAdapter = new CourseRecyclerAdapter(Schedule.get(getActivity()).getSchedule());
+        CourseRecyclerAdapter mAdapter = new CourseRecyclerAdapter(Schedule.get(getActivity()).getCourses());
         mRecyclerView.setAdapter(mAdapter);
 
         mNumEdit = (EditText) mView.findViewById(R.id.course_num_enter);
