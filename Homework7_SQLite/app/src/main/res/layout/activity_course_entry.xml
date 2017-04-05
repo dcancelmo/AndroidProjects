@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="assignment07.csc214.homework7_sqlite.CourseEntryActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a new course:"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/text_view_entry_prompt"
+            />
+        <LinearLayout
+            android:id="@+id/data_entry_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/text_view_entry_prompt">
+
+            <EditText
+                android:id="@+id/course_num_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_course_num"
+                />
+            <EditText
+                android:id="@+id/course_name_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/course_name"
+                />
+            <EditText
+                android:id="@+id/instructor_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/instructor"
+                />
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/description_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/course_description"
+            android:layout_below="@id/data_entry_linear"
+            android:layout_centerHorizontal="true"
+            />
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/description_enter">
+            <Button
+                android:id="@+id/enter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter"
+                android:onClick="acceptNewCourse"
+                />
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:onClick="cancelNewCourse"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
