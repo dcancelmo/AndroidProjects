@@ -60,7 +60,7 @@ public class CourseEntryActivity extends AppCompatActivity {
     }
 
     public void acceptNewCourse(View view) {
-        
+
         Intent intent = new Intent(CourseEntryActivity.this, MainActivity.class);
         setResult(RESULT_OK, intent);
         finish();

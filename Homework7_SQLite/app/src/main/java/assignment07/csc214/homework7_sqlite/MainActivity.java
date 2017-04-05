@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CourseListFragment mCourseList;
+    private CourseListFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FragmentManager mFragManager = getSupportFragmentManager();
-        Fragment mFragment = mFragManager.findFragmentById(R.id.recycle_activity_frame_layout);
-        if (mFragment == null) {
-            mFragment = new CourseListFragment();
-            mFragManager.beginTransaction().add(R.id.recycle_activity_frame_layout, mFragment).commit();
-        }
+        //mFragment = mFragManager.findFragmentById(R.id.recycle_activity_frame_layout);
+        mFragment = new CourseListFragment();
+        mFragManager.beginTransaction().add(R.id.recycle_activity_frame_layout, mFragment).commit();
     }
 
     @Override
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(resultCode == Activity.RESULT_OK) {
-            mCourseList.updateUI();
+            mFragment.updateUI();
         }
     }
 }

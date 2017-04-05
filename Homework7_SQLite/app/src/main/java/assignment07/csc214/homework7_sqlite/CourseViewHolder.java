@@ -1,5 +1,6 @@
 package assignment07.csc214.homework7_sqlite;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -20,15 +21,7 @@ public class CourseViewHolder extends RecyclerView.ViewHolder {
     public CourseViewHolder(View mView) {
         super(mView);
         mCourseView = (TextView) mView.findViewById(R.id.course_textview);
-//        mView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View mInnerView) {
-//                AppCompatActivity mContext = (AppCompatActivity) mInnerView.getContext();
-//                FragmentManager mManager = mContext.getSupportFragmentManager();
-//                DescriptionDialogFragment mDialog = DescriptionDialogFragment.newInstance(mCourse);
-//                mDialog.show(mManager, "Course Dialog");
-//            }
-//        });
+
 
     }
 

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,6 +31,12 @@ public class CourseFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private TextView mCourseTextView;
+    private Course mCourse;
+    EditText mNumEdit;
+    EditText mNameEdit;
+    EditText mInstructorEdit;
+    EditText mDescriptionEdit;
+
 
 
     public CourseFragment() {
@@ -46,6 +53,11 @@ public class CourseFragment extends Fragment {
         CourseRecyclerAdapter mAdapter = new CourseRecyclerAdapter(Schedule.get(getActivity()).getSchedule());
         mRecyclerView.setAdapter(mAdapter);
 
+        mNumEdit = (EditText) mView.findViewById(R.id.course_num_enter);
+        mNameEdit = (EditText) mView.findViewById(R.id.course_name_enter);
+        mInstructorEdit = (EditText) mView.findViewById(R.id.instructor_enter);
+        mDescriptionEdit = (EditText) mView.findViewById(R.id.description_enter);
+
         return  mView;
     }
 
@@ -55,6 +67,16 @@ public class CourseFragment extends Fragment {
         args.putInt(COURSE_NUM, mCourse.getCourseNum());
         mFragment.setArguments(args);
         return mFragment;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mCourse.setCourseNum(Integer.getInteger(mNumEdit.getText().toString()));
+        mCourse.setCourseName(mNameEdit.getText().toString());
+        mCourse.setInstructor(mInstructorEdit.getText().toString());
+        mCourse.setDescription(mDescriptionEdit.getText().toString());
+        Schedule.get(getContext()).updateCourse(mCourse);
     }
 
 
