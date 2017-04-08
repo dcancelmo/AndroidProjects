@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import aproject02.csc214.project2_network.model.Post;
 import aproject02.csc214.project2_network.model.User;
@@ -13,6 +14,7 @@ import aproject02.csc214.project2_network.model.User;
  */
 
 public class NetworkDb {
+    private static final String TAG = "cancelmo_network_test";
     private static NetworkDb SINGLETON;
 
     private final SQLiteDatabase mDatabase;
@@ -23,6 +25,7 @@ public class NetworkDb {
 
     public static NetworkDb get(Context context) {
         if(SINGLETON == null) {
+            Log.i(TAG, "NetworkDb get(Context) called\nNew NetworkDb created and returned");
             SINGLETON = new NetworkDb(context);
         }
         return SINGLETON;
@@ -34,6 +37,30 @@ public class NetworkDb {
                 null,
                 "username = ? AND password = ?",
                 new String[] {mUsername, mPassword},
+                null,
+                null,
+                null
+        );
+        NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
+        User mUser;
+        if(mWrapper.getCount() > 0) {
+            mWrapper.moveToFirst();
+            mUser = mWrapper.getUser();
+        }
+        else {
+            mUser = null;
+        }
+        mWrapper.close();
+
+        return mUser;
+    }
+
+    public User getUser(String mUsername) {
+        Cursor mCursor = mDatabase.query(
+                NetworkDbSchema.Users.NAME,
+                null,
+                "username = ?",
+                new String[] {mUsername},
                 null,
                 null,
                 null

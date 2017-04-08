@@ -19,7 +19,11 @@ public class MainActivity extends AppCompatActivity {
     private NetworkDb mDatabase;
     private static final String TAG = "cancelmo_network_test";
 
-    private static final String KEY_USERNAME = "";
+    private static final String KEY_USERNAME = "aproject02.csc214.project2_network.username";
+    private static final String KEY_PASSWORD = "aproject02.csc214.project2_network.password";
+    private static final int RC_NEW_USER = 1;
+
+
 
 
     @Override
@@ -30,14 +34,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginUser(View view) {
+        Log.i(TAG, "loginUser called");
         EditText mLoginUser = (EditText) findViewById(R.id.enter_username);
         EditText mLoginPass = (EditText) findViewById(R.id.enter_password);
         User mThisUser = mDatabase.getUser(mLoginUser.getText().toString(), mLoginPass.getText().toString());
         if (mThisUser == null) {
             Toast.makeText(MainActivity.this, R.string.invalid_login, Toast.LENGTH_LONG).show();
+            Log.i(TAG, "loginUser failed (invalid entry)");
             return;
         }
-        //TODO: Open network feed passing in mThisUser
+        Intent intent = new Intent(MainActivity.this, NetworkFeed.class);
+        intent.putExtra(KEY_USERNAME, mLoginUser.getText().toString());
+        startActivityForResult(intent, RC_NEW_USER);
 
     }
 
@@ -45,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         EditText mCreateUser = (EditText) findViewById(R.id.enter_new_username);
         EditText mCreatePass = (EditText) findViewById(R.id.enter_new_password);
         Log.i(TAG, "CreateNewUser called");
+        User mThisUser = mDatabase.getUser(mCreateUser.getText().toString());
+        if (mThisUser == null) {
+            Toast.makeText(MainActivity.this, R.string.user_already_exists, Toast.LENGTH_LONG).show();
+            Log.i(TAG, "CreateNewUser failed (user already exists)");
+            return;
+        }
         Intent intent = new Intent(MainActivity.this, NewUserCreation.class);
         intent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
         intent.putExtra(KEY_PASSWORD, mCreatePass.getText().toString());

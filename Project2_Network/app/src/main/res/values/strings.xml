@@ -1,12 +1,21 @@
 <resources>
     <string name="app_name">UR Network</string>
     <string name="login">Login</string>
-    <string name="username">Username:</string>
-    <string name="password">Password:</string>
+    <string name="username">Username: </string>
+    <string name="password">Password: </string>
     <string name="enter_username">Enter username...</string>
-    <string name="enter_password">Enter password...</string>
+    <string name="enter_password">Password...</string>
     <string name="create_a_new_user">Create a new user</string>
     <string name="create">Create</string>
     <string name="ur_network">UR Network</string>
     <string name="invalid_login">Invalid username and/or password</string>
+    <string name="user_already_exists">This username already exists</string>
+    <string name="username_default">Username: DEFAULT</string>
+    <string name="first_name">First name:</string>
+    <string name="enter_your_first_name">Enter your first name...</string>
+    <string name="last_name">Last name:</string>
+    <string name="enter_your_last_name">Enter your last name...</string>
+    <string name="birthday">Birthday:</string>
+    <string name="enter_birthday">Enter birthday</string>
+    <string name="enter_your_birthday">Enter your birthday</string>
 </resources>
