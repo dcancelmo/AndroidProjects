@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NetworkFeed"/>
-        <activity android:name=".UpdateAccountActivity"
-            android:parentActivityName=".NetworkFeed"
-        />
+        <activity android:name=".NetworkFeed" />
+        <activity
+            android:name=".UpdateAccountActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".NetworkFeed" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -30,8 +31,10 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity android:name=".OwnProfileActivity"></activity>
     </application>
 
 </manifest>
