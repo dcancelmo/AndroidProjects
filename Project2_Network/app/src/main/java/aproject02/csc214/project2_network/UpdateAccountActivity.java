@@ -6,6 +6,8 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Environment;
@@ -96,11 +98,16 @@ public class UpdateAccountActivity extends AppCompatActivity {
             sLastName = mBundle.getString(KEY_LAST_NAME);
             sBirthDate = mBundle.getString(KEY_BIRTHDATE);
             sProfilePic = mBundle.getString(KEY_PROFILE_PIC);
+            File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            mPhotoFile = new File(picturesDir, sProfilePic);
             mEmailText.setText(getResources().getString(R.string.email) + " " + sEmail);
             mUsernameText.setText(getResources().getString(R.string.username) + " " + sUsername);
             mFirstNameEdit.setText(sFirstName);
             mLastNameEdit.setText(sLastName);
             mBirthdayEdit.setText(sBirthDate);
+            Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+            mProfilePicImage.setImageBitmap(newPhoto);
+            mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
     }
 
@@ -115,9 +122,16 @@ public class UpdateAccountActivity extends AppCompatActivity {
         sLastName = mThisUser.getLastName();
         sBirthDate = FORMAT.format(mThisUser.getBirthDate());
         sProfilePic = mThisUser.getProfilePic();
+        File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        mPhotoFile = new File(picturesDir, sProfilePic);
         mFirstNameEdit.setText(sFirstName);
         mLastNameEdit.setText(sLastName);
         mBirthdayEdit.setText(sBirthDate);
+        Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+        mProfilePicImage.setImageBitmap(newPhoto);
+        mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        mProfilePicImage.setImageBitmap(newPhoto);
+        mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     public void takePicture(View view) {
@@ -153,6 +167,10 @@ public class UpdateAccountActivity extends AppCompatActivity {
         Log.d(TAG, "onActivityResult()");
         if(resultCode == Activity.RESULT_OK) {
             mPhotoFiles.add(mPhotoFile);
+            sProfilePic = mPhotoFile.toString();
+            Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+            mProfilePicImage.setImageBitmap(newPhoto);
+            mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
     }
 
@@ -176,5 +194,25 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mNewData.put("profile_pic", sProfilePic);
         mDatabase.update(mNewData, sEmail);
         finish();
+    }
+
+
+    public static Bitmap getScaledBitmap(String path, int width, int height) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(path, options);
+        float srcWidth = options.outWidth;
+        float srcHeight = options.outHeight;
+        int sampleSize = 1;
+        if (srcHeight > height || srcWidth > width) {
+            if (srcWidth > srcHeight) {
+                sampleSize = Math.round(srcHeight / height);
+            } else {
+                sampleSize = Math.round(srcWidth / width);
+            }
+        }
+        BitmapFactory.Options scaledOptions = new BitmapFactory.Options();
+        scaledOptions.inSampleSize = sampleSize;
+        return BitmapFactory.decodeFile(path, scaledOptions);
     }
 }
