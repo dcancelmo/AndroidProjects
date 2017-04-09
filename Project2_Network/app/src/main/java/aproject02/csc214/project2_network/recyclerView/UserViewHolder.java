@@ -1,5 +1,7 @@
 package aproject02.csc214.project2_network.recyclerView;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -18,10 +20,17 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     public UserViewHolder(View mView) {
         super(mView);
         mUserView = (TextView) mView.findViewById(R.id.user_list_text_view);
+        mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View mInnerView) {
+                //TODO: View profile
+            }
+        });
     }
 
     public void bindCourse(User mPUser) {
         mUser = mPUser;
         mUserView.setText(mUser.toString());
     }
+
 }

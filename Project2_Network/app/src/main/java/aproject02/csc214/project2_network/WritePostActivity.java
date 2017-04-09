@@ -166,7 +166,6 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
 
     @Override
     public void userListButtonPressed() {
-        //TODO
         Intent intent = new Intent(WritePostActivity.this, UserListActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
