@@ -30,6 +30,13 @@
             android:clickable="true"
             android:src="@mipmap/ic_own_profile"
             />
+        <ImageButton
+            android:id="@+id/see_user_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@mipmap/ic_user_list"
+            />
     </LinearLayout>
 
 </RelativeLayout>

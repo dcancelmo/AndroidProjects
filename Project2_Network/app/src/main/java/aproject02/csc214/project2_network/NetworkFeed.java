@@ -1,12 +1,16 @@
 package aproject02.csc214.project2_network;
 
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
 
 import aproject02.csc214.project2_network.database.NetworkDb;
@@ -23,6 +27,7 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
     private static String sUsername;
     private static String sEmail;
     private static User sThisUser;
+    private FragmentTransaction mFragTransaction;
 
     HeaderFragment mHeaderFragment;
 
@@ -32,16 +37,19 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network_feed);
         mDatabase = NetworkDb.get(getApplicationContext());
-        FragmentTransaction mFragTransaction = getFragmentManager().beginTransaction();
-        mHeaderFragment = new HeaderFragment();
-        mHeaderFragment.setArguments(getIntent().getExtras());
-        mFragTransaction.add(R.id.header_frame_layout, mHeaderFragment).commit();
         Intent mIntent = getIntent();
         if (mIntent != null) {
             sUsername = mIntent.getStringExtra(KEY_USERNAME);
             sThisUser = mDatabase.getUserByName(sUsername);
             sEmail = sThisUser.getEmail();
+            mIntent.putExtra(KEY_EMAIL, sEmail);
         }
+        mFragTransaction = getSupportFragmentManager().beginTransaction();
+        Bundle extras = mIntent.getExtras();
+        mHeaderFragment = new HeaderFragment();
+        mHeaderFragment.setArguments(extras);
+        mHeaderFragment.setArguments(getIntent().getExtras());
+        mFragTransaction.add(R.id.header_frame_layout, mHeaderFragment, null).commit();
 
     }
 
@@ -79,9 +87,8 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
     }
 
     @Override
-    public void selfPostButtonPressed() {
-        //TODO
-        Intent intent = new Intent(NetworkFeed.this, NetworkFeed.class);
+    public void selfPostButtonPressed(View v) {
+        Intent intent = new Intent(NetworkFeed.this, WritePostActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
@@ -94,6 +101,11 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
         intent.putExtra(KEY_EMAIL, sEmail);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
+    }
+
+    @Override
+    public void userListButtonPressed() {
+
     }
 
 //    @Override

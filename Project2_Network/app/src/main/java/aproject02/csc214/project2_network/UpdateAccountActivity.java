@@ -176,7 +176,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
             //Uri photoUri = Uri.fromFile(mPhotoFile);
             Uri photoUri = FileProvider.getUriForFile(getApplicationContext(), getApplicationContext().getPackageName() + ".provider", mPhotoFile);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-            Log.d(TAG, "photo location: " + mPhotoFile.toString());
+            Log.i(TAG, "photo location: " + mPhotoFile.toString());
             startActivityForResult(intent, 0);
         } else {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 1);

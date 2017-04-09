@@ -32,7 +32,11 @@
     <string name="tell_about_yourself">Tell us about yourself...</string>
     <string name="update_info">Update info</string>
     <string name="logout">Logout</string>
+    <string name="post">Post</string>
+    <string name="cancel">Cancel</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="write_a_new_post">Write a new post!</string>
+    <string name="type_your_post_here_nand_or_attach_an_image">Type your post here...</string>
+    <string name="post_an_image">Post an image</string>
 </resources>

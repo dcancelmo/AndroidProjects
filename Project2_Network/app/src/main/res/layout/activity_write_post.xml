@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="aproject02.csc214.project2_network.WritePostActivity">
+
+    <FrameLayout
+        android:id="@+id/header_frame_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/new_post_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/type_your_post_here_nand_or_attach_an_image"
+        />
+    <ImageView
+        android:id="@+id/image_post_view"
+        android:maxWidth="100sp"
+        android:maxHeight="100sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/new_post_text_content"
+        android:layout_centerHorizontal="true"
+        android:background="#8b8b8b"
+        android:contentDescription="@string/post_an_image"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/new_post_text_content">
+
+        <Button
+            android:id="@+id/post_take_picture_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/take_picture"
+            android:onClick="takePicture"
+            />
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/post"
+            android:onClick="addPost"
+            />
+        <Button
+            android:id="@+id/cancel_post_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:onClick="cancelPost"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

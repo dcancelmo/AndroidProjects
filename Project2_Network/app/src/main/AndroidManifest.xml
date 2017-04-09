@@ -34,7 +34,12 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".OwnProfileActivity"></activity>
+        <activity android:name=".OwnProfileActivity" />
+        <activity
+            android:name=".WritePostActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".NetworkFeed" />
+        <activity android:name=".UserListActivity"></activity>
     </application>
 
 </manifest>
