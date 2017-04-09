@@ -25,10 +25,7 @@ public class NetworkHelper extends SQLiteOpenHelper {
                 + NetworkDbSchema.Users.Cols.BIRTH_DATE + ", "
                 + NetworkDbSchema.Users.Cols.PROFILE_PIC + ","
                 + NetworkDbSchema.Users.Cols.HOMETOWN + ", "
-                + NetworkDbSchema.Users.Cols.BIO + ", "
-                + NetworkDbSchema.Users.Cols.POST_LIST + ", "
-                + NetworkDbSchema.Users.Cols.FAVORITE_LIST + ") "
-
+                + NetworkDbSchema.Users.Cols.BIO + ")"
         );
 
         db.execSQL("CREATE TABLE " + NetworkDbSchema.Posts.NAME
@@ -37,6 +34,12 @@ public class NetworkHelper extends SQLiteOpenHelper {
                 + NetworkDbSchema.Posts.Cols.POSTED_DATE + ", "
                 + NetworkDbSchema.Posts.Cols.TEXT_CONTENT + ", "
                 + NetworkDbSchema.Posts.Cols.PHOTO_PATH + ")"
+        );
+
+        db.execSQL("CREATE TABLE " + NetworkDbSchema.Favorites.NAME
+                + "(_id integer primary key autoincrement, "
+                + NetworkDbSchema.Favorites.Cols.EMAIL + ", "
+                + NetworkDbSchema.Favorites.Cols.FAVORITE + ")"
         );
 
     }

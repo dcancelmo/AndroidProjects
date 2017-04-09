@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_pic_layout"
             android:layout_centerHorizontal="true"
-            android:text="@string/create_account"
+            android:text="@string/update_info"
             android:onClick="updateAccount"
             />
 

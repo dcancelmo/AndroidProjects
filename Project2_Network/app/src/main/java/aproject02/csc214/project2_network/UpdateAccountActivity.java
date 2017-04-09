@@ -96,8 +96,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mBioEdit = (EditText) findViewById(R.id.bio_enter);
 
         Intent mIntent = getIntent();
-        restoreValues(savedInstanceState);
         updateValues(mIntent);
+        restoreValues(savedInstanceState);
     }
 
     public void restoreValues(Bundle mBundle) {
@@ -111,44 +111,53 @@ public class UpdateAccountActivity extends AppCompatActivity {
             sProfilePic = mBundle.getString(KEY_PROFILE_PIC);
             sHometown = mBundle.getString(KEY_HOMETOWN);
             sBio = mBundle.getString(KEY_BIO);
-            File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-            mPhotoFile = new File(picturesDir, sProfilePic);
             mEmailText.setText(getResources().getString(R.string.email) + " " + sEmail);
             mUsernameText.setText(getResources().getString(R.string.username) + " " + sUsername);
             mFirstNameEdit.setText(sFirstName);
             mLastNameEdit.setText(sLastName);
             mBirthdayEdit.setText(sBirthDate);
-            Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
-            mProfilePicImage.setImageBitmap(newPhoto);
-            mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mHometownEdit.setText(sHometown);
+            mBioEdit.setText(sBio);
+            if (sProfilePic != null) {
+//                File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//                mPhotoFile = new File(sProfilePic);
+//                mPhotoFiles.add(mPhotoFile);
+                Bitmap mNewPhoto = getScaledBitmap(sProfilePic, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+                mProfilePicImage.setImageBitmap(mNewPhoto);
+                mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
         }
     }
 
     public void updateValues(Intent mIntent) {
-        sEmail = mIntent.getStringExtra(KEY_EMAIL);
-        sUsername = mIntent.getStringExtra(KEY_USERNAME);
-        sPassword = mIntent.getStringExtra(KEY_PASSWORD);
-        mEmailText.setText(getResources().getString(R.string.email) + " " + sEmail);
-        mUsernameText.setText(getResources().getString(R.string.username) + " " + sUsername);
-        User mThisUser = mDatabase.getUser(sEmail);
-        sFirstName = mThisUser.getFirstName();
-        sLastName = mThisUser.getLastName();
-        sBirthDate = FORMAT.format(mThisUser.getBirthDate());
-        sProfilePic = mThisUser.getProfilePic();
-        sHometown = mThisUser.getHometown();
-        sBio = mThisUser.getBio();
-        File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        mPhotoFile = new File(picturesDir, sProfilePic);
-        mFirstNameEdit.setText(sFirstName);
-        mLastNameEdit.setText(sLastName);
-        mBirthdayEdit.setText(sBirthDate);
-        mHometownEdit.setText(sHometown);
-        mBioEdit.setText(sBio);
-        Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
-        mProfilePicImage.setImageBitmap(newPhoto);
-        mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        mProfilePicImage.setImageBitmap(newPhoto);
-        mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        if (mIntent != null) {
+            sEmail = mIntent.getStringExtra(KEY_EMAIL);
+            sUsername = mIntent.getStringExtra(KEY_USERNAME);
+            sPassword = mIntent.getStringExtra(KEY_PASSWORD);
+            mEmailText.setText(getResources().getString(R.string.email) + " " + sEmail);
+            mUsernameText.setText(getResources().getString(R.string.username) + " " + sUsername);
+            User mThisUser = mDatabase.getUser(sEmail);
+            sFirstName = mThisUser.getFirstName();
+            sLastName = mThisUser.getLastName();
+            sBirthDate = FORMAT.format(mThisUser.getBirthDate());
+            sProfilePic = mThisUser.getProfilePic();
+            sHometown = mThisUser.getHometown();
+            sBio = mThisUser.getBio();
+            mFirstNameEdit.setText(sFirstName);
+            mLastNameEdit.setText(sLastName);
+            mBirthdayEdit.setText(sBirthDate);
+            mHometownEdit.setText(sHometown);
+            mBioEdit.setText(sBio);
+            if (sProfilePic != null) {
+//                File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//                mPhotoFile = new File(sProfilePic);
+//                mPhotoFiles.add(mPhotoFile);
+                Bitmap mNewPhoto = getScaledBitmap(sProfilePic, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+                mProfilePicImage.setImageBitmap(mNewPhoto);
+                mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
+
+        }
     }
 
     public void takePicture(View view) {
@@ -184,9 +193,9 @@ public class UpdateAccountActivity extends AppCompatActivity {
         Log.d(TAG, "onActivityResult()");
         if(resultCode == Activity.RESULT_OK) {
             mPhotoFiles.add(mPhotoFile);
-            sProfilePic = mPhotoFile.toString();
-            Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
-            mProfilePicImage.setImageBitmap(newPhoto);
+            sProfilePic = mPhotoFile.getPath();
+            Bitmap mNewPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+            mProfilePicImage.setImageBitmap(mNewPhoto);
             mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
     }
@@ -197,6 +206,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mNewData.put("last_name", mLastNameEdit.getText().toString());
         mNewData.put("birth_date", mBirthdayEdit.getText().toString());
         mNewData.put("profile_pic", sProfilePic);
+        mNewData.put("hometown", mHometownEdit.getText().toString());
+        mNewData.put("bio", mBioEdit.getText().toString());
         mDatabase.update(mNewData, sEmail);
         finish();
     }
@@ -226,11 +237,11 @@ public class UpdateAccountActivity extends AppCompatActivity {
         state.putString(KEY_EMAIL, sEmail);
         state.putString(KEY_USERNAME, sUsername);
         state.putString(KEY_PASSWORD, sPassword);
-        state.putString(KEY_FIRST_NAME, sFirstName);
-        state.putString(KEY_LAST_NAME, sLastName);
-        state.putString(KEY_BIRTHDATE, sBirthDate);
+        state.putString(KEY_FIRST_NAME, mFirstNameEdit.getText().toString());
+        state.putString(KEY_LAST_NAME, mLastNameEdit.getText().toString());
+        state.putString(KEY_BIRTHDATE, mBirthdayEdit.getText().toString());
         state.putString(KEY_PROFILE_PIC, sProfilePic);
-        state.putString(KEY_HOMETOWN, sHometown);
-        state.putString(KEY_BIO, sBio);
+        state.putString(KEY_HOMETOWN, mHometownEdit.getText().toString());
+        state.putString(KEY_BIO, mBioEdit.getText().toString());
     }
 }

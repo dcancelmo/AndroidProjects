@@ -30,4 +30,5 @@
     <string name="enter_your_hometown">Enter your hometown...</string>
     <string name="bio">Bio:</string>
     <string name="tell_about_yourself">Tell us about yourself...</string>
+    <string name="update_info">Update info</string>
 </resources>

@@ -1,7 +1,11 @@
 package aproject02.csc214.project2_network.model;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 import java.util.Date;
+
+import aproject02.csc214.project2_network.database.NetworkDb;
 
 /**
  * Created by Dan on 4/8/17.
@@ -17,8 +21,8 @@ public class User {
     private String mProfilePic;
     private String mHometown;
     private String mBio;
-    private ArrayList<Post> mPostList;
-    private ArrayList<User> mFavoriteList;
+    private NetworkDb mPostList;
+    private NetworkDb mFavoriteList;
 
     public User() {
     }
@@ -101,19 +105,20 @@ public class User {
         this.mBio = mBio;
     }
 
-    public ArrayList<Post> getPostList() {
+    public NetworkDb getPostList() {
+
         return mPostList;
     }
 
-    public void setPostList(ArrayList<Post> mPostList) {
+    public void setPostList(NetworkDb mPostList) {
         this.mPostList = mPostList;
     }
 
-    public ArrayList<User> getFavoriteList() {
+    public NetworkDb getFavoriteList() {
         return mFavoriteList;
     }
 
-    public void setFavoriteList(ArrayList<User> mFavoriteList) {
+    public void setFavoriteList(NetworkDb mFavoriteList) {
         this.mFavoriteList = mFavoriteList;
     }
 }

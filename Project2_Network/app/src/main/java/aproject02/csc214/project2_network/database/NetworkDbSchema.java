@@ -6,7 +6,7 @@ package aproject02.csc214.project2_network.database;
 
 public class NetworkDbSchema {
 
-    public static final String DATABASE_NAME = "URNetwork.db";
+    public static final String DATABASE_NAME = "URSocialNetwork.db";
     public static final int VERSION = 1;
 
     public static class Users {
@@ -21,8 +21,6 @@ public class NetworkDbSchema {
             public static final String PROFILE_PIC = "profile_pic";
             public static final String HOMETOWN = "hometown";
             public static final String BIO = "bio";
-            public static final String POST_LIST = "post_list";
-            public static final String FAVORITE_LIST = "favorite_list";
         }
     }
 
@@ -35,5 +33,14 @@ public class NetworkDbSchema {
             public static final String PHOTO_PATH = "photo_path";
         }
     }
+
+    public static class Favorites {
+        public static final String NAME = "favorites";
+        public static class Cols {
+            public static final String EMAIL = "email";
+            public static final String FAVORITE = "favorite";
+        }
+    }
+
 
 }

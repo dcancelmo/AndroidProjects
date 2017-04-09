@@ -32,10 +32,6 @@ public class NetworkCursorWrapper extends CursorWrapper {
         mUser.setProfilePic(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PROFILE_PIC)));
         mUser.setHometown(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PROFILE_PIC)));
         mUser.setBio(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PROFILE_PIC)));
-        mUser.setFavoriteList(getString(getColumnIndex(NetworkDbSchema.Users.Cols.FAVORITE_LIST)));
-        mUser.setPostList(getString(getColumnIndex(NetworkDbSchema.Users.Cols.POST_LIST)));
-
-
         return mUser;
     }
 }

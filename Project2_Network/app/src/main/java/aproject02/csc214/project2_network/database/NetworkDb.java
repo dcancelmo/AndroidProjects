@@ -119,11 +119,18 @@ public class NetworkDb {
         mDatabase.insert(NetworkDbSchema.Users.NAME, null, values);
     }
 
-    public void insertFeedItem(Post mPost) {
+    public void insertPost(Post mPost) {
         ContentValues values = getPostContentValues(mPost);
         mDatabase.insert(NetworkDbSchema.Posts.NAME, null, values);
     }
 
+    public void insertFavorite(String email, String favorite) {
+        ContentValues values = new ContentValues();
+        values.put(NetworkDbSchema.Favorites.Cols.EMAIL, email);
+        values.put(NetworkDbSchema.Favorites.Cols.FAVORITE, favorite);
+
+        mDatabase.insert(NetworkDbSchema.Favorites.NAME, null, values);
+    }
 
 
     private static ContentValues getUserContentValues(User user) {
@@ -139,10 +146,6 @@ public class NetworkDb {
         values.put(NetworkDbSchema.Users.Cols.PROFILE_PIC, user.getProfilePic());
         values.put(NetworkDbSchema.Users.Cols.HOMETOWN, user.getHometown());
         values.put(NetworkDbSchema.Users.Cols.BIO, user.getBio());
-        values.put(NetworkDbSchema.Users.Cols.POST_LIST, user.getPostList());
-        values.put(NetworkDbSchema.Users.Cols.FAVORITE_LIST, user.getFavoriteList());
-
-
         return values;
     }
 
