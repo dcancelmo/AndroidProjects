@@ -1,5 +1,6 @@
 package aproject02.csc214.project2_network.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,6 +15,10 @@ public class User {
     private String mLastName;
     private Date mBirthDate;
     private String mProfilePic;
+    private String mHometown;
+    private String mBio;
+    private ArrayList<Post> mPostList;
+    private ArrayList<User> mFavoriteList;
 
     public User() {
     }
@@ -80,4 +85,35 @@ public class User {
         this.mProfilePic = mProfilePic;
     }
 
+    public String getHometown() {
+        return mHometown;
+    }
+
+    public void setHometown(String mHometown) {
+        this.mHometown = mHometown;
+    }
+
+    public String getBio() {
+        return mBio;
+    }
+
+    public void setBio(String mBio) {
+        this.mBio = mBio;
+    }
+
+    public ArrayList<Post> getPostList() {
+        return mPostList;
+    }
+
+    public void setPostList(ArrayList<Post> mPostList) {
+        this.mPostList = mPostList;
+    }
+
+    public ArrayList<User> getFavoriteList() {
+        return mFavoriteList;
+    }
+
+    public void setFavoriteList(ArrayList<User> mFavoriteList) {
+        this.mFavoriteList = mFavoriteList;
+    }
 }

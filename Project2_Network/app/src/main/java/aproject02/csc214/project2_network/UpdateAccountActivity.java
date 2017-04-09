@@ -49,6 +49,9 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private static final String KEY_LAST_NAME = "aproject02.csc214.project2_network.lastname";
     private static final String KEY_BIRTHDATE = "aproject02.csc214.project2_network.birthdate";
     private static final String KEY_PROFILE_PIC = "aproject02.csc214.project2_network.profile_pic";
+    private static final String KEY_BIO = "aproject02.csc214.project2_network.bio";
+    private static final String KEY_HOMETOWN = "aproject02.csc214.project2_network.hometown";
+
 
     private static String sEmail;
     private static String sUsername;
@@ -57,6 +60,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private static String sLastName;
     private static String sBirthDate;
     private static String sProfilePic;
+    private static String sHometown;
+    private static String sBio;
 
     private TextView mEmailText;
     private TextView mUsernameText;
@@ -64,6 +69,9 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private EditText mLastNameEdit;
     private EditText mBirthdayEdit;
     private ImageView mProfilePicImage;
+    private EditText mHometownEdit;
+    private EditText mBioEdit;
+
 
     private static final DateFormat FORMAT = new SimpleDateFormat("mm/dd/yyyy");
 
@@ -84,6 +92,9 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mProfilePicImage = (ImageView) findViewById(R.id.profile_pic_view);
         mProfilePicImage.setImageResource(R.mipmap.ic_default_picture);
         mPhotoFiles = new ArrayList<>();
+        mHometownEdit = (EditText) findViewById(R.id.hometown_enter);
+        mBioEdit = (EditText) findViewById(R.id.bio_enter);
+
         Intent mIntent = getIntent();
         restoreValues(savedInstanceState);
         updateValues(mIntent);
@@ -98,6 +109,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
             sLastName = mBundle.getString(KEY_LAST_NAME);
             sBirthDate = mBundle.getString(KEY_BIRTHDATE);
             sProfilePic = mBundle.getString(KEY_PROFILE_PIC);
+            sHometown = mBundle.getString(KEY_HOMETOWN);
+            sBio = mBundle.getString(KEY_BIO);
             File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             mPhotoFile = new File(picturesDir, sProfilePic);
             mEmailText.setText(getResources().getString(R.string.email) + " " + sEmail);
@@ -122,11 +135,15 @@ public class UpdateAccountActivity extends AppCompatActivity {
         sLastName = mThisUser.getLastName();
         sBirthDate = FORMAT.format(mThisUser.getBirthDate());
         sProfilePic = mThisUser.getProfilePic();
+        sHometown = mThisUser.getHometown();
+        sBio = mThisUser.getBio();
         File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         mPhotoFile = new File(picturesDir, sProfilePic);
         mFirstNameEdit.setText(sFirstName);
         mLastNameEdit.setText(sLastName);
         mBirthdayEdit.setText(sBirthDate);
+        mHometownEdit.setText(sHometown);
+        mBioEdit.setText(sBio);
         Bitmap newPhoto = getScaledBitmap(mPhotoFile.getPath(), mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
         mProfilePicImage.setImageBitmap(newPhoto);
         mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -174,18 +191,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         }
     }
 
-
-    @Override
-    protected void onSaveInstanceState(Bundle state) {
-        state.putString(KEY_EMAIL, sEmail);
-        state.putString(KEY_USERNAME, sUsername);
-        state.putString(KEY_PASSWORD, sPassword);
-        state.putString(KEY_FIRST_NAME, sFirstName);
-        state.putString(KEY_LAST_NAME, sLastName);
-        state.putString(KEY_BIRTHDATE, sBirthDate);
-        state.putString(KEY_PROFILE_PIC, sProfilePic);
-    }
-
     public void updateAccount(View view) throws ParseException {
         ContentValues mNewData = new ContentValues();
         mNewData.put("first_name", mFirstNameEdit.getText().toString());
@@ -214,5 +219,18 @@ public class UpdateAccountActivity extends AppCompatActivity {
         BitmapFactory.Options scaledOptions = new BitmapFactory.Options();
         scaledOptions.inSampleSize = sampleSize;
         return BitmapFactory.decodeFile(path, scaledOptions);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        state.putString(KEY_EMAIL, sEmail);
+        state.putString(KEY_USERNAME, sUsername);
+        state.putString(KEY_PASSWORD, sPassword);
+        state.putString(KEY_FIRST_NAME, sFirstName);
+        state.putString(KEY_LAST_NAME, sLastName);
+        state.putString(KEY_BIRTHDATE, sBirthDate);
+        state.putString(KEY_PROFILE_PIC, sProfilePic);
+        state.putString(KEY_HOMETOWN, sHometown);
+        state.putString(KEY_BIO, sBio);
     }
 }

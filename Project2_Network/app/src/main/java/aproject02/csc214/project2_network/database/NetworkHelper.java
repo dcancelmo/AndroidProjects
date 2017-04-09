@@ -23,7 +23,12 @@ public class NetworkHelper extends SQLiteOpenHelper {
                 + NetworkDbSchema.Users.Cols.FIRST_NAME + ", "
                 + NetworkDbSchema.Users.Cols.LAST_NAME + ", "
                 + NetworkDbSchema.Users.Cols.BIRTH_DATE + ", "
-                + NetworkDbSchema.Users.Cols.PROFILE_PIC + ")"
+                + NetworkDbSchema.Users.Cols.PROFILE_PIC + ","
+                + NetworkDbSchema.Users.Cols.HOMETOWN + ", "
+                + NetworkDbSchema.Users.Cols.BIO + ", "
+                + NetworkDbSchema.Users.Cols.POST_LIST + ", "
+                + NetworkDbSchema.Users.Cols.FAVORITE_LIST + ") "
+
         );
 
         db.execSQL("CREATE TABLE " + NetworkDbSchema.Posts.NAME

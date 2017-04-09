@@ -47,4 +47,6 @@ public class Post {
     public void setPhotoPath(String mPhotoPath) {
         this.mPhotoPath = mPhotoPath;
     }
+
+
 }

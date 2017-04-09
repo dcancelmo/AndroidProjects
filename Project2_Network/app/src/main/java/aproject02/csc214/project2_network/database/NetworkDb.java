@@ -137,6 +137,12 @@ public class NetworkDb {
             values.put(NetworkDbSchema.Users.Cols.BIRTH_DATE, user.getBirthDate().getTime());
         }
         values.put(NetworkDbSchema.Users.Cols.PROFILE_PIC, user.getProfilePic());
+        values.put(NetworkDbSchema.Users.Cols.HOMETOWN, user.getHometown());
+        values.put(NetworkDbSchema.Users.Cols.BIO, user.getBio());
+        values.put(NetworkDbSchema.Users.Cols.POST_LIST, user.getPostList());
+        values.put(NetworkDbSchema.Users.Cols.FAVORITE_LIST, user.getFavoriteList());
+
+
         return values;
     }
 

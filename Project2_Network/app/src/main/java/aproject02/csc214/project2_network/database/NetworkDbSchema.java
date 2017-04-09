@@ -19,6 +19,10 @@ public class NetworkDbSchema {
             public static final String LAST_NAME = "last_name";
             public static final String BIRTH_DATE = "birth_date";
             public static final String PROFILE_PIC = "profile_pic";
+            public static final String HOMETOWN = "hometown";
+            public static final String BIO = "bio";
+            public static final String POST_LIST = "post_list";
+            public static final String FAVORITE_LIST = "favorite_list";
         }
     }
 
