@@ -17,6 +17,8 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -243,5 +245,29 @@ public class UpdateAccountActivity extends AppCompatActivity {
         state.putString(KEY_PROFILE_PIC, sProfilePic);
         state.putString(KEY_HOMETOWN, mHometownEdit.getText().toString());
         state.putString(KEY_BIO, mBioEdit.getText().toString());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu mMenu) {
+        Log.d(TAG, "onCreateOptionsMenu MainActivity called");
+        getMenuInflater().inflate(R.menu.user_menu, mMenu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem mItem) {
+        Log.d(TAG, "onOptionsItemSelected MainActivity called");
+        boolean handled;
+        switch(mItem.getItemId()) {
+            case R.id.menu_item_logout:
+                Intent mIntent = MainActivity.newIntent(this);
+                startActivityForResult(mIntent, 0);
+                handled = true;
+                break;
+            default:
+                handled = super.onOptionsItemSelected(mItem);
+                break;
+        }
+        return handled;
     }
 }

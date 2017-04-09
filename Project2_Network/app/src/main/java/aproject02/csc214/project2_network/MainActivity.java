@@ -1,6 +1,7 @@
 package aproject02.csc214.project2_network;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.UUID;
 
 import aproject02.csc214.project2_network.database.NetworkDb;
 import aproject02.csc214.project2_network.database.NetworkDbSchema;
@@ -85,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
         Intent newIntent = new Intent(MainActivity.this, NetworkFeed.class);
         newIntent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
         startActivityForResult(newIntent, RC_LOGIN_USER);
+    }
+
+    public static Intent newIntent(Context mContext) {
+        Intent intent = new Intent(mContext, MainActivity.class);
+        return intent;
     }
 }
