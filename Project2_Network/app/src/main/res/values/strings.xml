@@ -26,4 +26,8 @@
     <string name="email">Email:</string>
     <string name="enter_email">Enter email...</string>
     <string name="email_default">Email: DEFAULT</string>
+    <string name="hometown">Hometown:</string>
+    <string name="enter_your_hometown">Enter your hometown...</string>
+    <string name="bio">Bio:</string>
+    <string name="tell_about_yourself">Tell us about yourself...</string>
 </resources>
