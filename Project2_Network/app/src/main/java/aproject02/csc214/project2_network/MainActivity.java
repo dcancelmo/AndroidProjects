@@ -1,5 +1,6 @@
 package aproject02.csc214.project2_network;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -55,9 +56,15 @@ public class MainActivity extends AppCompatActivity {
         EditText mCreateUser = (EditText) findViewById(R.id.enter_new_username);
         EditText mCreatePass = (EditText) findViewById(R.id.enter_new_password);
         Log.i(TAG, "CreateNewUser called");
-        User mThisUser = mDatabase.getUser(mCreateEmail.getText().toString());
+        User mThisUser = mDatabase.getUserByName(mCreateUser.getText().toString());
         if (mThisUser != null) {
             Toast.makeText(MainActivity.this, R.string.user_already_exists, Toast.LENGTH_LONG).show();
+            Log.i(TAG, "CreateNewUser failed (user already exists)");
+            return;
+        }
+        mThisUser = mDatabase.getUser(mCreateEmail.getText().toString());
+        if (mThisUser != null) {
+            Toast.makeText(MainActivity.this, R.string.email_already_exists, Toast.LENGTH_LONG).show();
             Log.i(TAG, "CreateNewUser failed (user already exists)");
             return;
         }
@@ -68,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
         startActivityForResult(intent, RC_NEW_USER);
 
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d(TAG, "onActivityResult()");
+        EditText mCreateUser = (EditText) findViewById(R.id.enter_new_username);
         Intent newIntent = new Intent(MainActivity.this, NetworkFeed.class);
         newIntent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
         startActivityForResult(newIntent, RC_LOGIN_USER);

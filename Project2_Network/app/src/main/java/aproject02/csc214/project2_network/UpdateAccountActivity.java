@@ -69,7 +69,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_account);
         mDatabase = NetworkDb.get(getApplicationContext());
-        mEmailText = (TextView) findViewById(R.id.username_text);
+        mEmailText = (TextView) findViewById(R.id.email_text);
         mUsernameText = (TextView) findViewById(R.id.username_text);
         mFirstNameEdit = (EditText) findViewById(R.id.first_name_enter);
         mLastNameEdit = (EditText) findViewById(R.id.last_name_enter);
@@ -168,5 +168,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mNewData.put("birth_date", mBirthdayEdit.getText().toString());
         mNewData.put("profile_pic", sProfilePic);
         mDatabase.update(mNewData, sEmail);
+        finish();
     }
 }

@@ -9,7 +9,8 @@
     <string name="create">Create</string>
     <string name="ur_network">UR Network</string>
     <string name="invalid_login">Invalid username and/or password</string>
-    <string name="user_already_exists">This username already exists</string>
+    <string name="user_already_exists">This user already exists</string>
+    <string name="email_already_exists">This email already exists</string>
     <string name="username_default">Username: DEFAULT</string>
     <string name="first_name">First name:</string>
     <string name="enter_your_first_name">Enter your first name...</string>

@@ -38,7 +38,7 @@ public class NetworkDb {
     }
 
     public void update(ContentValues mNewData, String mEmail) {
-        mDatabase.update(NetworkDbSchema.DATABASE_NAME, mNewData, "email= ?", new String[]{mEmail});
+        mDatabase.update(NetworkDbSchema.Users.NAME, mNewData, "email= ?", new String[]{mEmail});
     }
 
 
