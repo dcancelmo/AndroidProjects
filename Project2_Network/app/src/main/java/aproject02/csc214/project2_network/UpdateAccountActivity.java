@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -61,6 +63,9 @@ public class UpdateAccountActivity extends AppCompatActivity {
     private EditText mBirthdayEdit;
     private ImageView mProfilePicImage;
 
+    private static final DateFormat FORMAT = new SimpleDateFormat("mm/dd/yyyy");
+
+
     private File mPhotoFile;
     private List<File> mPhotoFiles;
 
@@ -76,6 +81,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mBirthdayEdit = (EditText) findViewById(R.id.birthday_enter);
         mProfilePicImage = (ImageView) findViewById(R.id.profile_pic_view);
         mProfilePicImage.setImageResource(R.mipmap.ic_default_picture);
+        mPhotoFiles = new ArrayList<>();
         Intent mIntent = getIntent();
         restoreValues(savedInstanceState);
         updateValues(mIntent);
@@ -107,7 +113,7 @@ public class UpdateAccountActivity extends AppCompatActivity {
         User mThisUser = mDatabase.getUser(sEmail);
         sFirstName = mThisUser.getFirstName();
         sLastName = mThisUser.getLastName();
-        sBirthDate = mThisUser.getBirthDate().toString();
+        sBirthDate = FORMAT.format(mThisUser.getBirthDate());
         sProfilePic = mThisUser.getProfilePic();
         mFirstNameEdit.setText(sFirstName);
         mLastNameEdit.setText(sLastName);
@@ -115,17 +121,18 @@ public class UpdateAccountActivity extends AppCompatActivity {
     }
 
     public void takePicture(View view) {
+        Log.d(TAG, "takePicture(View) called");
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "Has permission to capture");
             Intent intent = new Intent();
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
 
-            //make a random filename
             String filename = "IMG_" + UUID.randomUUID().toString() + ".jpg";
-            //make a file in the external photos directory
             File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             mPhotoFile = new File(picturesDir, filename);
 
-            Uri photoUri = Uri.fromFile(mPhotoFile);
+            //Uri photoUri = Uri.fromFile(mPhotoFile);
+            Uri photoUri = FileProvider.getUriForFile(getApplicationContext(), getApplicationContext().getPackageName() + ".provider", mPhotoFile);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
             Log.d(TAG, "photo location: " + mPhotoFile.toString());
             startActivityForResult(intent, 0);
