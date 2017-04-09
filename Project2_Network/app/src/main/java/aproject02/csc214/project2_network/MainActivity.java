@@ -19,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
     private NetworkDb mDatabase;
     private static final String TAG = "cancelmo_network_test";
 
+    private static final String KEY_EMAIL = "aproject02.csc214.project2_network.email";
     private static final String KEY_USERNAME = "aproject02.csc214.project2_network.username";
     private static final String KEY_PASSWORD = "aproject02.csc214.project2_network.password";
     private static final int RC_NEW_USER = 1;
+    private static final int RC_LOGIN_USER = 2;
 
 
 
@@ -45,23 +47,29 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(MainActivity.this, NetworkFeed.class);
         intent.putExtra(KEY_USERNAME, mLoginUser.getText().toString());
-        startActivityForResult(intent, RC_NEW_USER);
-
+        startActivityForResult(intent, RC_LOGIN_USER);
     }
 
     public void createNewUser(View view) {
+        EditText mCreateEmail = (EditText) findViewById(R.id.enter_new_email);
         EditText mCreateUser = (EditText) findViewById(R.id.enter_new_username);
         EditText mCreatePass = (EditText) findViewById(R.id.enter_new_password);
         Log.i(TAG, "CreateNewUser called");
-        User mThisUser = mDatabase.getUser(mCreateUser.getText().toString());
-        if (mThisUser == null) {
+        User mThisUser = mDatabase.getUser(mCreateEmail.getText().toString());
+        if (mThisUser != null) {
             Toast.makeText(MainActivity.this, R.string.user_already_exists, Toast.LENGTH_LONG).show();
             Log.i(TAG, "CreateNewUser failed (user already exists)");
             return;
         }
-        Intent intent = new Intent(MainActivity.this, NewUserCreation.class);
+        mThisUser = new User(mCreateEmail.getText().toString(), mCreateUser.getText().toString(), mCreatePass.getText().toString());
+        mDatabase.insertUser(mThisUser);
+        Intent intent = new Intent(MainActivity.this, UpdateAccountActivity.class);
+        intent.putExtra(KEY_EMAIL, mCreateEmail.getText().toString());
         intent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
-        intent.putExtra(KEY_PASSWORD, mCreatePass.getText().toString());
         startActivityForResult(intent, RC_NEW_USER);
+
+        Intent newIntent = new Intent(MainActivity.this, NetworkFeed.class);
+        newIntent.putExtra(KEY_USERNAME, mCreateUser.getText().toString());
+        startActivityForResult(newIntent, RC_LOGIN_USER);
     }
 }

@@ -16,6 +16,13 @@
     <string name="last_name">Last name:</string>
     <string name="enter_your_last_name">Enter your last name...</string>
     <string name="birthday">Birthday:</string>
-    <string name="enter_birthday">Enter birthday</string>
-    <string name="enter_your_birthday">Enter your birthday</string>
+    <string name="enter_your_birthday">MM/DD/YYYY</string>
+    <string name="profile_picture">Profile picture:</string>
+    <string name="create_account">Create account</string>
+    <string name="profile_picture_image">Profile picture image</string>
+    <string name="take_picture">Take picture</string>
+    <string name="must_grant_camera">You must grant permission to take picture</string>
+    <string name="email">Email:</string>
+    <string name="enter_email">Enter email...</string>
+    <string name="email_default">Email: DEFAULT</string>
 </resources>

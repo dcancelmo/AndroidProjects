@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import aproject02.csc214.project2_network.model.Post;
 import aproject02.csc214.project2_network.model.User;
 
@@ -15,6 +18,9 @@ import aproject02.csc214.project2_network.model.User;
 
 public class NetworkDb {
     private static final String TAG = "cancelmo_network_test";
+    private static final DateFormat FORMAT = new SimpleDateFormat("mm/dd/yyyy");
+
+
     private static NetworkDb SINGLETON;
 
     private final SQLiteDatabase mDatabase;
@@ -31,7 +37,12 @@ public class NetworkDb {
         return SINGLETON;
     }
 
-    public User getUser(String mUsername, String mPassword) {
+    public void update(ContentValues mNewData, String mEmail) {
+        mDatabase.update(NetworkDbSchema.DATABASE_NAME, mNewData, "email= ?", new String[]{mEmail});
+    }
+
+
+        public User getUser(String mUsername, String mPassword) {
         Cursor mCursor = mDatabase.query(
                 NetworkDbSchema.Users.NAME,
                 null,
@@ -55,7 +66,31 @@ public class NetworkDb {
         return mUser;
     }
 
-    public User getUser(String mUsername) {
+    public User getUser(String mEmail) {
+        Cursor mCursor = mDatabase.query(
+                NetworkDbSchema.Users.NAME,
+                null,
+                "email = ?",
+                new String[] {mEmail},
+                null,
+                null,
+                null
+        );
+        NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
+        User mUser;
+        if(mWrapper.getCount() > 0) {
+            mWrapper.moveToFirst();
+            mUser = mWrapper.getUser();
+        }
+        else {
+            mUser = null;
+        }
+        mWrapper.close();
+
+        return mUser;
+    }
+
+    public User getUserByName(String mUsername) {
         Cursor mCursor = mDatabase.query(
                 NetworkDbSchema.Users.NAME,
                 null,
@@ -93,11 +128,14 @@ public class NetworkDb {
 
     private static ContentValues getUserContentValues(User user) {
         ContentValues values = new ContentValues();
+        values.put(NetworkDbSchema.Users.Cols.EMAIL, user.getEmail());
         values.put(NetworkDbSchema.Users.Cols.USERNAME, user.getUsername());
         values.put(NetworkDbSchema.Users.Cols.PASSWORD, user.getPassword());
         values.put(NetworkDbSchema.Users.Cols.FIRST_NAME, user.getFirstName());
         values.put(NetworkDbSchema.Users.Cols.LAST_NAME, user.getLastName());
-        values.put(NetworkDbSchema.Users.Cols.BIRTH_DATE, user.getBirthDate().getTime());
+        if (user.getBirthDate() != null) {
+            values.put(NetworkDbSchema.Users.Cols.BIRTH_DATE, user.getBirthDate().getTime());
+        }
         values.put(NetworkDbSchema.Users.Cols.PROFILE_PIC, user.getProfilePic());
         return values;
     }

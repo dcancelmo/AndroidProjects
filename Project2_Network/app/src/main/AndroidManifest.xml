@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="aproject02.csc214.project2_network">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,8 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewUserCreation" />
-        <activity android:name=".NetworkFeed"></activity>
+        <activity
+            android:name=".NewUserCreation"
+            android:screenOrientation="portrait" />
+        <activity android:name=".NetworkFeed" />
+        <activity android:name=".UpdateAccountActivity"></activity>
     </application>
 
 </manifest>

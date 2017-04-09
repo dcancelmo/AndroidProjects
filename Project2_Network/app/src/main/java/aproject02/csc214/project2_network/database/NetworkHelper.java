@@ -17,6 +17,7 @@ public class NetworkHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + NetworkDbSchema.Users.NAME
                 + "(_id integer primary key autoincrement, "
+                + NetworkDbSchema.Users.Cols.EMAIL + ", "
                 + NetworkDbSchema.Users.Cols.USERNAME + ", "
                 + NetworkDbSchema.Users.Cols.PASSWORD + ", "
                 + NetworkDbSchema.Users.Cols.FIRST_NAME + ", "

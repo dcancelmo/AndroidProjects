@@ -6,12 +6,13 @@ package aproject02.csc214.project2_network.database;
 
 public class NetworkDbSchema {
 
-    public static final String DATABASE_NAME = "URNetworkDatabase.db";
+    public static final String DATABASE_NAME = "URNetwork.db";
     public static final int VERSION = 1;
 
     public static class Users {
         public static final String NAME = "users";
         public static class Cols {
+            public static final String EMAIL = "email";
             public static final String USERNAME = "username";
             public static final String PASSWORD = "password";
             public static final String FIRST_NAME = "first_name";

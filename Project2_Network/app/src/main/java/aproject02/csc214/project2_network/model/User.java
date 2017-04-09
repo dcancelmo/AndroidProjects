@@ -7,6 +7,7 @@ import java.util.Date;
  */
 
 public class User {
+    private String mEmail;
     private String mUsername;
     private String mPassword;
     private String mFirstName;
@@ -17,6 +18,20 @@ public class User {
     public User() {
     }
 
+    public User(String mEmail, String mUsername, String mPassword) {
+        this.mEmail = mEmail;
+        this.mUsername = mUsername;
+        this.mPassword = mPassword;
+    }
+
+    public String getEmail() {
+        return mEmail;
+    }
+
+    public void setEmail(String mEmail) {
+        this.mEmail = mEmail;
+    }
+
     public String getUsername() {
         return mUsername;
     }
@@ -24,7 +39,6 @@ public class User {
     public void setUsername(String mUsername) {
         this.mUsername = mUsername;
     }
-
 
     public String getPassword() {
         return mPassword;
@@ -65,4 +79,5 @@ public class User {
     public void setProfilePic(String mProfilePic) {
         this.mProfilePic = mProfilePic;
     }
+
 }

@@ -23,6 +23,7 @@ public class NetworkCursorWrapper extends CursorWrapper {
 
     public User getUser() {
         User mUser = new User();
+        mUser.setEmail(getString(getColumnIndex(NetworkDbSchema.Users.Cols.EMAIL)));
         mUser.setUsername(getString(getColumnIndex(NetworkDbSchema.Users.Cols.USERNAME)));
         mUser.setPassword(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PASSWORD)));
         mUser.setFirstName(getString(getColumnIndex(NetworkDbSchema.Users.Cols.FIRST_NAME)));

@@ -102,11 +102,31 @@
                 android:textSize="25sp"
                 />
             <LinearLayout
-                android:id="@+id/new_username_layout"
+                android:id="@+id/new_email_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_below="@id/new_user_text">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textSize="15sp"
+                    />
+                <EditText
+                    android:id="@+id/enter_new_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_email"
+                    android:inputType="textEmailAddress"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/new_username_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/new_email_layout">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
