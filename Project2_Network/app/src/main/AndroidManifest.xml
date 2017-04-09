@@ -39,7 +39,8 @@
             android:name=".WritePostActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:parentActivityName=".NetworkFeed" />
-        <activity android:name=".UserListActivity"></activity>
+        <activity android:name=".UserListActivity"
+            android:parentActivityName=".NetworkFeed" />
     </application>
 
 </manifest>

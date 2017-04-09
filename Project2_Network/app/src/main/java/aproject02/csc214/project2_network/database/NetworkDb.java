@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import aproject02.csc214.project2_network.model.Post;
 import aproject02.csc214.project2_network.model.User;
@@ -112,6 +113,60 @@ public class NetworkDb {
         mWrapper.close();
 
         return mUser;
+    }
+
+    public ArrayList<User> getUserList() {
+        ArrayList<User> mUserList = new ArrayList<>();
+        Cursor mCursor = mDatabase.query(
+                NetworkDbSchema.Users.NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
+        Post mPost;
+        if(mWrapper.getCount() > 0) {
+            mWrapper.moveToFirst();
+            do {
+                mUserList.add(mWrapper.getUser());
+                mWrapper.moveToNext();
+            } while (!mWrapper.isLast());
+        } else {
+            mUserList = null;
+        }
+        mWrapper.close();
+
+        return mUserList;
+    }
+
+    public ArrayList<Post> getPosts(String mEmail) {
+        ArrayList<Post> mPostList = new ArrayList<>();
+        Cursor mCursor = mDatabase.query(
+                NetworkDbSchema.Posts.NAME,
+                null,
+                "mEmail = ?",
+                new String[] {mEmail},
+                null,
+                null,
+                null
+        );
+        NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
+        Post mPost;
+        if(mWrapper.getCount() > 0) {
+            mWrapper.moveToFirst();
+            do {
+                mPostList.add(mWrapper.getPost());
+                mWrapper.moveToNext();
+            } while (!mWrapper.isLast());
+        } else {
+            mPostList = null;
+        }
+        mWrapper.close();
+
+        return mPostList;
     }
 
     public void insertUser(User mUser) {

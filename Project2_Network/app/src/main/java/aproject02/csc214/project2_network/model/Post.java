@@ -1,5 +1,8 @@
 package aproject02.csc214.project2_network.model;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,6 +15,7 @@ public class Post {
     private String mContent;
     private String mPhotoPath;
 
+    private static final DateFormat FORMAT = new SimpleDateFormat("mm/dd/yyyy");
 
     public Post() {
     }
@@ -30,6 +34,10 @@ public class Post {
 
     public void setPostedDate(Date mPostedDate) {
         this.mPostedDate = mPostedDate;
+    }
+
+    public void setPostedDate(String mPostedDate) throws ParseException {
+        this.mPostedDate = FORMAT.parse(mPostedDate);
     }
 
     public String getContent() {

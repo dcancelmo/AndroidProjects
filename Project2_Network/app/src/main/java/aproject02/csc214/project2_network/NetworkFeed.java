@@ -105,7 +105,10 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
 
     @Override
     public void userListButtonPressed() {
-
+        Intent intent = new Intent(NetworkFeed.this, UserListActivity.class);
+        intent.putExtra(KEY_EMAIL, sEmail);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
     }
 
 //    @Override

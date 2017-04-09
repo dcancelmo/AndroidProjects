@@ -3,8 +3,11 @@ package aproject02.csc214.project2_network.database;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import aproject02.csc214.project2_network.model.Post;
 import aproject02.csc214.project2_network.model.User;
 
 /**
@@ -12,6 +15,9 @@ import aproject02.csc214.project2_network.model.User;
  */
 
 public class NetworkCursorWrapper extends CursorWrapper {
+
+    private static final DateFormat FORMAT = new SimpleDateFormat("mm/dd/yyyy");
+
     /**
      * Creates a cursor wrapper.
      *
@@ -33,5 +39,14 @@ public class NetworkCursorWrapper extends CursorWrapper {
         mUser.setHometown(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PROFILE_PIC)));
         mUser.setBio(getString(getColumnIndex(NetworkDbSchema.Users.Cols.PROFILE_PIC)));
         return mUser;
+    }
+
+    public Post getPost() {
+        Post mPost = new Post();
+        mPost.setUsername(getString(getColumnIndex(NetworkDbSchema.Posts.Cols.USERNAME)));
+        mPost.setContent(getString(getColumnIndex(NetworkDbSchema.Posts.Cols.TEXT_CONTENT)));
+        mPost.setPhotoPath(getString(getColumnIndex(NetworkDbSchema.Posts.Cols.PHOTO_PATH)));
+        mPost.setPostedDate(new Date(getLong(getColumnIndex(NetworkDbSchema.Posts.Cols.POSTED_DATE))));
+        return mPost;
     }
 }

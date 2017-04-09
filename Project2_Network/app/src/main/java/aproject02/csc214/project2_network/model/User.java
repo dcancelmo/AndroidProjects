@@ -121,4 +121,9 @@ public class User {
     public void setFavoriteList(NetworkDb mFavoriteList) {
         this.mFavoriteList = mFavoriteList;
     }
+
+    @Override
+    public String toString() {
+        return getFirstName() + " " + getLastName() + " - " + getUsername() + ":\n" + getEmail();
+    }
 }
