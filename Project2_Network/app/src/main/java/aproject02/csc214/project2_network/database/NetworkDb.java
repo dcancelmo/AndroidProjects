@@ -129,12 +129,13 @@ public class NetworkDb {
         NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
         ArrayList<User> mUserList = new ArrayList<>();
         if(mWrapper.getCount() > 0) {
-            mWrapper.moveToFirst();
             //if(!mWrapper.isLast()) {
             try{
+                mWrapper.moveToFirst();
+                mUserList.add(mWrapper.getUser());
                 do {
-                    mUserList.add(mWrapper.getUser());
                     mWrapper.moveToNext();
+                    mUserList.add(mWrapper.getUser());
                 } while (!mWrapper.isLast());
             } catch (CursorIndexOutOfBoundsException mException) {
             }

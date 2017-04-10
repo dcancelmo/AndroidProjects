@@ -74,6 +74,7 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
         mProfilePicImage.setImageResource(R.mipmap.ic_default_picture);
 
         if (sPhotoPath != null) {
+            Log.i(TAG, sPhotoPath);
             Bitmap mNewPhoto = getScaledBitmap(sPhotoPath, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
             mProfilePicImage.setImageBitmap(mNewPhoto);
             mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -85,6 +86,18 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
         mBirthdayText.setText(getString(R.string.birthday_) + " " + FORMAT.format(sThisUser.getBirthDate()));
         mHometownText.setText(getString(R.string.hometown) + " " + sThisUser.getHometown());
         mBioText.setText(sThisUser.getBio());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (sPhotoPath != null) {
+            Log.i(TAG, "Resume: " + sPhotoPath);
+            ImageView mProfilePicImage = (ImageView) findViewById(R.id.profile_image_display);
+            Bitmap mNewPhoto = getScaledBitmap(sPhotoPath, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
+            mProfilePicImage.setImageBitmap(mNewPhoto);
+            mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
     }
 
     public void favoritePerson(View view) {
@@ -173,4 +186,5 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
         scaledOptions.inSampleSize = sampleSize;
         return BitmapFactory.decodeFile(path, scaledOptions);
     }
+
 }
