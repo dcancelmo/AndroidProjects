@@ -1,8 +1,5 @@
 package aproject02.csc214.project2_network;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.ListFragment;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,10 +8,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 
 import aproject02.csc214.project2_network.database.NetworkDb;
 import aproject02.csc214.project2_network.model.User;
+import aproject02.csc214.project2_network.recyclerView.PostListFragment;
 
 public class NetworkFeed extends AppCompatActivity implements HeaderFragment.HeaderButtonListener {
 
@@ -30,6 +27,7 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
     private FragmentTransaction mFragTransaction;
 
     HeaderFragment mHeaderFragment;
+    PostListFragment mPostListFragment;
 
 
     @Override
@@ -49,7 +47,9 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
         mHeaderFragment = new HeaderFragment();
         mHeaderFragment.setArguments(extras);
         mHeaderFragment.setArguments(getIntent().getExtras());
-        mFragTransaction.add(R.id.header_frame_layout, mHeaderFragment, null).commit();
+        mPostListFragment = new PostListFragment();
+        mPostListFragment.setArguments(extras);
+        mFragTransaction.add(R.id.header_frame_layout, mHeaderFragment, null).add(R.id.post_list_frame_layout, mPostListFragment, null).commit();
 
     }
 

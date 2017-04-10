@@ -139,7 +139,6 @@ public class NetworkDb {
                 } while (!mWrapper.isLast());
             } catch (CursorIndexOutOfBoundsException mException) {
             }
-
             //}
         } else {
             mUserList = null;
@@ -149,25 +148,28 @@ public class NetworkDb {
         return mUserList;
     }
 
-    public ArrayList<Post> getPosts(String mEmail) {
-        ArrayList<Post> mPostList = new ArrayList<>();
+    public ArrayList<Post> getPosts() {
         Cursor mCursor = mDatabase.query(
                 NetworkDbSchema.Posts.NAME,
                 null,
-                "mEmail = ?",
-                new String[] {mEmail},
+                null,
+                null,
                 null,
                 null,
                 null
         );
         NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
-        Post mPost;
+        ArrayList<Post> mPostList = new ArrayList<>();
         if(mWrapper.getCount() > 0) {
-            mWrapper.moveToFirst();
-            do {
+            try{
+                mWrapper.moveToFirst();
                 mPostList.add(mWrapper.getPost());
-                mWrapper.moveToNext();
-            } while (!mWrapper.isLast());
+                do {
+                    mWrapper.moveToNext();
+                    mPostList.add(mWrapper.getPost());
+                } while (!mWrapper.isLast());
+            } catch (CursorIndexOutOfBoundsException mException) {
+            }
         } else {
             mPostList = null;
         }

@@ -56,5 +56,9 @@ public class Post {
         this.mPhotoPath = mPhotoPath;
     }
 
+    @Override
+    public String toString() {
+        return getUsername() + "\n" + getContent() + "\n" + getPostedDate();
+    }
 
 }

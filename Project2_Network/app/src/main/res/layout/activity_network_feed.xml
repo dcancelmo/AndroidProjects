@@ -13,5 +13,11 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true">
     </FrameLayout>
+    <FrameLayout
+        android:id="@+id/post_list_frame_layout"
+        android:layout_below="@id/header_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
 
 </RelativeLayout>
