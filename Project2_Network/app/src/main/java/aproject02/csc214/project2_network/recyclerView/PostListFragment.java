@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import aproject02.csc214.project2_network.R;
 import aproject02.csc214.project2_network.database.NetworkDb;
@@ -46,6 +47,7 @@ public class PostListFragment extends Fragment {
         mPostsList = mDatabase.getPosts();
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.post_recycler_list_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        Collections.reverse(mPostsList);
         mAdapter = new PostRecyclerAdapter(mPostsList);
         mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
@@ -56,6 +58,7 @@ public class PostListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         mPostsList = mDatabase.getPosts();
+        Collections.reverse(mPostsList);
         mAdapter.swap(mPostsList);
     }
 
