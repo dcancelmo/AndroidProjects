@@ -33,8 +33,8 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
     private HeaderFragment mHeaderFragment;
     private String sViewEmail;
     private String sEmail;
-    private static String sUsername;
-    private static String sPhotoPath;
+    private String sUsername;
+    private String sPhotoPath;
     private User sThisUser;
 
     @Override
@@ -111,6 +111,7 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
     public void ownProfileButtonPressed() {
         Intent intent = new Intent(ViewProfileActivity.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
+        intent.putExtra(KEY_USERNAME, sUsername);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }

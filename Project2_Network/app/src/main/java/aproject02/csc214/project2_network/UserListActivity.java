@@ -24,13 +24,11 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
     private FragmentTransaction mFragTransaction;
 
     private static final String KEY_EMAIL = "aproject02.csc214.project2_network.email";
+    private static final String KEY_USERNAME = "aproject02.csc214.project2_network.username";
 
     private String sEmail;
     private User sThisUser;
-
-    public User getThisUser() {
-        return sThisUser;
-    }
+    private String sUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +47,12 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
             Intent mIntent = getIntent();
             sEmail = mIntent.getStringExtra(KEY_EMAIL);
             sThisUser = mDatabase.getUser(sEmail);
+            sUsername = sThisUser.getUsername();
         }
         if (savedInstanceState != null) {
             sEmail = savedInstanceState.getString(KEY_EMAIL);
             sThisUser = mDatabase.getUserByName(sEmail);
+            sUsername = sThisUser.getUsername();
         }
         Log.i(TAG, "Current user: " + sEmail);
     }
@@ -77,6 +77,7 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
     public void ownProfileButtonPressed() {
         Intent intent = new Intent(UserListActivity.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
+        intent.putExtra(KEY_USERNAME, sUsername);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }

@@ -129,12 +129,12 @@ public class NetworkDb {
         ArrayList<User> mUserList = new ArrayList<>();
         if(mWrapper.getCount() > 0) {
             mWrapper.moveToFirst();
-            if(!mWrapper.isLast()) {
+            //if(!mWrapper.isLast()) {
                 do {
                     mUserList.add(mWrapper.getUser());
                     mWrapper.moveToNext();
                 } while (!mWrapper.isLast());
-            }
+            //}
         } else {
             mUserList = null;
         }

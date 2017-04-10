@@ -98,6 +98,7 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
     public void ownProfileButtonPressed() {
         Intent intent = new Intent(NetworkFeed.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
+        intent.putExtra(KEY_USERNAME, sUsername);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }

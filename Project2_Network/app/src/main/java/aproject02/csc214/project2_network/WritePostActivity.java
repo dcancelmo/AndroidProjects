@@ -39,6 +39,7 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
     private static final String TAG = "cancelmo_network_test";
 
     private static final String KEY_EMAIL = "aproject02.csc214.project2_network.email";
+    private static final String KEY_USERNAME = "aproject02.csc214.project2_network.username";
     private static final String KEY_PICTURE_PATH = "aproject02.csc214.project2_network.picture_path";
     private static final String KEY_TEXT_CONTENT = "aproject02.csc214.project2_network.text_content";
 
@@ -55,6 +56,7 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
 
     private NetworkDb mDatabase;
     private static User sThisUser;
+    private static String sUsername;
 
 
     @Override
@@ -75,11 +77,13 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
             Intent mIntent = getIntent();
             sEmail = mIntent.getStringExtra(KEY_EMAIL);
             sThisUser = mDatabase.getUser(sEmail);
+            sUsername = sThisUser.getUsername();
         }
         if (savedInstanceState != null) {
             sEmail = savedInstanceState.getString(KEY_EMAIL);
             mPicturePath = savedInstanceState.getString(KEY_PICTURE_PATH);
             sThisUser = mDatabase.getUserByName(sEmail);
+            sUsername = sThisUser.getUsername();
             mContentEditText.setText(savedInstanceState.getString(KEY_TEXT_CONTENT));
         }
         if (mPicturePath != null) {
@@ -159,6 +163,7 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
     public void ownProfileButtonPressed() {
         Intent intent = new Intent(WritePostActivity.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
+        intent.putExtra(KEY_USERNAME, sUsername);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }

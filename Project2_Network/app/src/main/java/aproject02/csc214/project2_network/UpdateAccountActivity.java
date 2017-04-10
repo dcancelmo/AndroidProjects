@@ -121,9 +121,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
             mHometownEdit.setText(sHometown);
             mBioEdit.setText(sBio);
             if (sProfilePic != null) {
-//                File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//                mPhotoFile = new File(sProfilePic);
-//                mPhotoFiles.add(mPhotoFile);
                 Bitmap mNewPhoto = getScaledBitmap(sProfilePic, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
                 mProfilePicImage.setImageBitmap(mNewPhoto);
                 mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -151,9 +148,6 @@ public class UpdateAccountActivity extends AppCompatActivity {
             mHometownEdit.setText(sHometown);
             mBioEdit.setText(sBio);
             if (sProfilePic != null) {
-//                File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//                mPhotoFile = new File(sProfilePic);
-//                mPhotoFiles.add(mPhotoFile);
                 Bitmap mNewPhoto = getScaledBitmap(sProfilePic, mProfilePicImage.getWidth(), mProfilePicImage.getHeight());
                 mProfilePicImage.setImageBitmap(mNewPhoto);
                 mProfilePicImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -211,6 +205,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
         mNewData.put("hometown", mHometownEdit.getText().toString());
         mNewData.put("bio", mBioEdit.getText().toString());
         mDatabase.update(mNewData, sEmail);
+        Log.i(TAG, "Hometown being saved: " + mHometownEdit.getText().toString());
+        Log.i(TAG, "Bio being saved: " + mBioEdit.getText().toString());
         finish();
     }
 
