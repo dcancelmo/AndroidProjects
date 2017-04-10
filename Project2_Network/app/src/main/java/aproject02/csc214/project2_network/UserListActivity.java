@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import aproject02.csc214.project2_network.database.NetworkDb;
 import aproject02.csc214.project2_network.model.User;
@@ -26,6 +27,10 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
 
     private String sEmail;
     private User sThisUser;
+
+    public User getThisUser() {
+        return sThisUser;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
             sEmail = savedInstanceState.getString(KEY_EMAIL);
             sThisUser = mDatabase.getUserByName(sEmail);
         }
+        Log.i(TAG, "Current user: " + sEmail);
     }
 
     @Override
@@ -69,8 +75,7 @@ public class UserListActivity extends AppCompatActivity implements HeaderFragmen
 
     @Override
     public void ownProfileButtonPressed() {
-        //TODO
-        Intent intent = new Intent(UserListActivity.this, OwnProfileActivity.class);
+        Intent intent = new Intent(UserListActivity.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);

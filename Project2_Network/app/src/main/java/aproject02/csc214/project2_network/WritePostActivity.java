@@ -87,7 +87,7 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
             mPostImageView.setImageBitmap(mNewPhoto);
             mPostImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
-
+        Log.i(TAG, "Current user: " + sEmail);
     }
 
     public void takePicture(View view) {
@@ -157,8 +157,7 @@ public class WritePostActivity extends AppCompatActivity implements HeaderFragme
 
     @Override
     public void ownProfileButtonPressed() {
-        //TODO
-        Intent intent = new Intent(WritePostActivity.this, OwnProfileActivity.class);
+        Intent intent = new Intent(WritePostActivity.this, UpdateAccountActivity.class);
         intent.putExtra(KEY_EMAIL, sEmail);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);

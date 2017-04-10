@@ -44,4 +44,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="favorite_this_person">Favorite this person</string>
     <string name="unfavorite_this_person">Unfavorite this person</string>
+    <string name="birthday_">Birthday:</string>
 </resources>

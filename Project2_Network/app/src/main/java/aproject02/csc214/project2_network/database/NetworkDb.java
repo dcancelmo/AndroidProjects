@@ -116,7 +116,6 @@ public class NetworkDb {
     }
 
     public ArrayList<User> getUserList() {
-        ArrayList<User> mUserList = new ArrayList<>();
         Cursor mCursor = mDatabase.query(
                 NetworkDbSchema.Users.NAME,
                 null,
@@ -127,13 +126,15 @@ public class NetworkDb {
                 null
         );
         NetworkCursorWrapper mWrapper = new NetworkCursorWrapper(mCursor);
-        Post mPost;
+        ArrayList<User> mUserList = new ArrayList<>();
         if(mWrapper.getCount() > 0) {
             mWrapper.moveToFirst();
-            do {
-                mUserList.add(mWrapper.getUser());
-                mWrapper.moveToNext();
-            } while (!mWrapper.isLast());
+            if(!mWrapper.isLast()) {
+                do {
+                    mUserList.add(mWrapper.getUser());
+                    mWrapper.moveToNext();
+                } while (!mWrapper.isLast());
+            }
         } else {
             mUserList = null;
         }

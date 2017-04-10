@@ -22,7 +22,6 @@
         android:layout_centerHorizontal="true"
         android:maxWidth="100sp"
         android:maxHeight="100sp"
-        android:src="@mipmap/ic_default_picture"
         />
     <TextView
         android:id="@+id/profile_name_display"
@@ -45,6 +44,7 @@
         android:text="@string/favorite_this_person"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/profile_username_display"
+        android:onClick="favoritePerson"
         />
     <TextView
         android:id="@+id/profile_email_display"
