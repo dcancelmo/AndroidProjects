@@ -30,6 +30,7 @@ public class PostListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private NetworkDb mDatabase;
     private ArrayList<Post> mPostsList;
+    PostRecyclerAdapter mAdapter;
 
 
     public PostListFragment() {
@@ -45,11 +46,19 @@ public class PostListFragment extends Fragment {
         mPostsList = mDatabase.getPosts();
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.post_recycler_list_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        PostRecyclerAdapter mAdapter = new PostRecyclerAdapter(mPostsList);
+        mAdapter = new PostRecyclerAdapter(mPostsList);
         mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
         return mView;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPostsList = mDatabase.getPosts();
+        mAdapter.swap(mPostsList);
+    }
+
 
     public static PostListFragment newInstance(Post mPost) {
         PostListFragment mFragment = new PostListFragment();

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import aproject02.csc214.project2_network.R;
@@ -43,5 +44,15 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<PostViewHolder> {
         } else {
             return 0;
         }
+    }
+
+    public void swap(ArrayList<Post> mNewList){
+        if (mPosts != null) {
+            mPosts.clear();
+            mPosts.addAll(mNewList);
+        } else {
+            mPosts = mNewList;
+        }
+        notifyDataSetChanged();
     }
 }

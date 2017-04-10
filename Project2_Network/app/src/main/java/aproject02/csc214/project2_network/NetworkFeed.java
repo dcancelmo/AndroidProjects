@@ -50,7 +50,6 @@ public class NetworkFeed extends AppCompatActivity implements HeaderFragment.Hea
         mPostListFragment = new PostListFragment();
         mPostListFragment.setArguments(extras);
         mFragTransaction.add(R.id.header_frame_layout, mHeaderFragment, null).add(R.id.post_list_frame_layout, mPostListFragment, null).commit();
-
     }
 
     @Override
