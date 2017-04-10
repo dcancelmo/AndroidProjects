@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -101,7 +102,14 @@ public class ViewProfileActivity extends AppCompatActivity implements HeaderFrag
     }
 
     public void favoritePerson(View view) {
-
+        Log.i(TAG, "favoritePerson(View) called");
+        //sEmail favorites sViewEmail
+        //if (mDatabase.getFavorite(sEmail, sViewEmail) != null) {
+            mDatabase.insertFavorite(sEmail, sViewEmail);
+            Toast.makeText(getApplicationContext(), R.string.favorited, Toast.LENGTH_LONG).show();
+        //} else {
+            //mDatabase.removeFavorite(sEmail, sViewEmail);
+        //}
     }
 
     @Override
