@@ -6,7 +6,7 @@ package aproject02.csc214.project2_network.database;
 
 public class NetworkDbSchema {
 
-    public static final String DATABASE_NAME = "URSocialNetwork_project2.db";
+    public static final String DATABASE_NAME = "URSocialNetwork_214.db";
     public static final int VERSION = 1;
 
     public static class Users {

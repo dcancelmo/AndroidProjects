@@ -3,6 +3,7 @@ package aproject02.csc214.project2_network.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -130,10 +131,14 @@ public class NetworkDb {
         if(mWrapper.getCount() > 0) {
             mWrapper.moveToFirst();
             //if(!mWrapper.isLast()) {
+            try{
                 do {
                     mUserList.add(mWrapper.getUser());
                     mWrapper.moveToNext();
                 } while (!mWrapper.isLast());
+            } catch (CursorIndexOutOfBoundsException mException) {
+            }
+
             //}
         } else {
             mUserList = null;
