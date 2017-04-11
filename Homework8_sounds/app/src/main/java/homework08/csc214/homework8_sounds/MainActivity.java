@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         TrackListFragment mFragment = (TrackListFragment) mFragManager.findFragmentById(R.id.frame_layout_main);
         if(mFragment == null) {
             mFragment = new TrackListFragment();
-            mFragManager.beginTransaction().add(R.id.frame_layout_main, fragment).commit();
+            mFragManager.beginTransaction().add(R.id.frame_layout_main, mFragment).commit();
         }
     }
 }
