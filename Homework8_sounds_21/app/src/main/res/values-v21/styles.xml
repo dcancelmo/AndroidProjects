@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SecondaryTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/harvard_red</item>
+        <item name="colorPrimaryDark">@color/garnett</item>
+        <item name="colorAccent">@color/old_gold</item>
+        <item name="android:colorBackground">@color/old_gold</item>
+    </style>
+</resources>
