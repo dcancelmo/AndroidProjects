@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -80,6 +81,7 @@ public class TrackListFragment extends Fragment {
         @Override
         public void onClick(View v) {
             mRadio.play(mTrack);
+            Toast.makeText(getContext(), "Playing " + mTrack.getName() + "!", Toast.LENGTH_LONG).show();
         }
     }
 
