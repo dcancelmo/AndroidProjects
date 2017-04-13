@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class TrackListFragment extends Fragment {
 
-    private static final String TAG = "TrackListFragmentLog";
+    public static final String TAG = "Cancelmo_Log_Tag";
     private Radio mRadio;
     View mView;
 

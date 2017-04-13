@@ -1,0 +1,14 @@
+Daniel Cancelmo
+dcancelm@u.rochester.edu
+CSC 214 - Android Mobile App Development
+Professor St Jacques
+TA: Alan Beadle
+Assignment 08
+April 13, 2017
+Logs File
+
+04-13 19:10:24.924 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: TrackListFragment added
+04-13 19:10:24.927 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreate() called
+04-13 19:10:24.938 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
+04-13 19:11:09.004 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
+04-13 19:11:19.830 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
