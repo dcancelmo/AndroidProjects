@@ -7,3 +7,8 @@ Assignment 08.5 - Originally 7
 April 18, 2017
 Logs File
 
+04-16 19:40:32.620 7990-7990/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onCreate MainActivity called
+04-16 19:40:32.868 7990-7990/assignment07.csc214.homework7_sqlite I/DEBUG_TAG: queryCourses where null with args null
+04-16 19:40:33.752 7990-7990/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onCreateOptionsMenu MainActivity called
+04-16 19:40:40.571 7990-7990/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onOptionsItemSelected MainActivity called
+04-16 19:40:53.757 7990-7990/assignment07.csc214.homework7_sqlite D/DEBUG_TAG: onActivityResult MainActivity called

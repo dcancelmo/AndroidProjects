@@ -21,9 +21,11 @@ import assignment07.csc214.homework7_sqlite.CourseDbSchema;
  */
 
 public class Schedule {
+
+    private static  final String TAG = "DEBUG_TAG";
+
     private static Schedule sSchedule;
     private Context mAppContext;
-    //private Map<Integer, Course> sMapSchedule;
     private ArrayList<Course> sListSchedule;
 
     private final Context mContext;
@@ -31,7 +33,6 @@ public class Schedule {
 
     private Schedule(Context appContext) {
         mAppContext = appContext;
-        //sMapSchedule = new HashMap<>();
         sListSchedule = new ArrayList<>();
         mContext = appContext.getApplicationContext();
         mDatabase = new CourseDatabaseHelper(mContext).getWritableDatabase();
@@ -81,6 +82,7 @@ public class Schedule {
     }
 
     private CourseCursorWrapper queryCourses(String where, String[] args) {
+        Log.i(TAG, "queryCourses where " + where + " with args " + args);
         Cursor mCursor = mDatabase.query(
                 CourseDbSchema.CourseTable.NAME, // table name
                 null,                          // which columns; null for all
@@ -96,7 +98,7 @@ public class Schedule {
 
     public ArrayList<Course> getCourses() {
         CourseCursorWrapper mWrapper = queryCourses(null, null);
-
+        sListSchedule = new ArrayList<>();
         try {
             mWrapper.moveToFirst();
             while(mWrapper.isAfterLast() == false) {

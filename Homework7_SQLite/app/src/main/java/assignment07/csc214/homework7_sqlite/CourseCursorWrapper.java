@@ -26,10 +26,10 @@ public class CourseCursorWrapper extends CursorWrapper {
         String mCourseName = getString(getColumnIndex(CourseDbSchema.CourseTable.Cols.COURSE_NAME));
         String mInstructor = getString(getColumnIndex(CourseDbSchema.CourseTable.Cols.INSTRUCTOR));
         String mDescription = getString(getColumnIndex(CourseDbSchema.CourseTable.Cols.DESCRIPTION));
-        Course mCourse = new Course(Integer.valueOf(mCourseNum));
-        mCourse.setCourseName(mCourseName);
-        mCourse.setInstructor(mInstructor);
-        mCourse.setDescription(mDescription);
+        Course mCourse = new Course(mCourseName, Integer.valueOf(mCourseNum), mInstructor, mDescription);
+//        mCourse.setCourseName(mCourseName);
+//        mCourse.setInstructor(mInstructor);
+//        mCourse.setDescription(mDescription);
         return mCourse;
     }
 }
