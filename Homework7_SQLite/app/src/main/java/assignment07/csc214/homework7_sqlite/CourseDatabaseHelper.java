@@ -13,7 +13,6 @@ public class CourseDatabaseHelper extends SQLiteOpenHelper {
 
 
     public CourseDatabaseHelper (Context context) {
-
         super(context, CourseDbSchema.DATABASE_NAME, null, CourseDbSchema.VERSION);
     }
 

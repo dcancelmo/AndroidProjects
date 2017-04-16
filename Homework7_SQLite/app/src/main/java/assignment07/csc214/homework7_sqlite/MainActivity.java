@@ -10,9 +10,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import assignment07.csc214.homework7_sqlite.model.Course;
+import assignment07.csc214.homework7_sqlite.model.Schedule;
+
 public class MainActivity extends AppCompatActivity {
 
     private static  final String TAG = "DEBUG_TAG";
+
+    private static final String KEY_COURSE_NUM = "assignment07.csc214.homeowork7_sglite.num";
+    private static final String KEY_COURSE_NAME = "assignment07.csc214.homeowork7_sglite.name";
+    private static final String KEY_INSTRUCTOR = "assignment07.csc214.homeowork7_sglite.instructor";
+    private static final String KEY_DESCRIPTION = "assignment07.csc214.homeowork7_sglite.description";
 
     private CourseListFragment mFragment;
 
@@ -63,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "onActivityResult MainActivity called");
         if(resultCode == Activity.RESULT_OK) {
+            Schedule mSchedule = Schedule.get(getApplicationContext());
+            mSchedule.addCourse(data.getStringExtra(KEY_COURSE_NAME), Integer.parseInt(data.getStringExtra(KEY_COURSE_NUM)), data.getStringExtra(KEY_INSTRUCTOR), data.getStringExtra(KEY_DESCRIPTION));
             mFragment.updateUI();
         }
     }

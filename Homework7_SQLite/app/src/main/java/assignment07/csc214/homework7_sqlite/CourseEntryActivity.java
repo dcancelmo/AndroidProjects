@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import java.util.UUID;
 
+import assignment07.csc214.homework7_sqlite.model.Course;
+
 public class CourseEntryActivity extends AppCompatActivity {
 
     public static final String ID_TAG = "assignment07.csc214.homework7_sqlite.id";
@@ -60,8 +62,15 @@ public class CourseEntryActivity extends AppCompatActivity {
     }
 
     public void acceptNewCourse(View view) {
-
+        EditText mNumEdit = (EditText) findViewById(R.id.course_num_enter);
+        EditText mNameEdit = (EditText) findViewById(R.id.course_name_enter);
+        EditText mInstructorEdit = (EditText) findViewById(R.id.instructor_enter);
+        EditText mDescriptionEdit = (EditText) findViewById(R.id.description_enter);
         Intent intent = new Intent(CourseEntryActivity.this, MainActivity.class);
+        intent.putExtra(KEY_COURSE_NUM, mNumEdit.getText().toString());
+        intent.putExtra(KEY_COURSE_NAME, mNameEdit.getText().toString());
+        intent.putExtra(KEY_INSTRUCTOR, mInstructorEdit.getText().toString());
+        intent.putExtra(KEY_DESCRIPTION, mDescriptionEdit.getText().toString());
         setResult(RESULT_OK, intent);
         finish();
     }

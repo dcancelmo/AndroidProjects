@@ -77,8 +77,7 @@ public class CourseListFragment extends Fragment {
         if(mAdapter == null) {
             mAdapter = new CourseRecyclerAdapter(mCourses);
             mRecyclerView.setAdapter(mAdapter);
-        }
-        else {
+        } else {
             mAdapter.setCourses(mCourses);
         }
     }
