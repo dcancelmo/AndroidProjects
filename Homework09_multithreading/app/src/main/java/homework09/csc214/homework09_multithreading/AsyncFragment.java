@@ -1,6 +1,7 @@
 package homework09.csc214.homework09_multithreading;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,5 +29,7 @@ public class AsyncFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_async, container, false);
     }
+
+
 
 }
