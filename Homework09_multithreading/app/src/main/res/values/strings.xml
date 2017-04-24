@@ -5,4 +5,6 @@
     <string name="square_root">Square root</string>
     <string name="largest_prime">Largest prime</string>
     <string name="result">Result</string>
+    <string name="not_a_valid_long">Not a valid long</string>
+    <string name="value_greater_than_equal_2"><![CDATA[Please enter a value >= 2]]></string>
 </resources>
