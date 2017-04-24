@@ -1,5 +1,8 @@
 package homework09.csc214.homework09_multithreading;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +29,14 @@ public class PrimeActivity extends AppCompatActivity {
         if (!checkValid(view)) {
             //Method
         }
+    }
+
+    public static Intent newIntent(Context c) {
+        return new Intent(c, PrimeActivity.class);
+    }
+
+    public AsyncFragment createFragment() {
+        return AsyncFragment.newInstance();
     }
 
     public boolean checkValid(View view) {

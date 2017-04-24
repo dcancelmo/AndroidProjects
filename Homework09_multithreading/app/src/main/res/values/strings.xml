@@ -7,4 +7,7 @@
     <string name="result">Result</string>
     <string name="not_a_valid_long">Not a valid long</string>
     <string name="value_greater_than_equal_2"><![CDATA[Please enter a value >= 2]]></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
