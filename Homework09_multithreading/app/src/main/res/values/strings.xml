@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Homework09 Multithreading</string>
     <string name="prime">Prime</string>
+    <string name="type_any_64_bit_integer">Type any 64-bit integer...</string>
+    <string name="square_root">Square root</string>
+    <string name="largest_prime">Largest prime</string>
+    <string name="result">Result</string>
 </resources>

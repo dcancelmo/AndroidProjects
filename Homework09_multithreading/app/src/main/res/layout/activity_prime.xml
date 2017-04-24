@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="homework09.csc214.homework09_multithreading.PrimeActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <EditText
+            android:id="@+id/long_entry"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/type_any_64_bit_integer"
+            android:inputType="number"
+            />
+        <Button
+            android:id="@+id/start_largest_prime"
+            android:layout_below="@id/long_entry"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/largest_prime"
+            android:onClick="startFindLargePrime"
+            />
+        <Button
+            android:id="@+id/start_square_root"
+            android:layout_below="@id/start_largest_prime"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/square_root"
+            android:onClick="startFindSquareRoot"
+            />
+        <TextView
+            android:id="@+id/answer_display"
+            android:layout_below="@id/start_square_root"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/result"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
