@@ -13,5 +13,6 @@ public class HTTPActivity extends AppCompatActivity {
     }
 
     public void fetchImage(View view) {
+
     }
 }

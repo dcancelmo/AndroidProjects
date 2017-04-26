@@ -17,6 +17,7 @@ public class HandlerActivity extends AppCompatActivity {
     private SqrtHandlerThread mSqrtHandler;
     EditText mLongEntry;
     TextView mAnswerDisplay;
+    private Handler mUiHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class HandlerActivity extends AppCompatActivity {
         String mTemp = mLongEntry.getText().toString();
         double mNum = Integer.parseInt(mTemp);
         final long mOriginal;
+        SqrtHandlerThread mWorkerThread;
         if (mNum >= 2) {
             mOriginal = Long.parseLong(mTemp);
             mWorkerThread = new SqrtHandlerThread("myWorkerThread");
@@ -63,7 +65,8 @@ public class HandlerActivity extends AppCompatActivity {
     public void startFindSquareRoot(View view) {
         String mTemp = mLongEntry.getText().toString();
         double mNum = Integer.parseInt(mTemp);
-        long mOriginal = Long.valueOf(mTemp);
+        final long mOriginal;
+        SqrtHandlerThread mWorkerThread;
         if (mNum >= 2) {
             mOriginal = Long.parseLong(mTemp);
             mWorkerThread = new SqrtHandlerThread("myWorkerThread");

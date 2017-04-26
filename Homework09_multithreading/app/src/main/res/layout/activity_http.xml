@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:src="@drawable/bread_lol"
             />
         <EditText
             android:id="@+id/url_entry"
@@ -24,6 +25,7 @@
             android:layout_below="@id/image_display"
             android:layout_centerHorizontal="true"
             android:hint="@string/enter_url_hint"
+            android:text="http://images3.wikia.nocookie.net/__cb20120128045061/thehungergames/images/6/67/Bread.jpg"
             />
         <Button
             android:id="@+id/fetch_button"
@@ -31,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/url_entry"
             android:layout_centerHorizontal="true"
+            android:text="@string/fetch_image"
             android:onClick="fetchImage"
             />
     </RelativeLayout>

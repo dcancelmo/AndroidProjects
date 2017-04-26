@@ -14,4 +14,5 @@
     <string name="asynctask">AsyncTask</string>
     <string name="http">HTTP</string>
     <string name="enter_url_hint">Enter an image URL</string>
+    <string name="fetch_image">Fetch Image</string>
 </resources>
