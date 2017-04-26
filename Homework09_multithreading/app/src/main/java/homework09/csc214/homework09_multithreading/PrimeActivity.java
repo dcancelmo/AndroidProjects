@@ -20,6 +20,7 @@ public class PrimeActivity extends AppCompatActivity {
     EditText mLongEntry;
     TextView mAnswerDisplay;
     Long mOrigInput;
+    Double mResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +34,67 @@ public class PrimeActivity extends AppCompatActivity {
         Log.i(TAG, "startFindSquareRoot called w/ input " + Long.parseLong(mLongEntry.getText().toString()));
         if (checkValid(view)) {
             Log.i(TAG, "called w/ valid input " + Long.parseLong(mLongEntry.getText().toString()));
-            mOrigInput = Long.parseLong(mLongEntry.getText().toString());
-            new CalculateRootTask().execute(Long.getLong(mLongEntry.getText().toString()));
+            //mOrigInput = Long.parseLong(mLongEntry.getText().toString());
+            new CalculateRootTask().execute(Long.parseLong(mLongEntry.getText().toString()));
             Log.i(TAG, "FindSquareRoot done");
+            Toast.makeText(this, getResources().getString(R.string.square_root), Toast.LENGTH_LONG).show();
         }
     }
 
     public void startFindLargePrime(View view) {
+        Log.i(TAG, "startFindLargePrime called w/ input " + Long.parseLong(mLongEntry.getText().toString()));
         if (checkValid(view)) {
-            //Method
+            Log.i(TAG, "called w/ valid input " + Long.parseLong(mLongEntry.getText().toString()));
+            //mOrigInput = Long.parseLong(mLongEntry.getText().toString());
+            new CalculatePrimeTask().execute(Long.parseLong(mLongEntry.getText().toString()));
+            Toast.makeText(this, getResources().getString(R.string.largest_prime), Toast.LENGTH_LONG).show();
         }
     }
 
     private class CalculateRootTask extends AsyncTask<Long,Void,Double> {
-
         @Override
         protected Double doInBackground(Long... params) {
             Log.i(TAG, "rootTask created");
-            Double mResult = Math.sqrt(mOrigInput);
-            return mResult;
+            Long mParam = params[0];
+            Double mResultRoot = Math.sqrt(mParam);
+            Log.i(TAG, "root: " + mResultRoot);
+            return mResultRoot;
         }
-
         @Override
         protected void onPostExecute(Double mResult) {
+            Log.i(TAG, "root: " + mResult);
             mAnswerDisplay.setText(mResult.toString());
+        }
+    }
+
+    private class CalculatePrimeTask extends AsyncTask<Long,Void,Long> {
+        @Override
+        protected Long doInBackground(Long... params) {
+            //check every odd below to see if divisibile by any number from 2 to sqrt of that number, int-- then repeat until reach 2
+            Log.i(TAG, "rootTask created");
+            for (Long i = params[0]; i > 2; i--){
+                if (isPrime(i)) {
+                    Log.i(TAG, "Result: " + i);
+                    return i;
+                }
+            }
+            Log.i(TAG, "Result: " + params[0]);
+            return params[0];
+        }
+        @Override
+        protected void onPostExecute(Long mResult1) {
+            Log.i(TAG, "Result: " + mResult1);
+            mAnswerDisplay.setText(Long.toString(mResult1));
+        }
+
+        public boolean isPrime(long mValue) {
+            for (long i = 2; i < mValue; i++) {
+                if (mValue % i == 0) {
+                    Log.i(TAG, i + " not prime");
+                    return false; //not prime
+                }
+            }
+            return true; //prime
         }
     }
 
