@@ -10,4 +10,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="handlerthread">HandlerThread</string>
+    <string name="asynctask">AsyncTask</string>
+    <string name="http">HTTP</string>
+    <string name="enter_url_hint">Enter an image URL</string>
 </resources>

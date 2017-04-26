@@ -19,4 +19,14 @@ public class MainActivity extends AppCompatActivity {
         Intent mIntent = new Intent(MainActivity.this, PrimeActivity.class);
         startActivity(mIntent);
     }
+
+    public void startHandlerActivity(View view) {
+        Intent mIntent = new Intent(MainActivity.this, HandlerActivity.class);
+        startActivity(mIntent);
+    }
+
+    public void startHTTPActivity(View view) {
+        Intent mIntent = new Intent(MainActivity.this, HTTPActivity.class);
+        startActivity(mIntent);
+    }
 }

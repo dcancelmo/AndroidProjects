@@ -4,38 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="homework09.csc214.homework09_multithreading.MainActivity">
+    tools:context="homework09.csc214.homework09_multithreading.HTTPActivity">
 
     <RelativeLayout
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/prime_start"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:id="@+id/image_display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/asynctask"
-            android:onClick="startPrimeActivity"
+            />
+        <EditText
+            android:id="@+id/url_entry"
+            android:inputType="textUri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_display"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/enter_url_hint"
             />
         <Button
-            android:id="@+id/handler_start"
-            android:layout_below="@id/prime_start"
+            android:id="@+id/fetch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/url_entry"
             android:layout_centerHorizontal="true"
-            android:text="@string/handlerthread"
-            android:onClick="startHandlerActivity"
-            />
-        <Button
-            android:id="@+id/http_start"
-            android:layout_below="@id/handler_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/http"
-            android:onClick="startHTTPActivity"
+            android:onClick="fetchImage"
             />
     </RelativeLayout>
 

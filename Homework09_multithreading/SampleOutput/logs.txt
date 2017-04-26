@@ -3,12 +3,43 @@ dcancelm@u.rochester.edu
 CSC 214 - Android Mobile App Development
 Professor St Jacques
 TA: Alan Beadle
-Assignment 08
-April 13, 2017
+Assignment 09
+April 25, 2017
 Logs File
 
-04-13 19:10:24.924 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: TrackListFragment added
-04-13 19:10:24.927 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreate() called
-04-13 19:10:24.938 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
-04-13 19:11:09.004 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
-04-13 19:11:19.830 6752-6752/homework08.csc214.homework8_sounds_21 I/Cancelmo_Log_Tag: onCreateView() called
+004-25 22:51:07.233 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: startFindLargePrime called w/ input 234
+04-25 22:51:07.233 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: >= 2
+04-25 22:51:07.233 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: called w/ valid input 234
+04-25 22:51:07.241 3206-3659/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: rootTask created
+04-25 22:51:07.241 3206-3659/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:07.241 3206-3659/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: Result: 233
+04-25 22:51:07.526 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: Result: 233
+04-25 22:51:08.982 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: startFindSquareRoot called w/ input 234
+04-25 22:51:08.982 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: >= 2
+04-25 22:51:08.982 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: called w/ valid input 234
+04-25 22:51:08.983 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: FindSquareRoot done
+04-25 22:51:08.992 3206-3688/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: rootTask created
+04-25 22:51:08.992 3206-3688/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: root: 15.297058540778355
+04-25 22:51:09.028 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: root: 15.297058540778355
+04-25 22:51:20.817 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: startFindLargePrime called w/ input 3454324323
+04-25 22:51:20.817 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: >= 2
+04-25 22:51:20.817 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: called w/ valid input 3454324323
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: rootTask created
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 3 not prime
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 7 not prime
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 263 not prime
+04-25 22:51:20.819 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 3 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 5 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 11 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 3 not prime
+04-25 22:51:20.820 3206-3869/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: 2 not prime
+04-25 22:51:22.460 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: startFindSquareRoot called w/ input 3454324323
+04-25 22:51:22.460 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: >= 2
+04-25 22:51:22.460 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: called w/ valid input 3454324323
+04-25 22:51:22.460 3206-3206/homework09.csc214.homework09_multithreading I/CANCELMOTESTING: FindSquareRoot done
