@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="assignment06.csc214.homework6_listrecyclerviews">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="project3.csc214.project3_final">
 
     <application
         android:allowBackup="true"
@@ -16,8 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListActivity" />
-        <activity android:name=".RecylcleActivity" />
+        <activity
+            android:name=".CustomItemActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ListDisplayActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

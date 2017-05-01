@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">UR Phonebook</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_a_custom_item">Add a custom item</string>
+    <string name="create_a_custom_entry">Create a custom entry:</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="location_name">Location name:</string>
+    <string name="enter_location_name">Enter location name...</string>
+    <string name="enter_name">Enter name...</string>
+    <string name="address">Address: </string>
+    <string name="enter_address">Enter address...</string>
+    <string name="phone_number">Phone number:</string>
+    <string name="website">Website:</string>
+    <string name="enter_website">Enter website...</string>
+    <string name="hours">Hours:</string>
+    <string name="enter_hours">Enter hours...</string>
+    <string name="enter_phone_number">Enter phone number...</string>
+    <string name="enter_description">Enter description...</string>
+    <string name="description_notes">Description/notes:</string>
+    <string name="custom_entry_not_created">Custom entry not created</string>
+    <string name="custom_entry_successfully_created">Custom entry successfully added</string>
+    <string name="malformed_url">Malformed URL</string>
+    <string name="an_error_has_occurred">An error has occurred</string>
+    <string name="basic_info">Basic info:</string>
+</resources>
