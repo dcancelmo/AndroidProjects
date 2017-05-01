@@ -1,10 +1,14 @@
 package project3.csc214.project3_final.recyclerViews;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import project3.csc214.project3_final.ItemDialogFragment;
 import project3.csc214.project3_final.R;
 import project3.csc214.project3_final.model.InfoItem;
 
@@ -30,7 +34,11 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.i(TAG, "Dialog fragment created for " + mItem.getName());
+                AppCompatActivity mContext = (AppCompatActivity) v.getContext();
+                FragmentManager mManager = mContext.getSupportFragmentManager();
+                ItemDialogFragment mDialog = ItemDialogFragment.newInstance(mItem);
+                mDialog.show(mManager, "Item Dialog");
             }
         });
     }

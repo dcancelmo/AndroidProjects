@@ -25,7 +25,6 @@ public class URRecyclerFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ArrayList<InfoItem> mItemList;
 
-
     public URRecyclerFragment() {
         // Required empty public constructor
     }

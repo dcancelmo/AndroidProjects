@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import project3.csc214.project3_final.recyclerViews.BarsRecyclerFragment;
 import project3.csc214.project3_final.recyclerViews.DiningRecyclerFragment;
+import project3.csc214.project3_final.recyclerViews.MiscRecyclerFragment;
 import project3.csc214.project3_final.recyclerViews.TaxiRecyclerFragment;
 import project3.csc214.project3_final.recyclerViews.TravelRecyclerFragment;
 import project3.csc214.project3_final.recyclerViews.URRecyclerFragment;
@@ -47,9 +48,9 @@ public class ListDisplayActivity extends AppCompatActivity {
                 case RC_DINING:
                     mFragment = new DiningRecyclerFragment();
                     break;
-//                case RC_MISC:
-//                    mFragment = new MiscRecyclerFragment();
-//                    break;
+                case RC_MISC:
+                    mFragment = new MiscRecyclerFragment();
+                    break;
                 case RC_TRAVEL:
                     mFragment = new TravelRecyclerFragment();
                     break;
