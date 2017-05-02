@@ -31,9 +31,6 @@ public class ItemDialogFragment extends DialogFragment {
     private static final String HOURS = "project3.csc214.project3_final.infoitem.hours";
     private static final String DESCRIPTION = "project3.csc214.project3_final.infoitem.description";
 
-
-
-
     public ItemDialogFragment() {
         // Required empty public constructor
     }
