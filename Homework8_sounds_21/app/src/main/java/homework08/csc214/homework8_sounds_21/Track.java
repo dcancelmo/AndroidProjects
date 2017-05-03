@@ -11,6 +11,7 @@ public class Track {
     private final String mArtist;
     private Integer mId;
 
+    //Creates the track object
     public Track(String path, String name, String album, String artist) {
         mPath = path;
         mName = name;

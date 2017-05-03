@@ -36,12 +36,15 @@
                         android:id="@+id/name_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/location_name"
                         />
                     <EditText
                         android:id="@+id/name_enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:hint="@string/enter_name"
                         />
                 </LinearLayout>
@@ -52,12 +55,15 @@
                         android:id="@+id/address_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/address"
                         />
                     <EditText
                         android:id="@+id/address_enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:hint="@string/enter_address"
                         android:inputType="textPostalAddress"
                         />
@@ -69,6 +75,7 @@
                         android:id="@+id/phone_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/phone_number"
                         />
                     <EditText
@@ -76,6 +83,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/enter_phone_number"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:inputType="phone"
                         android:digits="0123456789+ ()-"
                         />
@@ -92,12 +101,15 @@
                         android:id="@+id/website_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/website"
                         />
                     <EditText
                         android:id="@+id/website_enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:hint="@string/enter_website"
                         android:inputType="textUri"
                         />
@@ -109,12 +121,15 @@
                         android:id="@+id/hours_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/hours"
                         />
                     <EditText
                         android:id="@+id/hours_enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:hint="@string/enter_hours"
                         />
                 </LinearLayout>
@@ -125,12 +140,15 @@
                         android:id="@+id/description_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/CustomTextView"
                         android:text="@string/description_notes"
                         />
                     <EditText
                         android:id="@+id/description_enter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_default"
+                        style="@style/CustomEditText"
                         android:hint="@string/enter_description"
                         />
                 </LinearLayout>
@@ -146,6 +164,8 @@
                 android:id="@+id/enter_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/old_button_selector"
+                android:textColor="@color/dandelion_yellow"
                 android:text="@string/create"
                 android:onClick="acceptNewEntry"
                 />
@@ -153,6 +173,8 @@
                 android:id="@+id/cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/old_button_selector"
+                android:textColor="@color/dandelion_yellow"
                 android:text="@string/cancel"
                 android:onClick="cancelNewEntry"
                 />

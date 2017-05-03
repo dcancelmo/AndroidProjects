@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/old_button_selector">
 
     <TextView
         android:id="@+id/view_location_name"
@@ -12,6 +13,7 @@
         android:paddingTop="10sp"
         android:paddingStart="25sp"
         android:paddingBottom="0sp"
+        android:textColor="@color/dandelion_yellow"
         android:text="@string/location_name"
         />
     <TextView
@@ -21,7 +23,8 @@
         android:textSize="15sp"
         android:paddingTop="5sp"
         android:paddingStart="25sp"
-        android:paddingBottom="0sp"
+        android:paddingBottom="10sp"
+        android:textColor="@color/dandelion_yellow"
         android:text="@string/basic_info"
         />
 

@@ -56,6 +56,7 @@ public class TrackListFragment extends Fragment {
         mRadio.release();
     }
 
+    //ViewHolder for the tracks
     private class TrackHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mTrackName;
         private TextView mAlbumName;
@@ -77,9 +78,14 @@ public class TrackListFragment extends Fragment {
             mArtistName.setText(track.getArtist());
         }
 
+        /* Clicking an item in the list calls this
+         * Plays the track
+         * Then displays toast or sets textview depending on if orientation is portrait or landscape
+         */
         @Override
         public void onClick(View v) {
             mRadio.play(mTrack);
+            //Portrait orientation
             if (getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
                 Toast.makeText(getContext(), "Playing " + mTrack.getName() + "!", Toast.LENGTH_LONG).show();
             } else { //Landscape orientation
@@ -89,6 +95,7 @@ public class TrackListFragment extends Fragment {
         }
     }
 
+    //Adapter for the tracks, uses the above viewholder
     private class TrackAdapter extends RecyclerView.Adapter<TrackHolder> {
         private List<Track> mTracks;
 

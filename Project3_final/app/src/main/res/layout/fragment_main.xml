@@ -19,6 +19,7 @@
             android:src="@mipmap/ic_ur"
             android:layout_column="0"
             android:layout_row="0"
+            android:background="@null"
             android:onClick="openURList"
             />
         <ImageButton
@@ -29,6 +30,7 @@
             android:src="@mipmap/ic_taxi"
             android:layout_column="1"
             android:layout_row="0"
+            android:background="@null"
             android:onClick="openTaxiList"
             />
         <ImageButton
@@ -39,6 +41,7 @@
             android:src="@mipmap/ic_food"
             android:layout_column="2"
             android:layout_row="0"
+            android:background="@null"
             android:onClick="openDiningList"
             />
         <ImageButton
@@ -49,6 +52,7 @@
             android:src="@mipmap/ic_misc"
             android:layout_column="0"
             android:layout_row="1"
+            android:background="@null"
             android:onClick="openMiscList"
             />
         <ImageButton
@@ -59,6 +63,7 @@
             android:src="@mipmap/ic_travel"
             android:layout_column="1"
             android:layout_row="1"
+            android:background="@null"
             android:onClick="openTravelList"
             />
         <ImageButton
@@ -69,6 +74,7 @@
             android:src="@mipmap/ic_bar"
             android:layout_column="2"
             android:layout_row="1"
+            android:background="@null"
             android:onClick="openBarList"
             />
     </GridLayout>

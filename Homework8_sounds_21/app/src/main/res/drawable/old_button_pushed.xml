@@ -6,11 +6,4 @@
             <solid android:color="@color/dandelion_yellow"/>
         </shape>
     </item>
-    <item>
-        <shape android:shape="rectangle">
-            <stroke
-                android:width="5dp"
-                android:color="@color/rochester_blue"/>
-        </shape>
-    </item>
 </layer-list>
