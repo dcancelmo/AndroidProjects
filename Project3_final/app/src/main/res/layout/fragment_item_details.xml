@@ -13,5 +13,51 @@
         android:paddingBottom="15sp"
         android:textSize="20sp"
         />
+    <TextView
+        android:id="@+id/details_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/details_name_text"
+        android:textColor="#587b7c"
+        android:autoLink="map"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/details_phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/details_address_text"
+        android:textColor="#587b7c"
+        android:autoLink="phone"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/details_website_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/details_phone_text"
+        android:textColor="#587b7c"
+        android:autoLink="web"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/details_hours_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/details_website_text"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/details_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/details_hours_text"
+        android:textSize="15sp"
+        />
 
 </RelativeLayout>

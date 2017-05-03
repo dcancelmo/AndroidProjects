@@ -42,9 +42,8 @@ public class ItemDetailsActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.an_error_has_occurred), Toast.LENGTH_LONG).show();
             finish();
         } else {
-            mFragment = new ItemDetailsFragment();
+            mFragment = ItemDetailsFragment.createInstance(mIntent);
             mFragManager.beginTransaction().add(R.id.details_frame_layout, mFragment).commit();
-            init(mIntent);
         }
     }
 

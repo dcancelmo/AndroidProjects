@@ -58,7 +58,11 @@ public class ListDisplayActivity extends AppCompatActivity {
                     mFragment = new BarsRecyclerFragment();
                     break;
             }
-            mFragManager.beginTransaction().add(R.id.list_display_frame, mFragment).commit();
+            if (getResources().getConfiguration().smallestScreenWidthDp == 600) {
+                mFragManager.beginTransaction().add(R.id.tablet_recycler_frame_layout, mFragment).commit();
+            } else {
+                mFragManager.beginTransaction().add(R.id.list_display_frame, mFragment).commit();
+            }
         } else {
             Toast.makeText(this, R.string.an_error_has_occurred, Toast.LENGTH_LONG).show();
             Log.e(TAG, "No intent passed in, could not create list");
