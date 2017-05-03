@@ -17,9 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import project3.csc214.project3_final.R;
-import project3.csc214.project3_final.sounds.Radio;
-import project3.csc214.project3_final.sounds.Track;
+import project3.csc214.project3_final.sounds.Song;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,10 +50,11 @@ public class MainFragment extends Fragment {
         });
     }
 
+    //Plays the background song
     private void play(Song mSong) {
         try {
-            AssetManager assets = getActivity().getAssets();
-            AssetFileDescriptor afd = assets.openFd(mSong.getPath());
+            AssetManager mAssets = getActivity().getAssets();
+            AssetFileDescriptor afd = mAssets.openFd(mSong.getPath());
             if(mPlayer.isPlaying()) {
                 Log.i(TAG, "Stopping");
                 mPlayer.stop();
@@ -72,6 +71,7 @@ public class MainFragment extends Fragment {
         }
     }
 
+    //Ends the background song
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -83,21 +83,19 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
-
         View mView = inflater.inflate(R.layout.fragment_main, container, false);
-        List<Song> mMusicList = new ArrayList<>();
+
+        Song mMusicFound;
         try {
             String[] musicNames = mAssets.list("music");
-            for(String filename : musicNames) {
-                String path = "music/" + filename;
-                mMusicList.add(new Song(filename, path));
-            }
+            String path = "music/" + musicNames[0];
+            mMusicFound = new Song(musicNames[0], path);
+            play(mMusicFound);
         }
         catch (IOException e) {
             Log.e(TAG, "MediaPlayer interrupted");
             e.printStackTrace();
         }
-        play(mMusicList.get(0));
         return mView;
     }
 

@@ -1,4 +1,4 @@
-package project3.csc214.project3_final;
+package project3.csc214.project3_final.sounds;
 
 /**
  * Created by Dan on 5/3/17.
