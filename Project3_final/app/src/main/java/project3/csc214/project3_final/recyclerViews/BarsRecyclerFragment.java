@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import project3.csc214.project3_final.R;
 import project3.csc214.project3_final.model.InfoItem;
+import project3.csc214.project3_final.sounds.Radio;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +33,6 @@ public class BarsRecyclerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View mView = inflater.inflate(R.layout.fragment_bars_recycler, container, false);
-
         mItemList = new ArrayList<>();
         mItemList.add(new InfoItem("Bar 145", "71 Celebration Dr, Rochester, NY 14642", "585) 360-2458", "", "In CollegeTown. Take the bus or walk! No need for a cab!"));
         mItemList.add(new InfoItem("Pearl", "349 East Ave, Rochester, NY 14604", "(757) 752-0370", "", "Club and bar in downtown."));

@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import project3.csc214.project3_final.sounds.Radio;
+import project3.csc214.project3_final.sounds.Track;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Cancelmo_Debug_3";
@@ -22,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_TRAVEL = 6;
     private static final int RC_BAR = 7;
 
-
-
+    private Radio mRadio;
     MainFragment mFragment;
     FragmentManager mFragManager;
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate MainActivity called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mRadio = new Radio(getApplicationContext());
         mFragManager = getSupportFragmentManager();
         mFragment = new MainFragment();
         mFragManager.beginTransaction().add(R.id.main_frame_layout, mFragment).commit();
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openURList(View view) {
         Log.i(TAG, "open UR list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_UR);
         startActivityForResult(mIntent, RC_UR);
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openTaxiList(View view) {
         Log.i(TAG, "open taxi list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_TAXI);
         startActivityForResult(mIntent, RC_TAXI);
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDiningList(View view) {
         Log.i(TAG, "open dining list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_DINING);
         startActivityForResult(mIntent, RC_DINING);
@@ -60,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openMiscList(View view) {
         Log.i(TAG, "open misc list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_MISC);
         startActivityForResult(mIntent, RC_MISC);
@@ -67,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openTravelList(View view) {
         Log.i(TAG, "open travel list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_TRAVEL);
         startActivityForResult(mIntent, RC_TRAVEL);
@@ -74,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openBarList(View view) {
         Log.i(TAG, "open bar list button pressed");
+        mRadio.play(mRadio.getTracks().get(0));
         Intent mIntent = new Intent(MainActivity.this, ListDisplayActivity.class);
         mIntent.putExtra(REQUEST_CODE, RC_BAR);
         startActivityForResult(mIntent, RC_BAR);

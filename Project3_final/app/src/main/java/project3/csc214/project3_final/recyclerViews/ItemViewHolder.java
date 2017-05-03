@@ -12,6 +12,8 @@ import project3.csc214.project3_final.ItemDetailsFragment;
 import project3.csc214.project3_final.ItemDialogFragment;
 import project3.csc214.project3_final.R;
 import project3.csc214.project3_final.model.InfoItem;
+import project3.csc214.project3_final.sounds.Radio;
+import project3.csc214.project3_final.sounds.Track;
 
 /**
  * Created by Dan on 4/30/17.
@@ -22,7 +24,6 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     private static final String TAG = "Cancelmo_Debug_3";
 
     private static final String KEY = "project3.csc214.project3_final.";
-
 
     private TextView mItemNameView;
     private TextView mItemBasicInfoView;
