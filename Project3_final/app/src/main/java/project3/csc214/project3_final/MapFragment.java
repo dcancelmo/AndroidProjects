@@ -33,21 +33,6 @@ public class MapFragment extends SupportMapFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        mClient = new GoogleApiClient.Builder(getActivity())
-//                .addApi(LocationServices.API)
-//                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-//                    @Override
-//                    public void onConnected(Bundle bundle) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onConnectionSuspended(int i) {
-//
-//                    }
-//                })
-//                .build();
-
         getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
