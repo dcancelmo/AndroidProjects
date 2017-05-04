@@ -1,14 +1,28 @@
 package project3.csc214.project3_final;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
 import project3.csc214.project3_final.sounds.Radio;
 import project3.csc214.project3_final.sounds.Track;
@@ -28,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private Radio mRadio;
     MainFragment mFragment;
     FragmentManager mFragManager;
+    File mPhotoFile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +104,37 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(mIntent, RC_BAR);
     }
 
+    public void takePicture() {
+        Log.d(TAG, "takePicture() called");
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            Log.d(TAG, "Has permission to capture");
+            Intent intent = new Intent();
+            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            String filename = "IMG_" + UUID.randomUUID().toString() + ".jpg";
+            File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            mPhotoFile = new File(picturesDir, filename);
+
+            //Uri photoUri = Uri.fromFile(mPhotoFile);
+            Uri photoUri = FileProvider.getUriForFile(getApplicationContext(), getApplicationContext().getPackageName() + ".provider", mPhotoFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+            Log.i(TAG, "Photo location: " + mPhotoFile.toString());
+            startActivityForResult(intent, 0);
+        } else {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, 1);
+            if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                takePicture();
+                return;
+            } else {
+                Toast.makeText(MainActivity.this, getString(R.string.must_grant_camera), Toast.LENGTH_LONG).show();
+            }
+        }
+   }
+
     @Override
     public boolean onCreateOptionsMenu(Menu mMenu) {
         Log.i(TAG, "onCreateOptionsMenu MainActivity called");
+        getMenuInflater().inflate(R.menu.photo_menu, mMenu);
         getMenuInflater().inflate(R.menu.custom_menu, mMenu);
         return true;
     }
@@ -103,6 +147,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_item_course_entry:
                 Intent mIntent = CustomItemActivity.newIntent(this);
                 startActivity(mIntent);
+                handled = true;
+                break;
+            case R.id.menu_item_camera:
+                takePicture();
                 handled = true;
                 break;
             default:
