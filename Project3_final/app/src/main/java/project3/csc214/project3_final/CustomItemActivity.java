@@ -98,6 +98,10 @@ public class CustomItemActivity extends AppCompatActivity {
         sDescriptionEdit = (EditText) findViewById(R.id.description_enter);
         try {
             String mURLString = sWebsiteEdit.getText().toString();
+            //Prevents a blank website field from becoming "http://"
+            if (mURLString.equals("")) {
+                new URL(mURLString);
+            }
             if (!mURLString.startsWith("http://")) {
                 String mNewString = "http://";
                 mNewString += mURLString;
@@ -107,7 +111,7 @@ public class CustomItemActivity extends AppCompatActivity {
             mNewItem = new InfoItem(sNameEdit.getText().toString(), sAddressEdit.getText().toString(), sPhoneEdit.getText().toString(), mWebsiteURL, sHoursEdit.getText().toString(), sDescriptionEdit.getText().toString());
             mDatabase.insertInfoItem(mNewItem);
         } catch (MalformedURLException e) {
-            Log.d(TAG, "Malformed URL");
+            Log.d(TAG, "Malformed or blank URL");
             e.printStackTrace();
             Toast.makeText(this, R.string.malformed_url, Toast.LENGTH_LONG).show();
             mNewItem = new InfoItem(sNameEdit.getText().toString(), sAddressEdit.getText().toString(), sPhoneEdit.getText().toString(), sHoursEdit.getText().toString(), sDescriptionEdit.getText().toString());

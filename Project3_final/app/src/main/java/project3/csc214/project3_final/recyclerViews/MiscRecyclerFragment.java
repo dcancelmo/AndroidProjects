@@ -36,6 +36,9 @@ public class MiscRecyclerFragment extends Fragment {
         View mView = inflater.inflate(R.layout.fragment_misc_recycler, container, false);
         mDatabase = CustomEntryDb.get(getContext());
         mItemList = mDatabase.getInfoItemList();
+        if (mItemList.isEmpty()) {
+            mItemList.add(new InfoItem(getString(R.string.empty_list), "", "", "", ""));
+        }
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.misc_recycler_view_frag);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ItemRecyclerAdapter mAdapter = new ItemRecyclerAdapter(mItemList);

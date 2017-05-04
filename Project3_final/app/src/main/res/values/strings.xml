@@ -27,7 +27,9 @@
     <string name="basic_info">Basic info:</string>
     <string name="close">Close</string>
     <string name="details">Details</string>
-    <string name="playing_genesee">Playing The Genesee sung by the UR Yellow Jackets</string>
+    <string name="playing_genesee">Playing "The Genesee" sung by the UR Yellow Jackets</string>
     <string name="must_grant_camera">You must grant camera access to use this</string>
     <string name="take_a_picture">Take a picure</string>
+    <string name="take_a_video">Take a video</string>
+    <string name="empty_list">This list is empty.  Try adding custom entries</string>
 </resources>

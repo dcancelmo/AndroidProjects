@@ -131,9 +131,18 @@ public class MainActivity extends AppCompatActivity {
         }
    }
 
+   //From the Android Developer docs suggested way to record video
+    private void takeVideo() {
+        Intent mVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        if (mVideoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(mVideoIntent, 1);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu mMenu) {
         Log.i(TAG, "onCreateOptionsMenu MainActivity called");
+        getMenuInflater().inflate(R.menu.video_menu, mMenu);
         getMenuInflater().inflate(R.menu.photo_menu, mMenu);
         getMenuInflater().inflate(R.menu.custom_menu, mMenu);
         return true;
@@ -151,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_item_camera:
                 takePicture();
+                handled = true;
+                break;
+            case R.id.menu_item_video:
+                takeVideo();
                 handled = true;
                 break;
             default:

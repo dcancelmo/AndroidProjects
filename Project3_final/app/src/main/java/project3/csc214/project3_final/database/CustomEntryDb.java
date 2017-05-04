@@ -87,6 +87,7 @@ public class CustomEntryDb {
             } catch (CursorIndexOutOfBoundsException mException) {
             }
         }
+
         mWrapper.close();
 
         return mUserList;
