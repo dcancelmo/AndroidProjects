@@ -44,7 +44,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
         } else {
             mFragment = ItemDetailsFragment.createInstance(mIntent);
             mFragManager.beginTransaction().add(R.id.details_frame_layout, mFragment).commit();
-        }
+          }
     }
 
     public void init(Intent mIntent){
