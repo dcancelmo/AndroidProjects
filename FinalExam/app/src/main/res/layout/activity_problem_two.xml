@@ -13,6 +13,14 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <fragment
+            android:name="mobappdev.demo.finalexam.problem2.ProblemTwoTopFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/top_fragment"
+            tools:layout="@layout/fragment_problem_two_top"
+            />
+
     </FrameLayout>
 
     <FrameLayout
