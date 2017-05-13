@@ -13,4 +13,4 @@ Assignment 8.5 was to redo a previous assignment to get credit back and to prove
 
 This assignment was to create an app that utilized databases to store data. The user uses menus to change activities to an activity to enter data for a new course that when entered will be displayed in the recycler view of the main activity.
 
-This app was developed for Android version 7.1.1 API 25 and texted on the Nexus 6 with 1440x2560 resolution and x86 CPU.
+This app was developed for Android version 7.1.1 API 25 and tested on the Nexus 6 with 1440x2560 resolution and x86 CPU.
