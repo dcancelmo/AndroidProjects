@@ -5,13 +5,19 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.media.Image;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 import mobappdev.demo.finalexam.R;
 
@@ -47,9 +53,20 @@ public class ImageDownloaderActivity extends AppCompatActivity {
             return mBitImage;
         }
 
-        protected void onPostExecute(Bitmap result) {
-
-            mImageView.setImageBitmap(result);
+        protected void onPostExecute(Bitmap mResult) {
+            String mFilename = "IMG_" + UUID.randomUUID().toString() + ".jpg";
+            File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+            File mPhotoFile = new File(picturesDir, mFilename);
+            FileOutputStream mOutStream = null;
+            try {
+                mOutStream = new FileOutputStream(mPhotoFile);
+                mResult.compress(Bitmap.CompressFormat.PNG, 1, mOutStream);
+                mOutStream.close();
+                Toast.makeText(ImageDownloaderActivity.this, getString(R.string.image_saved_to) + mPhotoFile.getPath(), Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mImageView.setImageBitmap(getScaledBitmap(mPhotoFile.getPath()));
         }
     }
 
