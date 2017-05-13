@@ -3,23 +3,54 @@ package mobappdev.demo.finalexam.problem4;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.media.Image;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
+import java.io.InputStream;
 
 import mobappdev.demo.finalexam.R;
 
 public class ImageDownloaderActivity extends AppCompatActivity {
     private static final String TAG = "ImgDler";
+    protected ImageView mImageView;
+
+    //http://images3.wikia.nocookie.net/__cb20120128045061/thehungergames/images/6/67/Bread.jpg
+    private static final String IMAGE_URL_STRING = "http://images3.wikia.nocookie.net/__cb20120128045061/thehungergames/images/6/67/Bread.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_downloader);
+        mImageView = (ImageView) findViewById(R.id.iv_image);
     }
 
     public void downloadPressed(View view) {
+        new ImageFetchTask().execute(IMAGE_URL_STRING);
+    }
+
+    private class ImageFetchTask extends AsyncTask<String, Void, Bitmap> {
+
+        protected Bitmap doInBackground(String... url) {
+            String mURL = url[0];
+            Bitmap mBitImage = null;
+            try {
+                InputStream mStream = new java.net.URL(mURL).openStream();
+                mBitImage = BitmapFactory.decodeStream(mStream);
+            } catch (Exception e) {
+                Log.i(TAG, "Invalid URL");
+            }
+            return mBitImage;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+
+            mImageView.setImageBitmap(result);
+        }
     }
 
 

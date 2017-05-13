@@ -9,6 +9,7 @@ import mobappdev.demo.finalexam.problem1.ProblemOneFirstActivity;
 import mobappdev.demo.finalexam.problem2.ProblemTwoActivity;
 import mobappdev.demo.finalexam.problem3.AActivity;
 import mobappdev.demo.finalexam.problem3.BActivity;
+import mobappdev.demo.finalexam.problem4.ImageDownloaderActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,14 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void problemThreeAClicked(View view) {
         Intent mIntent = new Intent(MainActivity.this, AActivity.class);
-        startActivityForResult(mIntent, 0);
+        startActivity(mIntent);
     }
 
     public void problemThreeBClicked(View view) {
         Intent mIntent = new Intent(MainActivity.this, BActivity.class);
-        startActivityForResult(mIntent, 0);
+        startActivity(mIntent);
     }
 
     public void problemFourClicked(View view) {
+        Intent mIntent = new Intent(MainActivity.this, ImageDownloaderActivity.class);
+        startActivity(mIntent);
     }
 }
