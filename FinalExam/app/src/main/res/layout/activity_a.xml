@@ -8,6 +8,54 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mobappdev.demo.finalexam.problem3.AActivity">
+    tools:context="mobappdev.demo.finalexam.problem3.AActivity"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/a"
+            android:textSize="115sp"
+            android:textColor="#636363"
+            android:background="#e76b6b"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bc"
+            android:textSize="115sp"
+            android:textColor="#636363"
+            android:background="#6b77e7"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/z"
+        android:textSize="115sp"
+        android:textColor="#636363"
+        android:background="#ffea00"
+        />
+
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qq"
+        android:textSize="115sp"
+        android:textColor="#636363"
+        android:background="#ececec"
+        />
 
 </RelativeLayout>

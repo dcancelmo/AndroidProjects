@@ -21,4 +21,8 @@
     <string name="problem_3a">Problem 3A</string>
     <string name="problem_3b">Problem 3B</string>
     <string name="problem_4">Problem 4</string>
+    <string name="a">A</string>
+    <string name="bc">BC</string>
+    <string name="z">Z</string>
+    <string name="qq">QQ</string>
 </resources>

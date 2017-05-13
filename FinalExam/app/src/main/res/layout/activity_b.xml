@@ -7,4 +7,5 @@
     android:orientation="vertical"
     tools:context="mobappdev.demo.finalexam.problem3.BActivity">
 
+
 </RelativeLayout>
